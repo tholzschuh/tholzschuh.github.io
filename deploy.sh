@@ -10,7 +10,7 @@ git checkout master
 
 git checkout develop -- _site/
 
-git mv _site/* .
+git mv -f _site/* .
 
 git rmdir _site/
 
