@@ -1,9 +1,11 @@
+git checkout develop
+
 nix-build
 ./result/bin/site build
 
 git checkout master
 
-cp -a _site/. .
+git checkout develop _site/*
 
 git add -A
 
