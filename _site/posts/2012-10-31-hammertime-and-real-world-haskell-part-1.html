@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Hammertime and real world haskell, part 1 - Musings about FP and CS</title>
+  <meta charset="utf-8" />
+  <link href="http://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="../css/default.css" />
+  <link rel="stylesheet" type="text/css" href="../css/syntax.css" />
+  <link rel="alternate" type="application/atom+xml" title="Musings about FP and CS (Atom)" href="../atom.xml" />
+</head>
+<body>
+    <header>
+      <hgroup>
+        <h1><a href="../">Musings about FP and CS</a></h1>
+        <h2>A log of my journey through FP and CS</h2>
+      </hgroup>
+    </header>
+    <nav>
+        <menu>
+          <a href="../">Home</a>
+          <a href="../posts.html">All posts</a>
+          <a href="http://clement.delafargue.name">About me</a>
+          <a href="../atom.xml">Atom feed</a>
+        </menu>
+    </nav>
+    <section>
+        <article>
+<header>
+<h1>Hammertime and real world haskell, part 1</h1>
+<p>by <em>Clément Delafargue</em> on <strong>October 31, 2012</strong></p>
+<p>Tagged as: <a title="All pages tagged 'fp'." href="../tags/fp.html">fp</a>, <a title="All pages tagged 'haskell'." href="../tags/haskell.html">haskell</a>, <a title="All pages tagged 'hammertime'." href="../tags/hammertime.html">hammertime</a>.</p>
+</header>
+
+<section>
+<p>I’ve spent the last few evenings on a pet project, <a href="http://github.com/divarvel/hammertime">Hammertime</a>. It’s a <strong>CLI time-tracker</strong> which allows me to collect data on how I use my time. I intend to generate SVG reports later on.</p>
+<p>For instance, before starting to read my news feeds:</p>
+<pre><code>hammertime start personal news</code></pre>
+<p>Then, proceeding to read work-related emails:</p>
+<pre><code>hammertime start work emails</code></pre>
+<p>For now, hammertime is just a helper to register events associated to a timestamp. Its model is fully sequential (no parallel tasks). It uses a flat file to store data.</p>
+<p>Hammertime’s feature set is arguably not the more important part of this project. Hammertime is my first “real” haskell project. By that I mean a project that I will really use and which is inherently impure (to some extent at least). Most of the haskell I write is usually based on one-liners typed in <code>ghci</code>. With hammertime, I intend to bridge the gap between fun, purely functional, highly abstract code (the kind of code I’ve never written outside of haskell-land) and more concrete, everyday code, to see how Haskell’s beauty can help me in a more mundane task.</p>
+<p>I intend to <strong>track my work on hammertime on this blog</strong> to write about <strong>how real world haskell development compares to other, mainstream workflows</strong>.</p>
+<h2 id="development-environment">Development environment</h2>
+<h3 id="build-tool">Build tool</h3>
+<p>Most of the time I just load a <code>.hs</code> file from <code>ghci</code> and I get running. This time, I’ve put up a cabal setup, just to keep track of the dependencies and to quickly provide a usable executable (even though I can’t visualize data, I’ve started to collect some). However, hammertime is still in one file, so I’ve kept cabal from my development workflow. Also, I must admit that I’m a bit scared of its dependency management, which is bad, <a href="http://www.txt.io/t-2kv5h">to say the least</a>. Fortunately, I use cabal only for development, not for installing software. My distro has a fairly good support of haskell (see <a href="http://git.exherbo.org/summer/repositories/haskell/index.html">Exherbo’s haskell repository</a>).</p>
+<p>That said, having fiddled with snap and yesod, cabal has always been a PITA with conflicting dependencies. I’ve tried <code>cabal-dev</code> but rebuilding everything for every new install was a huge time sink. I somehow miss the java world with <code>sbt</code> and <code>maven</code> which handle these kinds of problems quite well.</p>
+<p>There is no real equivalent of sbt’s REPL (which starts with the right classpath), but I use a <code>.ghci</code> file wich makes ghci execute statements when starting.</p>
+<p>My reference for a good cabal layout was <a href="https://github.com/tonymorris/course/tree/answers">Tony Morris’ tic-tac-toe example</a>, until I found (precisely when writing down this very sentence) <a href="https://github.com/tonymorris/haskell-package">Tony Morris’ haskell-package</a>. This skeleton package provides a very good starting point for a package.</p>
+<p>I’ve not yet written unit tests for hammertime (which is bad, I know), and I must admit I’m a bit put off by how they’re integrated in cabal. Again, I miss <code>sbt</code> for this.</p>
+<p>Cabal is able to provide all of that, but not out of the box.</p>
+<h3 id="playing-with-the-code">Playing with the code</h3>
+<p>I don’t really like IDEs for lots of reasons (cf <a href="http://www.recursivity.com/blog/2012/10/28/ides-are-a-language-smell/">IDEs are a language smell</a>) and I’ve not used one for years. For a full-blown java dev, I would certainly use one, but right now, I’m using languages expressive enough to avoid IDEs (I even wrote a small java project from <code>sbt</code> the other day and played with it via the <code>REPL</code>, but that’s another story).</p>
+<p>Overall, I’ve been able to keep my habits: <strong><code>vim</code> + <code>ghci</code> is a great combo</strong> to play with code. One nice side effect is that it gives a strong incentive to write really short top-level methods, which are easier to use in ghci.</p>
+<p>Playing with side-effecting code in ghci is quite simple too. For instance:</p>
+<pre><code>Prelude Data.Time&gt; :t getCurrentTime
+getCurrentTime :: IO UTCTime
+
+Prelude Data.Time&gt; getCurrentTime
+2012-10-30 22:30:32.980922 UTC
+
+Prelude Data.Time&gt; :t it
+it :: UTCTime</code></pre>
+<p>With the special <code>it</code> variable, I directly have access to the unwrapped <code>UTCTime</code> value after it has been evaluated. This makes <code>ghci</code> even more useful when trying new code.</p>
+<p>I use <code>pointfree</code> from time to time to refactor lambdas into a more elegant style. I’m quite cautious with this tool because it can produce cryptic formulations, but from time to time it’s useful.</p>
+<h3 id="documentation">Documentation</h3>
+<p>Once again, it’s quite the same for haskell or scala or JS, I just browse the reference websites when I want to have precise info on some part of the API. Since I’m quite new to haskell, my knowledge of the standard library is a bit thin, and that’s where <a href="http://www.haskell.org/hoogle">Hoogle</a> is a <strong>huge</strong> time-saver. <a href="http://holumbus.fh-wedel.de/hayoo/hayoo.html">Hayoo!</a> is more useful for packages outside the standard lib, but for these I prefer to read thoroughly the documentation. These tools allow me to <strong>find functions based on their type</strong>. Since haskell’s type system is really expressive and functions are highly generic, most often the type describes exactly the feature.</p>
+<p>Even though I almost know <a href="http://learnyouahaskell.com/">LYAH</a> by heart and I have a decent knowledge of common haskell constructs, <strong>I don’t know anything about basic stuff like writing to a file or reading command line args</strong>. That’s where <a href="http://book.realworldhaskell.org/">Real World Haskell</a> is of tremendous help. I’ve not read it completely yet because it frightened me a bit, but the more I read it, the more I like the choices taken by its authors. They offer a good vision of their process in end-to-end case studies.</p>
+<p>I just wish they explained how to package Haskell software with cabal.</p>
+<h2 id="wrap-up">Wrap up</h2>
+<p>Apart from the problems with cabal, developing in Haskell is a nice experience. <code>ghci</code> and <em>hoogle</em> are making me insanely more productive when I’m in need of documentation. Hoogle is one of the best proofs that a good type system is essential for readability. I may not have been as productive with new libraries as I would have with an IDE and some <code>C^Space</code> magic, but I’ve learned more about the libraries I’m using.</p>
+<p>Next part will be about the <strong>thought process when prototyping haskell code</strong>. I’ve found it to be quite different from the one I adopt when writing scala or JS.</p>
+<p>The code is <a href="http://github.com/divarvel/hammertime">available on github</a>. Feel free to browse it and give me feedback. As I said, it’s my first haskell project and I’m eager to improve.</p>
+</section>
+</article>
+
+<section>
+<div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'blogclementd',
+                disqus_url = window.location.href.split('/').splice(0,3).join("/")+'/posts/2012-10-31-hammertime-and-real-world-haskell-part-1.html';
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+    </section>
+    <footer>
+        <p>
+        <a href="http://clever-cloud.com">Hosted by Clever-Cloud</a> -
+        <a href="http://clement.delafargue.name">Clément Delafargue</a> -
+        <a href="http://jaspervdj.be/hakyll/index.html">Generated with Hakyll</a> -
+        <a href="http://github.com/divarvel/blog">Source code</a>
+        </p>
+        <p>
+        <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />This
+        work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+        </p>
+
+    </footer>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-9207155-5']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+</body>
+</html>

@@ -1,11 +1,11 @@
 <article>
-    <section class="header">
-        Posted on $date$
-        $if(author)$
-            by $author$
-        $endif$
-    </section>
-    <section>
-        $body$
-    </section>
+<header>
+<h1>$title$</h1>
+<p>by <em>$author$</em> on <strong>$date$</strong></p>
+<p>Tagged as: $prettytags$.</p>
+</header>
+
+<section>
+$body$
+</section>
 </article>

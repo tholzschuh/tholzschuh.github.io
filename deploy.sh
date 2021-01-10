@@ -1,7 +1,7 @@
 git checkout develop
 
 nix-build
-./result/bin/site build
+./result/bin/blog build
 
 git add -A
 git commit -m "rebuilt site."

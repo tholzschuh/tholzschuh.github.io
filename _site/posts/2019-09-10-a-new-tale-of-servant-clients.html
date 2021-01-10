@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>a (new) tale of servant clients - Musings about FP and CS</title>
+  <meta charset="utf-8" />
+  <link href="http://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="../css/default.css" />
+  <link rel="stylesheet" type="text/css" href="../css/syntax.css" />
+  <link rel="alternate" type="application/atom+xml" title="Musings about FP and CS (Atom)" href="../atom.xml" />
+</head>
+<body>
+    <header>
+      <hgroup>
+        <h1><a href="../">Musings about FP and CS</a></h1>
+        <h2>A log of my journey through FP and CS</h2>
+      </hgroup>
+    </header>
+    <nav>
+        <menu>
+          <a href="../">Home</a>
+          <a href="../posts.html">All posts</a>
+          <a href="http://clement.delafargue.name">About me</a>
+          <a href="../atom.xml">Atom feed</a>
+        </menu>
+    </nav>
+    <section>
+        <article>
+<header>
+<h1>a (new) tale of servant clients</h1>
+<p>by <em>Clement Delafargue</em> on <strong>September 10, 2019</strong></p>
+<p>Tagged as: <a title="All pages tagged 'haskell'." href="../tags/haskell.html">haskell</a>, <a title="All pages tagged 'servant'." href="../tags/servant.html">servant</a>, <a title="All pages tagged 'fretlink'." href="../tags/fretlink.html">fretlink</a>.</p>
+</header>
+
+<section>
+<p>I was super happy with <a href="../posts/2018-12-27-a-tale-of-servant-clients.html">my previous post about servant clients</a>… And then, we upgraded to servant 0.16… which dropped entirely the generic mechanism we used (to be fair, it was not documented, so…).</p>
+<p>Lo and behold, we migrated to the proper <a href="http://hackage.haskell.org/package/servant-0.16.2/docs/Servant-API-Generic.html">servant generic</a> system.</p>
+<p>Instead of declaring the API types <em>and then</em> replicating them in records, we directly declare the API types with records.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb1-1"><a href="#cb1-1"></a><span class="ot">{-# LANGUAGE TypeOperators #-}</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="ot">{-# LANGUAGE DataKinds     #-}</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="ot">{-# LANGUAGE TypeFamilies  #-}</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="kw">module</span> <span class="dt">API</span> <span class="kw">where</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="kw">import</span>           <span class="dt">Servant</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="kw">import</span>           <span class="dt">Servant.API.Generic</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="kw">import</span>           <span class="dt">Servant.Client.Generic</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="kw">import</span>           <span class="dt">Types</span>                  (<span class="dt">User</span>, <span class="dt">UserData</span>)</span>
+<span id="cb1-11"><a href="#cb1-11"></a></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="kw">type</span> <span class="dt">API</span> <span class="ot">=</span> <span class="dt">BasicAuth</span> <span class="st">&quot;user-management&quot;</span> <span class="dt">User</span> <span class="op">:&gt;</span> <span class="dt">ToServantApi</span> <span class="dt">UsersAPI</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="kw">data</span> <span class="dt">UsersAPI</span> mode</span>
+<span id="cb1-15"><a href="#cb1-15"></a>  <span class="ot">=</span> <span class="dt">UsersAPI</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a>  {<span class="ot"> getUsers ::</span> mode <span class="op">:-</span> <span class="dt">Get</span> '[<span class="dt">JSON</span>] [<span class="dt">User</span>]</span>
+<span id="cb1-17"><a href="#cb1-17"></a>  ,<span class="ot"> postUser ::</span> mode <span class="op">:-</span> <span class="dt">ReqBody</span> '[<span class="dt">JSON</span>] <span class="dt">UserData</span> <span class="op">:&gt;</span> <span class="dt">Post</span> '[<span class="dt">JSON</span>] <span class="dt">NoContent</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a>  ,<span class="ot"> withUser ::</span> mode <span class="op">:-</span> <span class="dt">Capture</span> <span class="st">&quot;user_id&quot;</span> <span class="dt">UserId</span> <span class="op">:&gt;</span> <span class="dt">ToServantApi</span> <span class="dt">UserAPI</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a>  }</span>
+<span id="cb1-20"><a href="#cb1-20"></a>  <span class="kw">deriving</span> <span class="dt">Generic</span></span>
+<span id="cb1-21"><a href="#cb1-21"></a></span>
+<span id="cb1-22"><a href="#cb1-22"></a><span class="kw">data</span> <span class="dt">UserAPI</span> mode</span>
+<span id="cb1-23"><a href="#cb1-23"></a>  <span class="ot">=</span> <span class="dt">UserAPI</span></span>
+<span id="cb1-24"><a href="#cb1-24"></a>  {<span class="ot"> getUser    ::</span> mode <span class="op">:-</span> <span class="dt">Get</span> '[<span class="dt">JSON</span>] <span class="dt">User</span></span>
+<span id="cb1-25"><a href="#cb1-25"></a>  ,<span class="ot"> putUser    ::</span> mode <span class="op">:-</span> <span class="dt">ReqBody</span> '[<span class="dt">JSON</span>] <span class="dt">UserData</span> <span class="op">:&gt;</span> <span class="dt">Put</span> '[<span class="dt">JSON</span>] <span class="dt">NoContent</span></span>
+<span id="cb1-26"><a href="#cb1-26"></a>  ,<span class="ot"> deleteUser ::</span> mode <span class="op">:-</span> <span class="dt">Delete</span> '[<span class="dt">JSON</span>] <span class="dt">NoContent</span></span>
+<span id="cb1-27"><a href="#cb1-27"></a>  }</span>
+<span id="cb1-28"><a href="#cb1-28"></a>  <span class="kw">deriving</span> <span class="dt">Generic</span></span></code></pre></div>
+<p>The magical part here is the <code>mode</code>. Choosing the <code>mode</code> allows us to get a record of api types, server types, or client types: we define everything in one place (the records), and then instantiate their fields to what we want:</p>
+<ul>
+<li><code>UsersAPI AsAPI</code> gives us a record of API types</li>
+<li><code>UsersAPI AsServer</code> gives us a record of Server types (the handlers)</li>
+<li><code>UsersAPI (AsClientT ClientM)</code> gives us a record of client types (functions taking parameters and returning ClientM values)</li>
+</ul>
+<p>Notice that since record fields require “regular” servant API types, we can’t nest records directly as we did previously.</p>
+<p>We need to turn the <em>record of API types</em> describing the sub-api into a <em>regular API type</em>. To do that, we can use <code>ToServant</code> to go from the records to the good old servant types.</p>
+<p>We can get:</p>
+<ul>
+<li>the API type with <code>ToServantApi</code> (a shortcut for <code>ToServant UsersAPI AsAPI</code>)</li>
+<li>the server type with <code>ToServant UsersAPI AsServer</code></li>
+<li>the client type with <code>ToServant UsersAPI (AsClientT ClientM)</code></li>
+</ul>
+<p>So at the <em>type</em> level, we can use <em>ToServant</em> to go from the record types to the regular types. At the <em>value</em> level, we can go from the regular types to the record types, with <code>fromServant</code>. It may seem strange, but it makes sense: <em>we</em> are responsible for providing the <em>types</em> (and we do so with records). From records, we go to types that servant can understand (with <code>ToServant</code>). With those types, <em>servant</em> is responsible for providing a client, that <em>we</em> want to use as a record.</p>
+<p>So given a regular servant client (here, <code>ToServant UsersAPI (AsClientT ClientM)</code>), we can get a <em>record of clients</em> (here, <code>UsersAPI (AsClientT ClientM)</code>). Instead of calling <code>fromServant</code> on <code>client</code>, we can directly use <code>genericClient</code> to get a record of clients.</p>
+<p>It’s all good and well, except for a small difference: in the new way, you don’t nest records, you just reference regular types (that you generate from records with <code>ToServantApi</code>).</p>
+<p>In the previous system, since we had nested records, we were able to compose accessors like this:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb2-1"><a href="#cb2-1"></a>withUser <span class="op">&gt;&gt;&gt;</span> (<span class="op">$</span> userId) <span class="op">&gt;&gt;&gt;</span> putUser <span class="op">&gt;&gt;&gt;</span> (<span class="op">$</span> userData)</span></code></pre></div>
+<p>Now, every time we call a record accessor, we don’t get the next record, but a <em>regular</em> servant client. So we have to interleave <code>fromServant</code> calls between record accessors as such:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb3-1"><a href="#cb3-1"></a>withUser <span class="op">&gt;&gt;&gt;</span> (<span class="op">$</span> userId) <span class="op">&gt;&gt;&gt;</span> fromServant <span class="op">&gt;&gt;&gt;</span> putUser (<span class="op">$</span> userData)</span></code></pre></div>
+<p>Not really satisfying.</p>
+<p>However, with a couple helpers, we can improve it substantially:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb4-1"><a href="#cb4-1"></a><span class="ot">(//) ::</span> ((m <span class="op">~</span> <span class="dt">AsClientT</span> n), <span class="dt">GenericServant</span> r m)</span>
+<span id="cb4-2"><a href="#cb4-2"></a>     <span class="ot">=&gt;</span> (a <span class="ot">-&gt;</span> <span class="dt">ToServant</span> r m)</span>
+<span id="cb4-3"><a href="#cb4-3"></a>     <span class="ot">-&gt;</span> (routes m <span class="ot">-&gt;</span> b)</span>
+<span id="cb4-4"><a href="#cb4-4"></a>     <span class="ot">-&gt;</span> (a <span class="ot">-&gt;</span> b)</span>
+<span id="cb4-5"><a href="#cb4-5"></a>f <span class="op">//</span> f' <span class="ot">=</span> f <span class="op">&gt;&gt;&gt;</span> fromServant <span class="op">&gt;&gt;&gt;</span> f'</span>
+<span id="cb4-6"><a href="#cb4-6"></a></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="ot">(/:) ::</span> (a <span class="ot">-&gt;</span> b <span class="ot">-&gt;</span> c)</span>
+<span id="cb4-8"><a href="#cb4-8"></a>     <span class="ot">-&gt;</span> b</span>
+<span id="cb4-9"><a href="#cb4-9"></a>     <span class="ot">-&gt;</span> a <span class="ot">-&gt;</span> c</span>
+<span id="cb4-10"><a href="#cb4-10"></a>(<span class="op">/:</span>) <span class="ot">=</span> <span class="fu">flip</span></span></code></pre></div>
+<p><code>//</code> interleaves accessor calls with <code>fromServant</code>, while <code>/:</code> hides the <code>(&gt;&gt;&gt; ($ p))</code> pattern. I chose those names due to the similarity with the way routes are declared in many frameworks (with the leading <code>:</code> for captured parameters).</p>
+<p>With all that done, we can go back to a nice style:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb5-1"><a href="#cb5-1"></a>withUser <span class="op">/:</span> userId <span class="op">//</span> putUser <span class="op">/:</span> userData</span></code></pre></div>
+<p>I’ve been told that servant generic records don’t compose elegantly; I hope I’ve shown they <em>can</em>.</p>
+<h2 id="addendum">Addendum</h2>
+<p>I kept the first part short and to the point, but I wanted to illustrate a bit more what’s going on behind the scenes.</p>
+<p>You may think this is all magic, as Servant relies <em>heavily</em> on type families, which hide the “actual” types you’re dealing with. Fear not, we can see precisely what’s happening with <code>:kind!</code>. If you want to follow along, you can download a <a href="../files/servant-client.hs">working example</a> (it’s a stack executable file, if you run it, it will drop you in a GHCI session with everything in scope).</p>
+<p>Let’s see the regular API type derived from <code>UsersAPI</code>:</p>
+<pre><code>λ&gt; :kind! ToServantApi UsersAPI
+ToServantApi UsersAPI :: *
+= Verb 'GET 200 '[JSON] [User]
+  :&lt;|&gt; ((ReqBody '[JSON] UserData :&gt; Post '[JSON] NoContent)
+        :&lt;|&gt; (Capture &quot;user_id&quot; UserId
+              :&gt; (Verb 'GET 200 '[JSON] User
+                  :&lt;|&gt; ((ReqBody '[JSON] UserData :&gt; Put '[JSON] NoContent)
+                        :&lt;|&gt; Verb 'DELETE 200 '[JSON] NoContent))))</code></pre>
+<p>And now, the regular client type derived from <code>UsersAPI</code>.</p>
+<pre><code>λ&gt; :kind! ToServant UsersAPI (AsClientT ClientM)
+ToServant UsersAPI (AsClientT ClientM) :: *
+= ClientM [User]
+  :&lt;|&gt; ((UserData -&gt; ClientM NoContent)
+        :&lt;|&gt; (Int
+              -&gt; ClientM User
+                 :&lt;|&gt; ((UserData -&gt; ClientM NoContent) :&lt;|&gt; ClientM NoContent)))</code></pre>
+<p>That should help you getting by with the <code>ToServant</code> type family.</p>
+<p>Now, if you want to understand more about the record types, <code>:kind!</code> will not help you <em>directly</em>. Since those records are… well, records, and not type families you won’t get interesting results:</p>
+<pre><code>λ&gt; :kind UsersAPI
+UsersAPI :: * -&gt; *
+λ&gt; :kind UsersAPI AsApi
+UsersAPI AsApi :: *</code></pre>
+<p>The records themselves keep the same structure, what changes is the types of their fields. Notice the <code>:-</code> bit?</p>
+<pre><code>λ&gt; :kind! AsApi :- Get '[JSON] [User]
+AsApi :- Get '[JSON] [User] :: *
+= Verb 'GET 200 '[JSON] [User]
+
+λ&gt; :kind! AsServer :- Get '[JSON] [User]
+AsServer :- Get '[JSON] [User] :: *
+= Handler [User]</code></pre>
+<p>One last word: if the compiler complains of a mismatch between <em>something that looks like an API type</em> and <em>something that looks like a server or a client type</em>, make sure you’ve not forgotten the <code>mode :-</code> in your record fields :-)</p>
+</section>
+</article>
+
+<section>
+<div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'blogclementd',
+                disqus_url = window.location.href.split('/').splice(0,3).join("/")+'/posts/2019-09-10-a-new-tale-of-servant-clients.html';
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+    </section>
+    <footer>
+        <p>
+        <a href="http://clever-cloud.com">Hosted by Clever-Cloud</a> -
+        <a href="http://clement.delafargue.name">Clément Delafargue</a> -
+        <a href="http://jaspervdj.be/hakyll/index.html">Generated with Hakyll</a> -
+        <a href="http://github.com/divarvel/blog">Source code</a>
+        </p>
+        <p>
+        <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />This
+        work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+        </p>
+
+    </footer>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-9207155-5']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+</body>
+</html>

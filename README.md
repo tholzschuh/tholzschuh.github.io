@@ -1,5 +1,16 @@
-# hakyll-nix-example
+# Setup
 
-* To build: `nix-build --show-trace`
-* Dev Server: `./result/bin/site watch`
-* Build Site: `./result/bin/site build`
+	stack setup
+	stack install # will install a `blog` executable in ~/.local/bin
+
+# Build
+
+	blog build
+
+# Preview
+
+	blog watch
+
+# Create a new article
+
+	make new

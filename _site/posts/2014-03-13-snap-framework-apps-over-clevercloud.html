@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Snap framework apps over Clever-Cloud - Musings about FP and CS</title>
+  <meta charset="utf-8" />
+  <link href="http://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="../css/default.css" />
+  <link rel="stylesheet" type="text/css" href="../css/syntax.css" />
+  <link rel="alternate" type="application/atom+xml" title="Musings about FP and CS (Atom)" href="../atom.xml" />
+</head>
+<body>
+    <header>
+      <hgroup>
+        <h1><a href="../">Musings about FP and CS</a></h1>
+        <h2>A log of my journey through FP and CS</h2>
+      </hgroup>
+    </header>
+    <nav>
+        <menu>
+          <a href="../">Home</a>
+          <a href="../posts.html">All posts</a>
+          <a href="http://clement.delafargue.name">About me</a>
+          <a href="../atom.xml">Atom feed</a>
+        </menu>
+    </nav>
+    <section>
+        <article>
+<header>
+<h1>Snap framework apps over Clever-Cloud</h1>
+<p>by <em>Clement Delafargue</em> on <strong>March 13, 2014</strong></p>
+<p>Tagged as: <a title="All pages tagged 'haskell'." href="../tags/haskell.html">haskell</a>, <a title="All pages tagged 'clever-cloud'." href="../tags/clever-cloud.html">clever-cloud</a>, <a title="All pages tagged 'PaaS'." href="../tags/PaaS.html">PaaS</a>.</p>
+</header>
+
+<section>
+<h2 id="this-blog-post-is-out-of-date">This blog post is out of date</h2>
+<p>Clever Cloud now has <a href="https://www.clever-cloud.com/doc/haskell/haskell/">native support for haskell applications</a>. Any <em>stack</em>-based application will be compiled and launched automatically on Clever Cloud.</p>
+<p>You can watch <a href="https://www.youtube.com/watch?v=TnmNoPJdQvk&amp;t=11s">how to deploy a scotty app on Clever Cloud</a>.</p>
+<p>You can still read the original article below.</p>
+<p>Even though my comfort zone, professionally, is Scala + Play Framework for web applications, I really like Haskell. For some reason, I had never written web apps in Haskell before last week. The Haskell web landscape has three main players, Yesod, Snap and Happstack. I’ve settled on Snap framework.</p>
+<p>Since I use <a href="http://clever-cloud.com">Clever-Cloud</a> to deploy my web applications, and since it doesn’t support cabal builds… yet, I had to cheat a bit to make it work.</p>
+<p>As I said, <a href="http://clever-cloud.com">Clever-Cloud</a> does not support cabal builds. But it can run binaries on its scalers, and a compiled snap application is a standalone binary, with an embedded HTTP server.</p>
+<h2 id="create-the-application-on-clever-cloud">Create the application on Clever Cloud</h2>
+<p>The trick is to deploy a normal Clever Cloud application, and run the haskell binary as part as the deployment process. Since node applications are not tied to an external HTTP server (as do PHP, Ruby and Python apps), and npm provides a simple way to run scripts during deployment, I’ll use a node js application.</p>
+<p>Create a node application in the Clever Cloud console.</p>
+<p><a href="http://console.clever-cloud.com" class="uri">http://console.clever-cloud.com</a></p>
+<p><a href="../files/create_app.png"><img src="../files/create_app.png" alt="app creation in clever cloud" width="100%" /></a></p>
+<p>Take note of the git remote URL, you’ll need it later.</p>
+<h2 id="setup-the-repository">Setup the repository</h2>
+<p>Create a new git repository, and put this in a file named <code>package.json</code>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="dt">&quot;name&quot;</span> <span class="fu">:</span> <span class="st">&quot;my-snap-app&quot;</span><span class="fu">,</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>  <span class="dt">&quot;version&quot;</span> <span class="fu">:</span> <span class="st">&quot;0.1.0&quot;</span><span class="fu">,</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>  <span class="dt">&quot;scripts&quot;</span> <span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>    <span class="dt">&quot;start&quot;</span><span class="fu">:</span> <span class="st">&quot;./my-snap-app -p 8080 --proxy=X_FORWARDED_FOR --no-access-log&quot;</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>  <span class="fu">}</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="fu">}</span></span></code></pre></div>
+<p>Make sure to put in the repo your snap binary (found in <code>/.cabal-sandbox/bin/</code> after a successful <code>cabal install</code>), the <code>site_key.txt</code> file and the <code>snaplets</code> directory which contains configuration files.</p>
+<p>The binary must be a 64-bit linux binary. If you’re not on a 64-bit linux system, you have to cross-compile it, or use a monstrously dirty solution like Boot2Docker if you feel adventurous.</p>
+<p>Make sure <strong>not to include</strong> the <code>log</code> directory.</p>
+<h2 id="deploy-on-clever-cloud">Deploy on Clever Cloud</h2>
+<pre><code>git remote add clever &lt;git-url&gt;
+git push clever master</code></pre>
+<p>And <em>voilà</em>.</p>
+<h2 id="more-details-caveats">More details, caveats</h2>
+<p>Upon deployment, <code>npm start</code> is launched, which starts the snap binary. The monitoring makes sure someone listens on port <code>8080</code> (the snap binary does) and marks the application as successfully deployed.</p>
+<p>The application can be automatically scaled (both horizontally and vertically) as long as you don’t store anything on the local file system.</p>
+<h3 id="flags">flags</h3>
+<p>The <code>-p 8080</code> is there to instruct snap to listen on port <code>8080</code> (required by clever-cloud).</p>
+<p>Since the application is behind a reverse proxy, you need to set <code>--proxy=X_Forwarded_For</code> to have access to the clients’ ip addresses (else it would take the address of the reverse proxy).</p>
+<p>Lastly, it’s clever-cloud responsibility to store the access logs, so you should disable it to keep only error logs, hence the <code>--no-access-log</code>.</p>
+<h3 id="caveats">Caveats</h3>
+<p>Snap has currently two issues: it logs to files and it reacts strangely to HAproxy.</p>
+<h4 id="dont-log-to-files.-period">Don’t log to files. Period</h4>
+<p>When you industrialize your deployment, one of the first things to do is log aggregation. Instead of logging to files, you forward the log to a collecting system. Clever cloud does this automatically with everything your application outputs to <code>stdout</code> and <code>stderr</code> .</p>
+<p>Moreover, an industrialized deployment process deploys fresh version of the code every time, and all the local changes are lost. That’s why logging to files is bad practice.</p>
+<p><del>Sort of fortunately, snap does log to <code>stderr</code> when it can’t find the log location (default: <code>./log</code>). While displaying a big, scary warning. You can safely ignore it.</del></p>
+<p><ins>You can tell snap to log to <code>stdout</code> or to <code>stderr</code>, by passing <code>stderr</code> or <code>-</code> (for <code>stdout</code>) to <code>--error-log</code> or <code>--access-log</code>.</ins></p>
+<h4 id="haproxymonitoring-log-spamming"><del>HAproxy</del><ins>Monitoring</ins> log spamming</h4>
+<p><del>In front of all the Clever Cloud scalers is HAproxy, which does the load balancing and the fail-over. To make sure the applications are really running and responding, HAproxy does a regular TCP check.</del> <ins>All applications on Clever Cloud are monitored (it allows Clever Cloud to automatically restart applications when they crash). The monitoring system periodically does a simple TCP check (it opens a TCP connection with the app, then closes it right away).</ins></p>
+<p>Unfortunately, snap can’t really handle it and logs an error. <strong>It’s not a big problem, as <del>HAproxy</del><ins>the moritoring system</ins> still counts the application as alive</strong>. However, it tends to spam the logs a bit. I don’t have a solution for this yet. Maybe a more experienced snap user knows how to deal with this.</p>
+<h2 id="wrap-up">Wrap up</h2>
+<p>It’s easy to deploy snap applications on <a href="http://clever-cloud.com">Clever-Cloud</a>, and you can take advantage of all its great features: pay-as-you-go, auto-scalability, and great performance.</p>
+</section>
+</article>
+
+<section>
+<div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'blogclementd',
+                disqus_url = window.location.href.split('/').splice(0,3).join("/")+'/posts/2014-03-13-snap-framework-apps-over-clevercloud.html';
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+    </section>
+    <footer>
+        <p>
+        <a href="http://clever-cloud.com">Hosted by Clever-Cloud</a> -
+        <a href="http://clement.delafargue.name">Clément Delafargue</a> -
+        <a href="http://jaspervdj.be/hakyll/index.html">Generated with Hakyll</a> -
+        <a href="http://github.com/divarvel/blog">Source code</a>
+        </p>
+        <p>
+        <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />This
+        work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+        </p>
+
+    </footer>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-9207155-5']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+</body>
+</html>
