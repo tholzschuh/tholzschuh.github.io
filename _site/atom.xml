@@ -8,6 +8,25 @@
         <name>Clément Delafargue</name>
         <email>clement+blog@delafargue.name</email>
     </author>
-    <updated>Unknown</updated>
-    
+    <updated>2021-01-10T00:00:00Z</updated>
+    <entry>
+    <title>Initial post</title>
+    <link href="http://blog.clement.delafargue.name/posts/2021-01-10-initial-post.html" />
+    <id>http://blog.clement.delafargue.name/posts/2021-01-10-initial-post.html</id>
+    <published>2021-01-10T00:00:00Z</published>
+    <updated>2021-01-10T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<article>
+<header>
+<h1>Initial post</h1>
+<p>by <em>Tim Holzschuh</em> on <strong>January 10, 2021</strong></p>
+<p>Tagged as: <a title="All pages tagged 'test'." href="http://blog.clement.delafargue.name/tags/test.html">test</a>.</p>
+</header>
+
+<section>
+<p>This is a test post.</p>
+</section>
+</article>
+]]></summary>
+</entry>
+
 </feed>
