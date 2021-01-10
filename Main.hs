@@ -60,6 +60,18 @@ main = hakyll $ do
                 >>= loadAndApplyTemplate "templates/index.html" (homeCtx tags list)
                 >>= loadAndApplyTemplate "templates/default.html" (homeCtx tags list)
                 >>= relativizeUrls
+    -- Maths
+    create ["maths.html"] $ do
+        route idRoute
+        compile $ do
+            posts <- loadAll "maths/*"
+            sorted <- take 10 <$> recentFirst posts
+            itemTpl <- loadBody "templates/postitem.html"
+            list <- applyTemplateList itemTpl postCtx sorted
+            makeItem list
+                >>= loadAndApplyTemplate "templates/maths.html" (homeCtx tags list)
+                >>= loadAndApplyTemplate "templates/default.html" (homeCtx tags list)
+                >>= relativizeUrls
 
     -- Post tags
     tagsRules tags $ \tag pattern -> do
