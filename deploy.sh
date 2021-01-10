@@ -8,7 +8,11 @@ git commit -m "rebuilt site."
 
 git checkout master
 
-git checkout develop _site/*
+git checkout develop -- _site/
+
+git mv _site/* .
+
+git rmdir _site/
 
 git add -A
 
