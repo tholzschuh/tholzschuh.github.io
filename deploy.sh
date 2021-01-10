@@ -12,7 +12,7 @@ git checkout develop -- _site/
 
 git mv -f _site/* .
 
-git rmdir _site/
+rmdir _site/
 
 git add -A
 
