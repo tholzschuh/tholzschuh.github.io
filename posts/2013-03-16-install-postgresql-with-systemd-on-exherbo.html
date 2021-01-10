@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Install postgreSQL-9.2 with systemd on exherbo - Musings about FP and CS</title>
+  <meta charset="utf-8" />
+  <link href="http://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="../css/default.css" />
+  <link rel="stylesheet" type="text/css" href="../css/syntax.css" />
+  <link rel="alternate" type="application/atom+xml" title="Musings about FP and CS (Atom)" href="../atom.xml" />
+</head>
+<body>
+    <header>
+      <hgroup>
+        <h1><a href="../">Musings about FP and CS</a></h1>
+        <h2>A log of my journey through FP and CS</h2>
+      </hgroup>
+    </header>
+    <nav>
+        <menu>
+          <a href="../">Home</a>
+          <a href="../posts.html">All posts</a>
+          <a href="http://clement.delafargue.name">About me</a>
+          <a href="../atom.xml">Atom feed</a>
+        </menu>
+    </nav>
+    <section>
+        <article>
+<header>
+<h1>Install postgreSQL-9.2 with systemd on exherbo</h1>
+<p>by <em>Clement Delafargue</em> on <strong>March 16, 2013</strong></p>
+<p>Tagged as: <a title="All pages tagged 'exherbo'." href="../tags/exherbo.html">exherbo</a>, <a title="All pages tagged 'postgresql'." href="../tags/postgresql.html">postgresql</a>, <a title="All pages tagged 'sysadmin'." href="../tags/sysadmin.html">sysadmin</a>.</p>
+</header>
+
+<section>
+<p>A few weekends, I had to play with postgreSQL on my Exherbo. The package was installed, but Pg needs some post-install init to run correctly. Since it’s not handled by the exheres, you’ve got a few things to do by yourself.</p>
+<p>This is really important as it allows you to configure everything before actually starting the init process.</p>
+<h2 id="install">Install</h2>
+<p>Check the options, namely <code>systemd</code> but if you’re using systemd, it should be already enabled. There are a few pg-specific options, like <code>hstore</code> which can be of interest.</p>
+<pre><code>cave resolve postgresql</code></pre>
+<h2 id="systemd-tweaking">Systemd tweaking</h2>
+<p>PostgreSQL 9.2 dropped some options (namely <code>silent_mode</code>), which are still present in the provided systemd service file. <a href="http://kdecherf.com/">Kévin Decherf</a> and I tweaked the exheres a bit to make it support different service files, one for each version.</p>
+<p>The patch is submitted, but not yet merged. In the meantime, you just have to edit your installed service file by hand.</p>
+<h1 id="init">Init</h1>
+<p>Then, the init part (as root).</p>
+<pre><code>mkdir -p /var/lib/postgresql/data/
+chown -R postgres:postgres /var/lib/postgresql
+su - postgres
+initdb -D /var/lib/postgresql/data/</code></pre>
+<p>Now everything should be ok.</p>
+<pre><code>systemctl start postgresql</code></pre>
+</section>
+</article>
+
+<section>
+<div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'blogclementd',
+                disqus_url = window.location.href.split('/').splice(0,3).join("/")+'/posts/2013-03-16-install-postgresql-with-systemd-on-exherbo.html';
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+    </section>
+    <footer>
+        <p>
+        <a href="http://clever-cloud.com">Hosted by Clever-Cloud</a> -
+        <a href="http://clement.delafargue.name">Clément Delafargue</a> -
+        <a href="http://jaspervdj.be/hakyll/index.html">Generated with Hakyll</a> -
+        <a href="http://github.com/divarvel/blog">Source code</a>
+        </p>
+        <p>
+        <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />This
+        work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+        </p>
+
+    </footer>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-9207155-5']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+</body>
+</html>

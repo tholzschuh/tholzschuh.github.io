@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Bake Delicious Macaroon Burritos With Servant - Musings about FP and CS</title>
+  <meta charset="utf-8" />
+  <link href="http://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="../css/default.css" />
+  <link rel="stylesheet" type="text/css" href="../css/syntax.css" />
+  <link rel="alternate" type="application/atom+xml" title="Musings about FP and CS (Atom)" href="../atom.xml" />
+</head>
+<body>
+    <header>
+      <hgroup>
+        <h1><a href="../">Musings about FP and CS</a></h1>
+        <h2>A log of my journey through FP and CS</h2>
+      </hgroup>
+    </header>
+    <nav>
+        <menu>
+          <a href="../">Home</a>
+          <a href="../posts.html">All posts</a>
+          <a href="http://clement.delafargue.name">About me</a>
+          <a href="../atom.xml">Atom feed</a>
+        </menu>
+    </nav>
+    <section>
+        <article>
+<header>
+<h1>Bake Delicious Macaroon Burritos With Servant</h1>
+<p>by <em>Clément Delafargue</em> on <strong>July 19, 2018</strong></p>
+<p>Tagged as: <a title="All pages tagged 'haskell'." href="../tags/haskell.html">haskell</a>, <a title="All pages tagged 'servant'." href="../tags/servant.html">servant</a>, <a title="All pages tagged 'macaroons'." href="../tags/macaroons.html">macaroons</a>, <a title="All pages tagged 'fretlink'." href="../tags/fretlink.html">fretlink</a>.</p>
+</header>
+
+<section>
+<p>When I’ve joind the Fretlink team in May, I’ve had the pleasure to find a team already enjoying the use of macaroons. One of my first missions was to improve how they were used to authorize API calls, in the context of Servant applications. After a few iterations, we’ve settled on a design I’m quite happy with.</p>
+<p>This involves Servant’s generalized auth mechanism, monad transformers, natural transformations, and, something I’ve called <em>deferred macaroons validation</em>.</p>
+<p>Hop on for a quick tour on how we did it, why we did it and what’s left ahead!</p>
+<!-- more -->
+<h2 id="what-are-macaroons">What are macaroons?</h2>
+<p>Macaroons are <em>bearer tokens</em>, initially conceived to allow sharing with contextual caveats. Let’s unpack it a bit: they’re <em>bearer tokens</em>, which means they’re meant to be sent with a request to authorize it. The service receiving the request can check the token to allow it to proceed or not.</p>
+<p>Now for the interesting part: <em>contextual caveats</em>. Macaroons can be <em>attenuated</em> with something called caveats. In layman terms, it means that a macaroon can be attenuated by adding “this is valid as long as condition X holds”. When receiving a macaroon along with a request, the service has to prove every caveat holds.</p>
+<p>A macaroon looks like this:</p>
+<pre><code>identifier &lt;opaque_id&gt;   # opaque user id. Permissions will be scoped to it
+location &lt;location hint&gt; # url where you can use the macaroon
+cid endpoint = route1    # caveats are just strings
+cid time &lt; 2018-07-18Z
+signature &lt;signature&gt;    # allows to check the macaroon validated</code></pre>
+<p>In practice, when verifying a macaroon, you provide a list of verifiers (roughly <code>Caveat -&gt; IO (Either VerifierError ())</code>, with <code>data VerifierError = Unrelated | Error String</code>). Each verifier is then applied to each caveat, and validation succeeds if every caveat has at least one verifier completing successfully. Most verifiers (called <em>exact verifiers</em>) just look for exact strings. For instance, if you’re hitting the <code>route1</code> endpoint, the corresponding verifier will just match the exact string <code>endpoint = route1</code>. For the TTL caveat, the verifier will parse the date string and succeed only if its after the current time. The syntax <code>name =</code> or <code>name &lt;</code> is purely arbitrary, as far as the macaroon is concerned, caveats are strings. It’s up to the verifiers to parse (or not) the caveats when verifying them.</p>
+<p>This gives macaroons two interesting properties:</p>
+<ul>
+<li>you can freely add any caveat to a macaroon, as it renders it <em>less</em> powerful.</li>
+<li>macaroons validation works in reverse compared to common intuition: a macaroon with no restrictions is almighty: you need to be careful when creating a macaroon, but when you validate one, there is no risk of forgetting to check something, since the checklist is embedded in the macaroon itself.</li>
+</ul>
+<p>To learn more on macaroons, you can</p>
+<ul>
+<li>read the <a href="https://ai.google/research/pubs/pub41892">original paper</a></li>
+<li>read <a href="https://github.com/rescrv/libmacaroons/blob/master/README">libmacaroon’s readme</a></li>
+</ul>
+<p>In Haskell, there is <a href="https://github.com/jtanguy">hmacaroons</a> which implements it for us.</p>
+<h2 id="auth-management-in-web-frameworks">Auth management in web frameworks</h2>
+<p>Most web frameworks implement authorization and authentication as a sort of filter. Usually, authentication can be done in a single place and provides a context used by the endpoints. Authorization is split in two places: some properties can be checked at a global level (token integrity, ttl, stuff like that), but other properties can only be checked at the endpoint level (read or write operation, rights matrix lookup, things like that).</p>
+<p>While frameworks provide interesting tools for authorization and global authorization, developers are often on their own when it comes to endpoint-specific authorization concerns. What’s worse is that it’s unsecure by default: developers <em>have</em> to <em>add</em> verifications, to make the endpoint correctly secure.</p>
+<p>That’s where macaroons help us: we can make endpoints secure by default, by making developers have to <em>prove</em> that the request is compatible with the given macaroon.</p>
+<h2 id="servant">Servant</h2>
+<p>To create our HTTP services, we use <a href="https://haskell-servant.readthedocs.io/en/stable/">Servant</a>. Servant is a “Type-Level Web DSL”. That means, that the first step is to describe your API. Then, you can either let servant derive clients, or you can provide handlers for each endpoint, and servant will build a <a href="http://hackage.haskell.org/package/wai">WAI</a> application out of it.</p>
+<p>A simple servant example looks like this:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">type</span> <span class="dt">API</span> <span class="ot">=</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>       (<span class="st">&quot;route1&quot;</span> <span class="op">:&gt;</span> <span class="dt">Get</span> '[<span class="dt">JSON</span>] <span class="dt">Resource</span>)</span>
+<span id="cb2-3"><a href="#cb2-3"></a>  <span class="op">:&lt;|&gt;</span> (<span class="st">&quot;route2&quot;</span> <span class="op">:&gt;</span> <span class="dt">Get</span> '[<span class="dt">JSON</span>] <span class="dt">OtherResource</span>)</span>
+<span id="cb2-4"><a href="#cb2-4"></a></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="ot">api ::</span> <span class="dt">Proxy</span> <span class="dt">API</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>api <span class="ot">=</span> <span class="dt">Proxy</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="ot">handleRoute1 ::</span> <span class="dt">Handler</span> <span class="dt">Resource</span></span>
+<span id="cb2-9"><a href="#cb2-9"></a>handleRoute1 <span class="ot">=</span> <span class="fu">pure</span> myResource</span>
+<span id="cb2-10"><a href="#cb2-10"></a></span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="ot">handleRoute2 ::</span> <span class="dt">Handler</span> <span class="dt">OtherResource</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a>handleRoute2 <span class="ot">=</span> <span class="fu">pure</span> myOtherResource</span>
+<span id="cb2-13"><a href="#cb2-13"></a></span>
+<span id="cb2-14"><a href="#cb2-14"></a><span class="co">-- Handlers can be composed, this allows you to compose sub-APIs</span></span>
+<span id="cb2-15"><a href="#cb2-15"></a><span class="co">-- and even abstract away common patterns</span></span>
+<span id="cb2-16"><a href="#cb2-16"></a><span class="ot">server ::</span> <span class="dt">Server</span> <span class="dt">API</span></span>
+<span id="cb2-17"><a href="#cb2-17"></a>server <span class="ot">=</span> handleRoute1 <span class="op">:&lt;|&gt;</span> handleRoute2</span>
+<span id="cb2-18"><a href="#cb2-18"></a></span>
+<span id="cb2-19"><a href="#cb2-19"></a><span class="co">-- Generates a WAI application from an API description and corresponding</span></span>
+<span id="cb2-20"><a href="#cb2-20"></a><span class="co">-- handlers</span></span>
+<span id="cb2-21"><a href="#cb2-21"></a><span class="ot">app ::</span> <span class="dt">Application</span></span>
+<span id="cb2-22"><a href="#cb2-22"></a>app <span class="ot">=</span> serve api server</span></code></pre></div>
+<p>What I like about servant is that there is still a DSL to describe the routes, instead of having annotations directly on handlers. You can have a quick look at the type and know the structure of the API. Instead of relying on an external DSL like Play Framework does, you get proper haskell, so you can mix and match API fragments freely, without arbitrary restrictions. The other cool thing is that it lets you think in terms of high-level types, and never worry about serialization, while still giving you complete control about it.</p>
+<h3 id="servants-generalized-authentication">Servant’s generalized authentication</h3>
+<p>Like everything, authentication has to show up in types:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">type</span> <span class="dt">ProtectedAPI</span> <span class="ot">=</span> <span class="dt">RequireMacaroon</span> <span class="op">:&gt;</span> <span class="st">&quot;route1&quot;</span> <span class="op">:&gt;</span> <span class="dt">Get</span> '[<span class="dt">JSON</span>] <span class="dt">Resource</span></span></code></pre></div>
+<p>Once an enpoint is marked as protected, the handler function will take a new argument, representing the information extracted from the request, usually a <code>User</code> or <code>Account</code> data type. In our cases, it was initially a <code>Macaroon</code>.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb4-1"><a href="#cb4-1"></a><span class="ot">protectedServer ::</span> <span class="dt">Server</span> <span class="dt">ProtectedAPI</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>protectedServer macaroon <span class="ot">=</span> myHandler macaroon</span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="ot">myHandler ::</span> <span class="dt">Macaroon</span> <span class="ot">-&gt;</span> <span class="dt">Resource</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>myHandler macaroon <span class="ot">=</span> …</span></code></pre></div>
+<p>To tie everything up, we still need to tell servant server how to extract it from the request, in the form of something like <code>Request -&gt; Handler Macaroon</code> (see <a href="https://haskell-servant.readthedocs.io/en/stable/tutorial/Authentication.html#generalized-authentication">Servant Generalized Authentication docs</a> for more info).</p>
+<p>This allows us to handle authentication (with the macaroon’s key identifier), as well as the verification of things like TTL. This still doesn’t account for <em>contextual</em> caveats since we don’t know about the endpoint being hit. We could extract information from the request but that would force us to duplicate all the endpoint description logic in this handler, losing all the type-safe goodness servant provides.</p>
+<p>Another possibility would be to extract the macaroon without any validation in the auth handler, and have every endpoint do all the verifications, with a complete context. That’s not satisfying either, as it would make endpoints insecure by default.</p>
+<h2 id="deferred-validation">Deferred validation</h2>
+<p><em>This is out of date, I’ve found a way to discharge all macaroons in one go. I’ve kept it in the article, but it’s not used anymore. I instead use a closure taking the remaining verifiers and handling the macaroon check.</em></p>
+<p>What we want is to validate what we can in the auth handler, while waiting for more context provided by the endpoint. This gives rise to what we can call deferred validation.</p>
+<p>Some caveats are marked as eligible for deferred validation and are unconditionally discharged in the auth handler. Caveats not properly discharged are kept alongside the macaroon and will have to be discharged later on.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">data</span> <span class="dt">PartiallyValidatedMacaroon</span> <span class="ot">=</span> <span class="dt">PartiallyValidatedMacaroon</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>  {<span class="ot"> macaroon ::</span> <span class="dt">Macaroon</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a>  ,<span class="ot"> remainingCaveats ::</span> [<span class="dt">Caveat</span>]</span>
+<span id="cb5-4"><a href="#cb5-4"></a>  }</span></code></pre></div>
+<p>The last piece is about verifying the remaining caveats while staying secure by default. To do that, we give a way to annotate handlers with verifiers, and we match those verifiers against the remaining caveats to let the request go through, or reject it. The key of being secured by default is to force this check. If it’s done, since endpoints do provide any verifier unless explicitely annotated, we get security by default.</p>
+<p>To put that in motion, we’ll use natural transformations and a nifty servant mechanism called <code>hoistServer</code>. But first I’d like to have a word with you about middlewares.</p>
+<h2 id="why-middlewares-are-not-enough">Why middlewares are not enough</h2>
+<p>The concept of <em>middleware</em> is common along web frameworks and web servers, it’s famously present in <a href="http://expressjs.com/en/guide/using-middleware.html">Express</a>, as well as in <a href="http://hackage.haskell.org/package/wai-3.2.1.2/docs/Network-Wai.html#t:Middleware">WAI</a>. Play Framework has similar concepts, called <em>filters</em> and <em>action builders</em>.</p>
+<p>Middlewares typically work by inspecting a request, then either short-circuit or pass the request (sometimes modified) to the rest of the application.</p>
+<p>In express, an auth middleware looks like this:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">const</span> authMiddleware <span class="op">=</span> (request<span class="op">,</span> response<span class="op">,</span> next) <span class="kw">=&gt;</span> {</span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="kw">const</span> user <span class="op">=</span> checkAuth(request)<span class="op">;</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>  <span class="cf">if</span> (user) {</span>
+<span id="cb6-4"><a href="#cb6-4"></a>    <span class="co">// the request is modified</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>    request<span class="op">.</span><span class="at">user</span> <span class="op">=</span> user<span class="op">;</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>    next(r)<span class="op">;</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a>  } <span class="cf">else</span> {</span>
+<span id="cb6-8"><a href="#cb6-8"></a>    res<span class="op">.</span><span class="fu">status</span>(<span class="dv">403</span>)<span class="op">.</span><span class="fu">send</span>({})<span class="op">;</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a>  }</span>
+<span id="cb6-10"><a href="#cb6-10"></a>}<span class="op">;</span></span></code></pre></div>
+<p>In Play framework, it’s a bit more involved, but it’s quite close. The extra complexity is needed for the types to reflect what’s happening. Play also lets you enforce properties about action builders: “does it shortcut”, “does it modify the request”.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode scala"><code class="sourceCode scala"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">case</span> <span class="kw">class</span> WithUser[A](user: User, request: Request[A]) <span class="kw">extends</span> WrappedRequest[A]</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="kw">class</span> Authenticated @<span class="fu">Inject</span>() (</span>
+<span id="cb7-3"><a href="#cb7-3"></a>    cc: ControllerComponents</span>
+<span id="cb7-4"><a href="#cb7-4"></a>) <span class="kw">extends</span> ActionRefiner[Request, WrappedRequest] {</span>
+<span id="cb7-5"><a href="#cb7-5"></a>  <span class="kw">def</span> refine[A](request: Request[A]): Future[Either[Result,WithUser[A]]] = {</span>
+<span id="cb7-6"><a href="#cb7-6"></a>    <span class="co">// perform auth and optionally return a modified request</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a>  }</span>
+<span id="cb7-8"><a href="#cb7-8"></a>}</span></code></pre></div>
+<p>In WAI (as well in other frameworks in the rust ecosystem), a different approach is used: instead of modifying or wrapping the request, a <a href="https://github.com/HeinrichApfelmus/vault">type-indexed data structure</a> is used. This allows to modify requests while providing extensibility.</p>
+<p>While it makes sense at the server-level (eg enabling gzip or handling CORS), using middlewares for application-level concerns is unsatisfactory. Play recognizes it by splitting <em>filters</em> and <em>action composition</em>, but it’s still quite constrained.</p>
+<p>Servant’s generalized auth mechanism side steps this issue by putting auth concerns into the API type and directly providing the auth data as an argument to the handler. But as we’ve seen, it’s not the only part of the story. We still want to annotate endpoints (or whole API subtrees) to handle authentication. That’s where servant’s design shines once again.</p>
+<h2 id="enter-hoistserver">Enter <code>hoistServer</code></h2>
+<p>By default, handlers live in the <code>Handler</code> monad. It provides <code>IO</code> capabilities, as well as error capabilities. Servant allows you to write handlers in another monad, as long as you provide a way to go from your monad to the <code>Handler</code> monad. To do that, you can use <code>hoistServer</code> and provide a function of type <code>forall a. MyMonad -&gt; Handler a</code>.</p>
+<p>In practice, all of the handlers live in <code>ReaderT Config Handler</code>, so we provide a <code>ReaderT Config Handler a -&gt; Handler a</code> transformation (more or less <code>runReaderT</code>) to let handlers access global configuration. Some handlers even leave in a <code>ReaderT Macaroon (ReaderT Config Handler)</code> to provide access to the request macaroon without needing to thread it manually across all the API tree. Haskell devs are lazy, don’t you know?</p>
+<p>We can use it to great effect by defining a wrapped type containing both our handler and its annotated verifiers.</p>
+<p>At first, I realized that verifiers were combined in a monoidal way, so I thought I could just encode it with a <code>Writer</code>. Try to find the issue with that :).</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb8-1"><a href="#cb8-1"></a><span class="co">-- rougly: PartiallyValidatedMacaroon -&gt; m ([Verifier], a)</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="kw">newtype</span> <span class="dt">MacaroonHandlerT</span> m a <span class="ot">=</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>  <span class="dt">WriterT</span> [<span class="dt">Verifier</span>]</span>
+<span id="cb8-4"><a href="#cb8-4"></a>    (<span class="dt">ReaderT</span> <span class="dt">PartiallyValidatedMacaroon</span> m) a</span>
+<span id="cb8-5"><a href="#cb8-5"></a></span>
+<span id="cb8-6"><a href="#cb8-6"></a><span class="co">-- we can use Writer and the monoid on [] to compose verifiers</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a><span class="ot">addVerifiers ::</span> [<span class="dt">Verifier</span>] <span class="ot">-&gt;</span> <span class="dt">MacaroonHandlerT</span> m a <span class="ot">-&gt;</span> <span class="dt">MacaroonHandlerT</span> m a</span>
+<span id="cb8-8"><a href="#cb8-8"></a>addVerifiers verifiers <span class="ot">=</span> (tell verifiers <span class="op">&gt;&gt;</span>)</span></code></pre></div>
+<p>When I realized the issue (more on that later), I came up with another design. It’s still flawed in a way (more on that later), but that’s what I went with.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">data</span> <span class="dt">WithVerifiersT</span> m a <span class="ot">=</span> <span class="dt">WithVerifiersT</span> {<span class="ot"> verifiers ::</span> [<span class="dt">Verifier</span>],<span class="ot"> handler ::</span> m a }</span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="kw">newtype</span> <span class="dt">MacaroonHandlerT</span> m a <span class="ot">=</span> <span class="dt">MacaroonHandlerT</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>  {<span class="ot"> runMacaroonHandlerT ::</span> <span class="dt">ReaderT</span> <span class="dt">PartiallyValidatedMacaroon</span> (<span class="dt">WithVerifiersT</span> m) a</span>
+<span id="cb9-4"><a href="#cb9-4"></a>  }</span>
+<span id="cb9-5"><a href="#cb9-5"></a></span>
+<span id="cb9-6"><a href="#cb9-6"></a></span>
+<span id="cb9-7"><a href="#cb9-7"></a><span class="co">-- Since we don't have a Writer anymore, we need to explicitely say:</span></span>
+<span id="cb9-8"><a href="#cb9-8"></a></span>
+<span id="cb9-9"><a href="#cb9-9"></a><span class="kw">instance</span> (<span class="dt">Applicative</span> m) <span class="ot">=&gt;</span> <span class="dt">Applicative</span> (<span class="dt">WithVerifiersT</span> m) <span class="kw">where</span></span>
+<span id="cb9-10"><a href="#cb9-10"></a>  <span class="co">-- #1: That by default, handlers don't have any verifier attached to it</span></span>
+<span id="cb9-11"><a href="#cb9-11"></a>  <span class="fu">pure</span> <span class="ot">=</span> <span class="dt">WithVerifiers</span> [] <span class="op">.</span> <span class="fu">pure</span></span>
+<span id="cb9-12"><a href="#cb9-12"></a>  <span class="co">-- #2: How verifiers can be combined</span></span>
+<span id="cb9-13"><a href="#cb9-13"></a>  (<span class="op">&lt;*&gt;</span>) <span class="ot">=</span> <span class="fu">error</span> <span class="st">&quot;left as an exercise for the reader&quot;</span></span>
+<span id="cb9-14"><a href="#cb9-14"></a></span>
+<span id="cb9-15"><a href="#cb9-15"></a><span class="co">-- #2: How verifiers can be added to existing handlers</span></span>
+<span id="cb9-16"><a href="#cb9-16"></a><span class="ot">addVerifiers ::</span> [<span class="dt">Verifier</span>] <span class="ot">-&gt;</span> <span class="dt">MacaroonHandlerT</span> m a <span class="ot">-&gt;</span> <span class="dt">MacaroonHandlerT</span> m a</span>
+<span id="cb9-17"><a href="#cb9-17"></a>addVerifiers <span class="ot">=</span> <span class="fu">error</span> <span class="st">&quot;left as an exercise for the reader&quot;</span></span></code></pre></div>
+<p>The actual types are a bit more complicated, as they are polymorphic on <code>[Verifier]</code>. We only require a monoid instance on <code>[Verifier]</code> for composition.</p>
+<p>Then we define a natural transformation <code>MacaroonHandlerT Handler a -&gt; Handler a</code> (constructed by providing the extracted <code>PartiallyValidatedMacaroon</code>. Its job is to match the remaining caveats with the provided verifiers, and either return an error or execute the handler.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb10-1"><a href="#cb10-1"></a><span class="ot">toMacaroonHandler ::</span> <span class="dt">PartiallyValidatedMacaroon</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>                  <span class="ot">-&gt;</span> <span class="dt">MacaroonHandlerT</span> <span class="dt">Handler</span> a</span>
+<span id="cb10-3"><a href="#cb10-3"></a>                  <span class="ot">-&gt;</span> <span class="dt">Handler</span> a</span>
+<span id="cb10-4"><a href="#cb10-4"></a>toMacaroonHandler <span class="ot">=</span> <span class="fu">error</span> <span class="st">&quot;apply the verifiers to the remaining caveats&quot;</span></span></code></pre></div>
+<p>You may now see why the first try did not work: in order to get the verifiers list, you need to run the handler. So much for security.</p>
+<p>The issue with the second design is a bit trickier to see for the untrained eye, but you can’t define a law abiding monad with it. Try writing <code>instance Monad m =&gt; Monad (WithVerifiersT m)</code> to see for yourself (functor and applicative instances can still be written).</p>
+<p>It took me some time to figure those two issues (you can really get lost when you’re neck-deep in monad transformers mumbo-jumbo). The two issues stem from the same problem: the data type representing a handler annotated with verifiers can’t be a monad: you need to statically declare all your dependencies before going on with the other effects. This kind of static properties are not compatible with monads.</p>
+<p>Thankfully, natural transformations don’t require monad instances. In the actual implementation, only a functor instance is required.</p>
+<p>A solution would be to not write a <code>Monad</code> instance for <code>WithVerifiersT</code> and to force the users to wrap their handler definitions in a <code>pure</code> call if they don’t want to add verifiers. For now I’ve written an illegal monad instance, to be able to use <code>do</code> blocks even when not adding verifiers, as well as simplifying type inference a bit.</p>
+<p>It’s illegal because it forgets the new verifiers introduced by the inner monadic value. It’s still secure by default, even though it doesn’t compose like it’s supposed to.</p>
+<h2 id="cherry-on-the-cake">Cherry on the cake</h2>
+<p>Natural transformations given to <code>hoistServer</code> need not return a <code>Handler</code> in every case. You can freely chain natural transformations anywhere in your API tree, as long as you end up with a <code>Handler</code> after the outermost transformation.</p>
+<p>In practice, that means you can annotate whole API trees with verifiers and avoid repeating yourself at each leaf of your tree.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">type</span> <span class="dt">API</span> <span class="ot">=</span> <span class="dt">RequireMacaroon</span> <span class="op">:&gt;</span> <span class="dt">DummyEndpoints</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="kw">type</span> <span class="dt">DummyEndpoints</span> <span class="ot">=</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a>       <span class="st">&quot;route1&quot;</span> <span class="op">:&gt;</span> <span class="dt">Route1API</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a>  <span class="op">:&lt;|&gt;</span> <span class="st">&quot;route2&quot;</span> <span class="op">:&gt;</span> <span class="dt">Route2API</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a></span>
+<span id="cb11-6"><a href="#cb11-6"></a><span class="ot">server ::</span> <span class="dt">Server</span> <span class="dt">API</span></span>
+<span id="cb11-7"><a href="#cb11-7"></a>server macaroon <span class="ot">=</span> hoistServer (<span class="dt">Proxy</span> <span class="op">@</span><span class="dt">DummyEndpoints</span>) (toMacaroonHandler macaroon) <span class="op">$</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a>    r1Server <span class="op">:&lt;|&gt;</span> r2Server</span>
+<span id="cb11-9"><a href="#cb11-9"></a>  <span class="kw">where</span></span>
+<span id="cb11-10"><a href="#cb11-10"></a>    r1Server <span class="ot">=</span> hoistServer (<span class="dt">Proxy</span> <span class="op">@</span><span class="dt">Route1API</span>) (addVerifier isRoute1)</span>
+<span id="cb11-11"><a href="#cb11-11"></a>    r2Server <span class="ot">=</span> hoistServer (<span class="dt">Proxy</span> <span class="op">@</span><span class="dt">Route2API</span>) (addVerifier isRoute2)</span></code></pre></div>
+<p>This example makes use of the most excellent <code>TypeApplications</code> GHC extension to avoid syntactic noise (<code>Proxy @Route1API</code> is roughly equivalent to <code>Proxy :: Proxy Route1API</code>)</p>
+<p>The ability to chain <code>hoistServer</code> calls to annotate whole API subtrees has helped simplify complex APIs a lot, while improving consistency. No need to tag every handler manually!</p>
+<h2 id="mtl">MTL</h2>
+<p>Writing the (bogus) monad transformers lead us to an interesting path down the mtl-style monad transformers. But that’s a story for another day.</p>
+<h2 id="what-ive-learned-along-the-way">What I’ve learned along the way</h2>
+<p>I’ve been using haskell as my main language for less than two months, and at some point I really felt I was out of my depth there. Thankfully, I always had humans, GHC and hlint to watch my back. Special thanks to <a href="https://twitter.com/Raveline">@Raveline</a> and <a href="https://twitter.com/alpmestan">@alpmestan</a> who helped me navigate MTL and Servant.</p>
+<p>Servant’s use of natural tranformations to add features to handlers is vastly superior to what I’ve used in other frameworks where the main abstraction is <code>Request -&gt; Request</code>. You can use the type system to its full extent without having to shoehorn things into request objects.</p>
+<p>Using haskell full-time is even better than I expected. I’ve learned a lot, especially about “boring” things that are usually eschewed in side projects.</p>
+<p>Haskell is not just a super elegant language for FP weenies, it’s also a solid platform for professionnals.</p>
+</section>
+</article>
+
+<section>
+<div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'blogclementd',
+                disqus_url = window.location.href.split('/').splice(0,3).join("/")+'/posts/2018-07-19-bake-delicious-macaroon-burritos-with-servant.html';
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+    </section>
+    <footer>
+        <p>
+        <a href="http://clever-cloud.com">Hosted by Clever-Cloud</a> -
+        <a href="http://clement.delafargue.name">Clément Delafargue</a> -
+        <a href="http://jaspervdj.be/hakyll/index.html">Generated with Hakyll</a> -
+        <a href="http://github.com/divarvel/blog">Source code</a>
+        </p>
+        <p>
+        <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />This
+        work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+        </p>
+
+    </footer>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-9207155-5']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+</body>
+</html>
