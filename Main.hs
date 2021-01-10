@@ -61,11 +61,14 @@ main = hakyll $ do
                 >>= loadAndApplyTemplate "templates/default.html" (homeCtx tags list)
                 >>= relativizeUrls
   
+    -- math tags
+    mathtags <- buildTags "maths/*" (fromCapture "tags/*.html")
+
     -- render math posts
     match "maths/*" $ do
         route   $ setExtension ".html"
         compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/post.html" (tagsCtx tags)
+            >>= loadAndApplyTemplate "templates/maths.html" (tagsCtx tags)
             >>= (externalizeUrls $ feedRoot feedConfiguration)
             >>= saveSnapshot "content"
             >>= (unExternalizeUrls $ feedRoot feedConfiguration)
