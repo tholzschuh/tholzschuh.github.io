@@ -8,6 +8,8 @@ git commit -m "rebuilt site."
 
 git checkout master
 
+rm -R .
+
 git checkout develop -- _site/
 
 git mv -f _site/* .
