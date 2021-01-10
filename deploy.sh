@@ -1,5 +1,3 @@
-git checkout develop
-
 nix-build
 ./result/bin/site build
 
