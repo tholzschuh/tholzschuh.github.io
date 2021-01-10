@@ -13,7 +13,7 @@ clean_title=`echo $clean_title | tr " " "-"` #Replace spaces by dashes
 filename=$date_pattern$clean_title.md
 author=`git config --get user.name`
 
-cat > "posts/."$filename <<EOF
+cat > "posts/"$filename <<EOF
 ---
 title: $title
 author: $author
@@ -22,4 +22,4 @@ tags:
 
 EOF
 
-$EDITOR "posts/."$filename
+$EDITOR "posts/"$filename
