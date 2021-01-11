@@ -6,6 +6,10 @@ import Data.List (isPrefixOf)
 import Data.Monoid (mappend)
 import Data.Text (pack, unpack, replace, empty)
 
+-- the next two imports are used for latex support
+import qualified Data.Set as S
+import           Text.Pandoc.Options
+
 import Hakyll
 
 main :: IO ()
@@ -26,12 +30,23 @@ main = hakyll $ do
     -- Render posts
     match "posts/*" $ do
         route   $ setExtension ".html"
-        compile $ pandocCompiler
+        compile $ pandocMathCompiler
             >>= loadAndApplyTemplate "templates/post.html" (tagsCtx tags)
             >>= (externalizeUrls $ feedRoot feedConfiguration)
             >>= saveSnapshot "content"
             >>= (unExternalizeUrls $ feedRoot feedConfiguration)
             >>= loadAndApplyTemplate "templates/disqus.html" (tagsCtx tags)
+            >>= loadAndApplyTemplate "templates/default.html" (tagsCtx tags)
+            >>= relativizeUrls
+
+    -- render math posts
+    match "maths/*" $ do
+        route   $ setExtension ".html"
+        compile $ pandocMathCompiler
+            >>= loadAndApplyTemplate "templates/maths.html" (tagsCtx tags)
+            >>= (externalizeUrls $ feedRoot feedConfiguration)
+            >>= saveSnapshot "content"
+            >>= (unExternalizeUrls $ feedRoot feedConfiguration)
             >>= loadAndApplyTemplate "templates/default.html" (tagsCtx tags)
             >>= relativizeUrls
 
@@ -48,8 +63,8 @@ main = hakyll $ do
                 >>= loadAndApplyTemplate "templates/default.html" allPostsCtx
                 >>= relativizeUrls
 
-    -- Index
-    create ["index.html"] $ do
+    -- Blog
+    create ["blog.html"] $ do
         route idRoute
         compile $ do
             posts <- loadAll "posts/*"
@@ -57,24 +72,15 @@ main = hakyll $ do
             itemTpl <- loadBody "templates/postitem.html"
             list <- applyTemplateList itemTpl postCtx sorted
             makeItem list
-                >>= loadAndApplyTemplate "templates/index.html" (homeCtx tags list)
+                >>= loadAndApplyTemplate "templates/blog.html" (homeCtx tags list)
                 >>= loadAndApplyTemplate "templates/default.html" (homeCtx tags list)
                 >>= relativizeUrls
-  
-    -- math tags
-    mathtags <- buildTags "maths/*" (fromCapture "tags/*.html")
 
-    -- render math posts
-    match "maths/*" $ do
-        route   $ setExtension ".html"
-        compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/maths.html" (tagsCtx tags)
-            >>= (externalizeUrls $ feedRoot feedConfiguration)
-            >>= saveSnapshot "content"
-            >>= (unExternalizeUrls $ feedRoot feedConfiguration)
-            >>= loadAndApplyTemplate "templates/default.html" (tagsCtx tags)
+    match "index.md" $ do
+        route $ setExtension "html"
+        compile $ pandocMathCompiler
+            >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
-    
 
 
     -- Maths
@@ -154,11 +160,11 @@ tagsCtx tags =
 
 feedConfiguration :: FeedConfiguration
 feedConfiguration = FeedConfiguration
-    { feedTitle       = "Clément Delafargue - RSS feed"
-    , feedDescription = "Musings about FP and CS"
-    , feedAuthorName  = "Clément Delafargue"
-    , feedAuthorEmail = "clement+blog@delafargue.name"
-    , feedRoot        = "http://blog.clement.delafargue.name"
+    { feedTitle       = "Tim Holzschuh - RSS feed"
+    , feedDescription = "maths & stuff"
+    , feedAuthorName  = "Tim Holzschuh"
+    , feedAuthorEmail = "tholzschuh@e.email"
+    , feedRoot        = "https://tholzschuh.github.io"
     }
 
 externalizeUrls :: String -> Item String -> Compiler (Item String)
@@ -191,3 +197,13 @@ postList tags pattern preprocess' = do
     posts <- loadAll pattern
     processed <- preprocess' posts
     applyTemplateList postItemTpl (tagsCtx tags) processed
+
+pandocMathCompiler =
+    let mathExtensions    = extensionsFromList [Ext_tex_math_dollars, Ext_tex_math_double_backslash, Ext_latex_macros]
+        defaultExtensions = writerExtensions defaultHakyllWriterOptions
+        newExtensions     = defaultExtensions <> mathExtensions
+        writerOptions     = defaultHakyllWriterOptions {
+                              writerExtensions = newExtensions,
+                              writerHTMLMathMethod = MathJax ""
+                            }
+    in pandocCompilerWith defaultHakyllReaderOptions writerOptions
