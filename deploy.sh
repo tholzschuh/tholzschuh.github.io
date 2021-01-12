@@ -10,9 +10,7 @@ git checkout master
 
 rm -Rf ./* 
 
-git checkout develop  _site/
-
-ls _site/
+git checkout develop --  _site/
 
 git mv -f _site/* .
 

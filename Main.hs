@@ -64,7 +64,7 @@ main = hakyll $ do
                 >>= relativizeUrls
 
     -- Blog
-    create ["blog.html"] $ do
+    create ["stuff.html"] $ do
         route idRoute
         compile $ do
             posts <- loadAll "posts/*"
