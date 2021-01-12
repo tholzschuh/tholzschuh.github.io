@@ -3,8 +3,6 @@ git checkout develop
 nix-build
 ./result/bin/blog rebuild
 
-ls _site/
-
 git add -A
 git commit -m "rebuilt site."
 
