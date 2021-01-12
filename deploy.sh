@@ -1,7 +1,7 @@
 git checkout develop
 
 nix-build
-./result/bin/blog build
+./result/bin/blog rebuild
 
 git add -A
 git commit -m "rebuilt site."
@@ -11,6 +11,8 @@ git checkout master
 rm -Rf ./* 
 
 git checkout develop -- _site/
+
+ls _site/
 
 git mv -f _site/* .
 
