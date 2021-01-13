@@ -8,14 +8,85 @@
         <name>Tim Holzschuh</name>
         <email>tholzschuh@e.email</email>
     </author>
-    <updated>2021-01-10T00:00:00Z</updated>
+    <updated>2021-01-12T00:00:00Z</updated>
     <entry>
+    <title>Using LaTeX with Hakyll</title>
+    <link href="https://tholzschuh.github.io/posts/2021-01-12-using-latex-with-hakyll.html" />
+    <id>https://tholzschuh.github.io/posts/2021-01-12-using-latex-with-hakyll.html</id>
+    <published>2021-01-12T00:00:00Z</published>
+    <updated>2021-01-12T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://tholzschuh.github.io/css/article.css" />
+<article>
+<header>
+<h1>Using LaTeX with Hakyll</h1>
+<p>by <em>Tim Holzschuh</em> on <strong>January 12, 2021</strong></p>
+<p>Tagged as: <a title="All pages tagged 'hakyll'." href="https://tholzschuh.github.io/tags/hakyll.html">hakyll</a>, <a title="All pages tagged 'latex'." href="https://tholzschuh.github.io/tags/latex.html">latex</a>.</p>
+</header>
+
+<section>
+<p>Since <a href="https://jaspervdj.be/hakyll/">Hakyll</a> is tightly integrated with <a href="https://pandoc.org/">Pandoc</a>, it’s easy to use LaTeX with Hakyll by enabling Pandoc’s LaTeX compile features. Most explanations I found online, like <a href="http://travis.athougies.net/posts/2013-08-13-using-math-on-your-hakyll-blog.html">this</a> one, seem to be quite outdated though and they don’t work verbatim.</p>
+<p>The basic idea still is to set up a custom pandoc compiler using the</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb1-1"><a href="https://tholzschuh.github.io#cb1-1"></a><span class="ot">pandocCompilerWith ::</span> <span class="dt">ReaderOptions</span> <span class="ot">-&gt;</span> <span class="dt">WriterOptions</span> <span class="ot">-&gt;</span> <span class="dt">Compiler</span> (<span class="dt">Item</span> <span class="dt">String</span>)</span></code></pre></div>
+<p>function, but the internals used in the <code>WriterOptions</code> have changed. Specifically, enabling several extensions at once is no longer passed around as a <code>Set Extension</code>, but there is a new data type <code>Extensions</code> introduced to handle several Extensions at once.</p>
+<p>The following code seems to work for me:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb2-1"><a href="https://tholzschuh.github.io#cb2-1"></a>pandocMathCompiler <span class="ot">=</span></span>
+<span id="cb2-2"><a href="https://tholzschuh.github.io#cb2-2"></a>    <span class="kw">let</span> mathExtensions    <span class="ot">=</span> extensionsFromList [<span class="dt">Ext_tex_math_dollars</span>, <span class="dt">Ext_tex_math_double_backslash</span>, <span class="dt">Ext_latex_macros</span>]</span>
+<span id="cb2-3"><a href="https://tholzschuh.github.io#cb2-3"></a>        defaultExtensions <span class="ot">=</span> writerExtensions defaultHakyllWriterOptions</span>
+<span id="cb2-4"><a href="https://tholzschuh.github.io#cb2-4"></a>        newExtensions     <span class="ot">=</span> defaultExtensions <span class="op">&lt;&gt;</span> mathExtensions</span>
+<span id="cb2-5"><a href="https://tholzschuh.github.io#cb2-5"></a>        writerOptions     <span class="ot">=</span> defaultHakyllWriterOptions {</span>
+<span id="cb2-6"><a href="https://tholzschuh.github.io#cb2-6"></a>                              writerExtensions <span class="ot">=</span> newExtensions,</span>
+<span id="cb2-7"><a href="https://tholzschuh.github.io#cb2-7"></a>                              writerHTMLMathMethod <span class="ot">=</span> <span class="dt">MathJax</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb2-8"><a href="https://tholzschuh.github.io#cb2-8"></a>                            }</span>
+<span id="cb2-9"><a href="https://tholzschuh.github.io#cb2-9"></a>    <span class="kw">in</span> pandocCompilerWith defaultHakyllReaderOptions writerOptions</span></code></pre></div>
+<p>It’s essentially doing the same thing, we just store the necessary math extensions inside the <code>Extensions</code> data type by using the <code>extensionsFromList</code> function and we append <code>defaultExtensions</code> with <code>mathExtensions</code> using the <code>&lt;&gt;</code> function (this is essentially <code>mappend</code>).</p>
+<p>You of course still have to add the</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb3-1"><a href="https://tholzschuh.github.io#cb3-1"></a><span class="op">&lt;</span>script type<span class="op">=</span><span class="st">&quot;text/javascript&quot;</span></span>
+<span id="cb3-2"><a href="https://tholzschuh.github.io#cb3-2"></a>        src<span class="op">=</span><span class="st">&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;</span><span class="op">&gt;&lt;/</span>script<span class="op">&gt;</span></span></code></pre></div>
+<p>line in the template generating the <code>HTML &lt;head&gt;</code> element. Then everything works as expected: \[ \ln x = \int_{-\infty}^x \frac 1 y \, dy . \]</p>
+</section>
+</article>
+]]></summary>
+</entry>
+<entry>
+    <title>Pandoc latex2markdown test</title>
+    <link href="https://tholzschuh.github.io/posts/2021-01-12-galcats.html" />
+    <id>https://tholzschuh.github.io/posts/2021-01-12-galcats.html</id>
+    <published>2021-01-12T00:00:00Z</published>
+    <updated>2021-01-12T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://tholzschuh.github.io/css/article.css" />
+<article>
+<header>
+<h1>Pandoc latex2markdown test</h1>
+<p>by <em>Tim Holzschuh</em> on <strong>January 12, 2021</strong></p>
+<p>Tagged as: <a title="All pages tagged 'pandoc'." href="https://tholzschuh.github.io/tags/pandoc.html">pandoc</a>, <a title="All pages tagged 'latex'." href="https://tholzschuh.github.io/tags/latex.html">latex</a>.</p>
+</header>
+
+<section>
+<p>For this chapter, we fix a category <span class="math inline">\(\mathcal{C}\)</span> satisfying</p>
+<ol type="1">
+<li><p><span class="math inline">\(\mathcal{C}\)</span> admits <em>finite limits</em></p></li>
+<li><p><span class="math inline">\(\mathcal{C}\)</span> admits <em>finite coproducts</em> and <em>quotients by finite groups of automorphisms</em></p></li>
+<li><p>Every morphism <span class="math inline">\(X \xrightarrow{u} Y\)</span> of <span class="math inline">\(\mathcal{C}\)</span> factorizes as <span class="math inline">\(u = u''\circ u'\)</span> with <span class="math inline">\(u'\)</span> an and <span class="math inline">\(u''\)</span> a and every monomorphism <span class="math inline">\(X \xrightarrow{u} Y\)</span> identifies <span class="math inline">\(X\)</span> with a direct summand of <span class="math inline">\(Y\)</span>.</p></li>
+</ol>
+<p>For a choice of such a category <span class="math inline">\(\mathcal{C}\)</span> we further fix a functor <span class="math inline">\(F \colon \mathcal{C} \to \textit{fsets}\)</span> satisfying</p>
+<ol type="1">
+<li><p><span class="math inline">\(F\)</span> is <em>left exact</em></p></li>
+<li><p><span class="math inline">\(F\)</span> <em>commutes</em> with coproducts, quotients by finite groups of automorphisms and carries epimorphisms into epimorphisms</p></li>
+<li><p><span class="math inline">\(F\)</span> is <em>conservative</em>, i.e. <span class="math inline">\(u\)</span> is an isomorphism if <span class="math inline">\(Fu\)</span> is</p></li>
+</ol>
+<p>In the following, we will give an alternative characterization of categories <span class="math inline">\(\mathcal{C}\)</span> satisfying <span class="math inline">\((G1)\)</span>-<span class="math inline">\((G3)\)</span> and admitting a functor <span class="math inline">\(F\)</span> satisfying <span class="math inline">\((G4)\)</span>-<span class="math inline">\((G6)\)</span> resulting in the notion of <span class="math inline">\(\textit{Galois Category}\)</span></p>
+</section>
+</article>
+]]></summary>
+</entry>
+<entry>
     <title>Initial post</title>
     <link href="https://tholzschuh.github.io/posts/2021-01-10-initial-post.html" />
     <id>https://tholzschuh.github.io/posts/2021-01-10-initial-post.html</id>
     <published>2021-01-10T00:00:00Z</published>
     <updated>2021-01-10T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<article>
+    <summary type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://tholzschuh.github.io/css/article.css" />
+<article>
 <header>
 <h1>Initial post</h1>
 <p>by <em>Tim Holzschuh</em> on <strong>January 10, 2021</strong></p>
@@ -24,6 +95,8 @@
 
 <section>
 <p>This is a test post.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb1-1"><a href="https://tholzschuh.github.io#cb1-1"></a>fac n <span class="ot">=</span> <span class="fu">foldr</span> (<span class="op">*</span>) <span class="dv">1</span> [<span class="dv">1</span><span class="op">..</span>n]</span></code></pre></div>
+<p>Let <span class="math inline">\(A\)</span> be a ring, <span class="math inline">\(f \in A\)</span> and <span class="math inline">\(M\)</span> an <span class="math inline">\(A\)</span>-module. Then <span class="math display">\[M[f^{-1}]\]</span> denotes the <em>localization</em> of <span class="math inline">\(M\)</span> at <span class="math inline">\(f\)</span>.</p>
 </section>
 </article>
 ]]></summary>
