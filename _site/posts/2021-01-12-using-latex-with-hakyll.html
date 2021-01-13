@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <title>Using LaTeX with Hakyll - tholzschuh</title>
+  <meta charset="utf-8" />
+  <!-- <link href="http://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet" type="text/css"> -->
+  <link rel="stylesheet" type="text/css" href="../css/default.css" />
+  <link rel="stylesheet" type="text/css" href="../css/syntax.css" />
+  <link rel="alternate" type="application/atom+xml" title="tholzschuh (Atom)" href="../atom.xml" />
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+    <header>
+      <hgroup>
+        <h1><a href="../">Tim Holzschuh</a></h1>
+        <h2>maths & stuff</h2>
+      </hgroup>
+    </header>
+    <nav>
+        <menu>
+          <a href="../">about</a>
+	        <a href="../maths.html">maths</a>
+          <a href="../stuff.html">stuff</a>
+          <a href="../atom.xml">atom feed</a>
+        </menu>
+    </nav>
+    <section>
+        <link rel="stylesheet" type="text/css" href="../css/article.css" />
+<article>
+<header>
+<h1>Using LaTeX with Hakyll</h1>
+<p>by <em>Tim Holzschuh</em> on <strong>January 12, 2021</strong></p>
+<p>Tagged as: <a title="All pages tagged 'hakyll'." href="../tags/hakyll.html">hakyll</a>, <a title="All pages tagged 'latex'." href="../tags/latex.html">latex</a>.</p>
+</header>
+
+<section>
+<p>Since <a href="https://jaspervdj.be/hakyll/">Hakyll</a> is tightly integrated with <a href="https://pandoc.org/">Pandoc</a>, it’s easy to use LaTeX with Hakyll by enabling Pandoc’s LaTeX compile features. Most explanations I found online, like <a href="http://travis.athougies.net/posts/2013-08-13-using-math-on-your-hakyll-blog.html">this</a> one, seem to be quite outdated though and they don’t work verbatim.</p>
+<p>The basic idea still is to set up a custom pandoc compiler using the</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb1-1"><a href="#cb1-1"></a><span class="ot">pandocCompilerWith ::</span> <span class="dt">ReaderOptions</span> <span class="ot">-&gt;</span> <span class="dt">WriterOptions</span> <span class="ot">-&gt;</span> <span class="dt">Compiler</span> (<span class="dt">Item</span> <span class="dt">String</span>)</span></code></pre></div>
+<p>function, but the internals used in the <code>WriterOptions</code> have changed. Specifically, enabling several extensions at once is no longer passed around as a <code>Set Extension</code>, but there is a new data type <code>Extensions</code> introduced to handle several Extensions at once.</p>
+<p>The following code seems to work for me:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb2-1"><a href="#cb2-1"></a>pandocMathCompiler <span class="ot">=</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>    <span class="kw">let</span> mathExtensions    <span class="ot">=</span> extensionsFromList [<span class="dt">Ext_tex_math_dollars</span>, <span class="dt">Ext_tex_math_double_backslash</span>, <span class="dt">Ext_latex_macros</span>]</span>
+<span id="cb2-3"><a href="#cb2-3"></a>        defaultExtensions <span class="ot">=</span> writerExtensions defaultHakyllWriterOptions</span>
+<span id="cb2-4"><a href="#cb2-4"></a>        newExtensions     <span class="ot">=</span> defaultExtensions <span class="op">&lt;&gt;</span> mathExtensions</span>
+<span id="cb2-5"><a href="#cb2-5"></a>        writerOptions     <span class="ot">=</span> defaultHakyllWriterOptions {</span>
+<span id="cb2-6"><a href="#cb2-6"></a>                              writerExtensions <span class="ot">=</span> newExtensions,</span>
+<span id="cb2-7"><a href="#cb2-7"></a>                              writerHTMLMathMethod <span class="ot">=</span> <span class="dt">MathJax</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a>                            }</span>
+<span id="cb2-9"><a href="#cb2-9"></a>    <span class="kw">in</span> pandocCompilerWith defaultHakyllReaderOptions writerOptions</span></code></pre></div>
+<p>It’s essentially doing the same thing, we just store the necessary math extensions inside the <code>Extensions</code> data type by using the <code>extensionsFromList</code> function and we append <code>defaultExtensions</code> with <code>mathExtensions</code> using the <code>&lt;&gt;</code> function (this is essentially <code>mappend</code>).</p>
+<p>You of course still have to add the</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1"></a><span class="op">&lt;</span>script type<span class="op">=</span><span class="st">&quot;text/javascript&quot;</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>        src<span class="op">=</span><span class="st">&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;</span><span class="op">&gt;&lt;/</span>script<span class="op">&gt;</span></span></code></pre></div>
+<p>line in the template generating the <code>HTML &lt;head&gt;</code> element. Then everything works as expected: \[ \ln x = \int_{-\infty}^x \frac 1 y \, dy . \]</p>
+</section>
+</article>
+
+<section>
+<div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'blogclementd',
+                disqus_url = window.location.href.split('/').splice(0,3).join("/")+'/posts/2021-01-12-using-latex-with-hakyll.html';
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+    </section>
+    <footer>
+        <p>
+        <a href="http://jaspervdj.be/hakyll/index.html">Generated with Hakyll</a> -
+        <a href="http://github.com/tholzschuh/tholzschuh.github.io">Source code</a>
+        </p>
+        <p>
+        <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />This
+        work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+        </p>
+
+    </footer>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-9207155-5']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+</body>
+</html>

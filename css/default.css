@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "LatoRegular";
+  src: local("Lato-Regular"),
+       url("/fonts/Lato-Regular.woff2") format("woff2"),
+       url("/fonts/Lato-Regular.woff") format("woff");
+  font-display: optional;
+  text-rendering: optimizeLegibility;
+}
 body {
     max-width: 45em;
     min-width: 20em;

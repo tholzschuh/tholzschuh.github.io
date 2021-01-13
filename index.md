@@ -8,7 +8,7 @@ I'm a master's student majoring in mathematics at Heidelberg University.
 
 Currently, I'm working on my master's thesis under [Prof. Alexander Schmidt](https://www.mathi.uni-heidelberg.de/~schmidt/) related to a reformulation of Grothendieck's Section Conjecture in terms of étale homotopy types as a homotopy fixed-point problem.
 
-Before that, I was visiting Koyto for about a year as a research student at RIMS, where my advisor was [Prof. Shinichi Mochizuki](http://www.kurims.kyoto-u.ac.jp/~motizuki/top-english.html).
+Before that, I was visiting Kyoto for about a year as a research student at RIMS, where my advisor was [Prof. Shinichi Mochizuki](http://www.kurims.kyoto-u.ac.jp/~motizuki/top-english.html).
 
 I obtained my Bachelor's degree from Heidelberg University at 30/08/2019, where my undergraduate thesis was supervised by [Prof. Gebhard Böckle](https://typo.iwr.uni-heidelberg.de/groups/arith-geom/home/members/gebhard-boeckle/).
 

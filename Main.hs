@@ -6,8 +6,6 @@ import Data.List (isPrefixOf)
 import Data.Monoid (mappend)
 import Data.Text (pack, unpack, replace, empty)
 
--- the next two imports are used for latex support
-import qualified Data.Set as S
 import           Text.Pandoc.Options
 
 import Hakyll
