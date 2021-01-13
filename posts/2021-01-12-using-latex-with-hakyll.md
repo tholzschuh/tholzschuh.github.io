@@ -31,7 +31,7 @@ It's essentially doing the same thing, we just store the necessary math extensio
 You of course still have to add the
 ```javascript
 <script type="text/javascript"
-        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 ```
 line in the template generating the `HTML <head>` element.
 Then everything works as expected:
