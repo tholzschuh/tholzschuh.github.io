@@ -6,12 +6,13 @@ tags: hakyll, latex
 Since [Hakyll](https://jaspervdj.be/hakyll/) is tightly integrated with [Pandoc](https://pandoc.org/), it's easy to use LaTeX with Hakyll by enabling Pandoc's LaTeX compile features.
 Most explanations I found online, like [this](http://travis.athougies.net/posts/2013-08-13-using-math-on-your-hakyll-blog.html) one, seem to be quite outdated though and they don't work verbatim.
 
+
 The basic idea still is to set up a custom pandoc compiler using the
 ```haskell
 pandocCompilerWith :: ReaderOptions -> WriterOptions -> Compiler (Item String)
 ```
 function, but the internals used in the `WriterOptions` have changed.
-Specifically, enabling several extensions at once is no longer passed around as a `Set Extension`, but there is a new data type `Extensions` introduced to handle several Extensions at once.
+Specifically, enabling several extensions at once is no longer passed around as a `Set Extension`. Instead, there is a new data type `Extensions` introduced to handle several Extensions at once.
 
 The following code seems to work for me:
 ```haskell
@@ -26,7 +27,7 @@ pandocMathCompiler =
     in pandocCompilerWith defaultHakyllReaderOptions writerOptions
 ```  
 
-It's essentially doing the same thing, we just store the necessary math extensions inside the `Extensions` data type by using the `extensionsFromList` function and we append `defaultExtensions` with `mathExtensions` using the `<>` function (this is essentially `mappend`).
+It's essentially doing the same thing, we just store the necessary math extensions inside the `Extensions` data type by using the `extensionsFromList` function and we append `defaultExtensions` with `mathExtensions` using the `<>` function (this is essentially `mappend`) instead of using `foldr`.
 
 You of course still have to add the
 ```javascript
@@ -34,5 +35,9 @@ You of course still have to add the
         src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 ```
 line in the template generating the `HTML <head>` element.
+
 Then everything works as expected:
-\\[ \\ln x = \\int_{-\\infty}^x \\frac 1 y \\, dy . \\]
+
+\\[
+  X(k) \\xrightarrow{\\sim} \\operatorname{H}^1(\\operatorname{Gal}(k), \\pi^{\\acute{et}}_{1}(\\overline{X}))
+\\]

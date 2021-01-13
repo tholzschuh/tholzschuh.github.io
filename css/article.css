@@ -171,7 +171,8 @@ code.sourceCode,
 pre.sourceCode {
   color: #fff;
   background: none;
-  font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
+  /*font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;*/
+  font-family: "Ubuntu Mono", monospace;
   -webkit-font-feature-settings: normal;
   font-feature-settings: normal;
   text-align: left;

@@ -21,8 +21,13 @@ main = hakyll $ do
         compile compressCssCompiler
 
     -- Copy Files
-    match "files/**" $ do
+    match "files/*" $ do
         route   idRoute
+        compile copyFileCompiler
+
+    -- copy all images
+    match "img/*" $ do
+        route idRoute
         compile copyFileCompiler
 
     -- Render posts
@@ -52,10 +57,10 @@ main = hakyll $ do
     create ["posts.html"] $ do
         route idRoute
         compile $ do
-            posts <- loadAll "posts/*"
-            sorted <- recentFirst posts
+            posts   <- loadAll "posts/*"
+            sorted  <- recentFirst posts
             itemTpl <- loadBody "templates/postitem.html"
-            list <- applyTemplateList itemTpl postCtx sorted
+            list    <- applyTemplateList itemTpl postCtx sorted
             makeItem list
                 >>= loadAndApplyTemplate "templates/posts.html" allPostsCtx
                 >>= loadAndApplyTemplate "templates/default.html" allPostsCtx
@@ -85,15 +90,28 @@ main = hakyll $ do
     create ["maths.html"] $ do
         route idRoute
         compile $ do
-            posts <- loadAll "maths/*"
-            sorted <- take 10 <$> recentFirst posts
+            posts   <- loadAll "maths/*"
+            sorted  <- take 10 <$> recentFirst posts
             itemTpl <- loadBody "templates/postitem.html"
-            list <- applyTemplateList itemTpl postCtx sorted
+            list    <- applyTemplateList itemTpl postCtx sorted
             makeItem list
                 >>= loadAndApplyTemplate "templates/maths.html" (homeCtx tags list)
                 >>= loadAndApplyTemplate "templates/default.html" (homeCtx tags list)
                 >>= relativizeUrls
 
+-- TODO ADD filter function to separate articles from notes (from publications?)
+    -- Maths
+    create ["maths.html"] $ do
+        route idRoute
+        compile $ do
+            posts   <- loadAll "maths/*"
+            sorted  <- take 10 <$> recentFirst posts
+            itemTpl <- loadBody "templates/postitem.html"
+            list    <- applyTemplateList itemTpl postCtx sorted
+            makeItem list
+                >>= loadAndApplyTemplate "templates/maths.html" (homeCtx tags list)
+                >>= loadAndApplyTemplate "templates/default.html" (homeCtx tags list)
+                >>= relativizeUrls
     -- Post tags
     tagsRules tags $ \tag pattern -> do
         let title = "Posts tagged " ++ tag
