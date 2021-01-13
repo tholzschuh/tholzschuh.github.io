@@ -6,9 +6,9 @@
   <!-- <link href="http://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet" type="text/css">
   <link href="http://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet" type="text/css"> -->
   <link rel="stylesheet" type="text/css" href="../css/default.css" />
-  <link rel="stylesheet" type="text/css" href="../css/syntax.css" />
+  <!--<link rel="stylesheet" type="text/css" href="/css/syntax.css" />-->
   <link rel="alternate" type="application/atom+xml" title="tholzschuh (Atom)" href="../atom.xml" />
-        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> 
 </head>
 <body>
     <header>
@@ -52,12 +52,12 @@
 <p>It’s essentially doing the same thing, we just store the necessary math extensions inside the <code>Extensions</code> data type by using the <code>extensionsFromList</code> function and we append <code>defaultExtensions</code> with <code>mathExtensions</code> using the <code>&lt;&gt;</code> function (this is essentially <code>mappend</code>).</p>
 <p>You of course still have to add the</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1"></a><span class="op">&lt;</span>script type<span class="op">=</span><span class="st">&quot;text/javascript&quot;</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>        src<span class="op">=</span><span class="st">&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;</span><span class="op">&gt;&lt;/</span>script<span class="op">&gt;</span></span></code></pre></div>
+<span id="cb3-2"><a href="#cb3-2"></a>        src<span class="op">=</span><span class="st">&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;</span><span class="op">&gt;&lt;/</span>script<span class="op">&gt;</span></span></code></pre></div>
 <p>line in the template generating the <code>HTML &lt;head&gt;</code> element. Then everything works as expected: \[ \ln x = \int_{-\infty}^x \frac 1 y \, dy . \]</p>
 </section>
 </article>
 
-<section>
+<!--<section>
 <div id="disqus_thread"></div>
         <script type="text/javascript">
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -72,6 +72,28 @@
         </script>
         <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
         <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+-->
+<section>
+<div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://maths-and-stuff.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </section>
 
     </section>
