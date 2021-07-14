@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <title>Declarative and Reproducible System and User Management with Nix(OS) - tholzschuh</title>
+  <meta charset="utf-8" />
+
+  <!-- Load the Ubuntu Fonts-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&family=Ubuntu:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+
+  <!-- Set up CSS for usual content -->
+  <link rel="stylesheet" type="text/css" href="../css/default.css" />
+
+  <link rel="alternate" type="application/atom+xml" title="tholzschuh (atom)" href="../atom.xml" />
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+    <header>
+      <hgroup>
+        <h1><a href="../">Tim Holzschuh</a></h1>
+        <h2>maths & stuff</h2>
+      </hgroup>
+    </header>
+    <nav>
+        <menu>
+          <a href="../">about</a>
+	        <a href="../maths.html">maths</a>
+          <a href="../stuff.html">stuff</a>
+          <a href="../atom.xml">atom feed</a>
+        </menu>
+    </nav>
+    <section>
+        <link rel="stylesheet" type="text/css" href="../css/article.css" />
+<article>
+<header>
+<h1>Declarative and Reproducible System and User Management with Nix(OS)</h1>
+<p>by <em>Tim Holzschuh</em> on <strong>July 14, 2021</strong></p>
+<p>Tagged as: <a title="All pages tagged 'nixos'." href="../tags/nixos.html">nixos</a>.</p>
+</header>
+
+<section>
+<p>I’ve been using <a href="https://nixos.org/">NixOS</a> as my main operating system for quite some time now.</p>
+<p>As I recently upgraded my computer equipment by acquiring a new laptop, I decided that it’s time to invest some more time into further capitalizing on the feature of NixOS. The main purpose of this post is to collect all the things I learned while doing so in a single place so that I’ll always be able to look it up again if need be.</p>
+<h1 id="overview">Overview</h1>
+<p>In NixOS, the whole system configuration takes place in a single file, <code>/etc/nixos/configuration.nix</code>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a>  <span class="kw">{</span> <span class="ex">config</span>, pkgs, ... <span class="kw">}</span> <span class="bu">:</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a>  <span class="kw">{</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>    <span class="co"># boot configuration</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>    <span class="ex">boot.loader.systemd-boot.enable</span>      = true<span class="kw">;</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>    <span class="ex">boot.loader.efi.canTouchEfiVariables</span> = true<span class="kw">;</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a></span>
+<span id="cb1-8"><a href="#cb1-8"></a>    <span class="ex">...</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a></span>
+<span id="cb1-10"><a href="#cb1-10"></a>    <span class="co"># set timezone to Berlin</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a>    <span class="ex">time.timeZone</span> = <span class="st">&quot;Europe/Berlin&quot;</span><span class="kw">;</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a></span>
+<span id="cb1-13"><a href="#cb1-13"></a>    <span class="ex">...</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a></span>
+<span id="cb1-15"><a href="#cb1-15"></a>    <span class="co"># set up user &quot;tim&quot;</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a>    <span class="ex">users.users.tim</span> = {</span>
+<span id="cb1-17"><a href="#cb1-17"></a>      <span class="ex">isNormalUser</span> = true<span class="kw">;</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a>      <span class="ex">...</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a>    <span class="kw">}</span>;</span>
+<span id="cb1-20"><a href="#cb1-20"></a></span>
+<span id="cb1-21"><a href="#cb1-21"></a>    <span class="co"># install firefox</span></span>
+<span id="cb1-22"><a href="#cb1-22"></a>    <span class="ex">environment.systemPackages</span> = [ pkgs.firefox ]<span class="kw">;</span> </span>
+<span id="cb1-23"><a href="#cb1-23"></a>  }</span></code></pre></div>
+<p>I want to use a single repository of customized nix configurations to set up both my laptop as well as my desktop as easily as possible.</p>
+<p>As I usually use my laptop and my desktop for similar but not exactly identical tasks, I want the configuration to be as <em>modular</em> as possible: For example, there should be a module enabling and setting up LaTeX exactly as I use it: texlive with this and that package, my favorite text editor <a href="https://www.vim.org/download.php">vim</a> set up with additional plugins to support LaTeX syntax highlighting et cetera.</p>
+<p>If I now plan to use LaTeX on a computer, I essentially just want to add something like</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a>  <span class="ex">custom.latex.enable</span> = true<span class="kw">;</span></span></code></pre></div>
+<p>in my <code>configuration.nix</code> to have my LaTeX tools installed and customized exactly like I want them to be.</p>
+<p>For practical as well aesthetical reasons, I’d like this configuration to be user-specific whenever possible: I don’t want to configure <code>vim</code> globally on the whole machine, but just the user I’m writing LaTeX code on. (What if someone else would want to write some LaTeX on my laptop?) Turns out the <a href="https://github.com/nix-community/home-manager">home-manager</a> project is adding tons of user-specific configuration options to the NixOS Ecosystem.</p>
+<p>To keep the configurations of my laptop and my desktop in sync with each other, I want to store my configuration in some git repository (added benefit: version control). This way, whenever I for example add a <code>vim</code> macro for my editing a LaTeX file, I’ll only have to commit my changes to the git repository and execute</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">git</span> pull origin master</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">sudo</span> nixos-rebuild switch</span></code></pre></div>
+<p>on my desktop to have the exact same configuration applied on my desktop as well.</p>
+<h1 id="my-current-setup">My current setup</h1>
+<p>As both NixOS as well as home-manager still often lack proper documentation, I ended up mostly reading other people’s configuration files and stealing things from there.</p>
+<p>My current configuration looks roughly like this:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="ex">nixos-conf</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="ex">+--</span> machines</span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="kw">|</span>   <span class="ex">+--</span> defaultMachine.nix</span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="kw">|</span>   <span class="ex">+--</span> thinkpad.nix</span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="kw">|</span>   <span class="ex">+--</span> desktop.nix</span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="kw">|</span>   <span class="ex">+--</span> ...</span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="ex">+--</span> modules</span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="kw">|</span>   <span class="ex">+--</span> nixos</span>
+<span id="cb4-9"><a href="#cb4-9"></a>    <span class="kw">|</span>   <span class="ex">+--</span> sys</span>
+<span id="cb4-10"><a href="#cb4-10"></a>        <span class="kw">|</span>   <span class="ex">+--</span> ...</span>
+<span id="cb4-11"><a href="#cb4-11"></a>    <span class="kw">|</span>   <span class="ex">+--</span> wm</span>
+<span id="cb4-12"><a href="#cb4-12"></a>        <span class="kw">|</span>   <span class="ex">+--</span> gnome</span>
+<span id="cb4-13"><a href="#cb4-13"></a>	    <span class="kw">|</span>   <span class="ex">+--</span> ...</span>
+<span id="cb4-14"><a href="#cb4-14"></a>        <span class="ex">+--</span> ...    </span>
+<span id="cb4-15"><a href="#cb4-15"></a><span class="kw">|</span>   <span class="ex">+--</span> hm</span>
+<span id="cb4-16"><a href="#cb4-16"></a>    <span class="kw">|</span>   <span class="ex">+--</span> dev</span>
+<span id="cb4-17"><a href="#cb4-17"></a>        <span class="kw">|</span>   <span class="ex">+--</span> latex</span>
+<span id="cb4-18"><a href="#cb4-18"></a>            <span class="kw">|</span>   <span class="ex">+--</span> latex.nix</span>
+<span id="cb4-19"><a href="#cb4-19"></a>            <span class="kw">|</span>   <span class="ex">+--</span> config</span>
+<span id="cb4-20"><a href="#cb4-20"></a>	            <span class="kw">|</span>   <span class="ex">+--</span> tex.vim</span>
+<span id="cb4-21"><a href="#cb4-21"></a>	    <span class="kw">|</span>   <span class="ex">+--</span> haskell</span>
+<span id="cb4-22"><a href="#cb4-22"></a>            <span class="kw">|</span>  <span class="ex">+--</span> haskell.nix</span>
+<span id="cb4-23"><a href="#cb4-23"></a>	        <span class="kw">|</span>  <span class="ex">+--</span> config</span>
+<span id="cb4-24"><a href="#cb4-24"></a>               <span class="kw">|</span>   <span class="ex">+--</span> hs.vim</span>
+<span id="cb4-25"><a href="#cb4-25"></a>	<span class="kw">|</span>   <span class="ex">+--</span> ...</span>
+<span id="cb4-26"><a href="#cb4-26"></a><span class="ex">+--</span> profiles</span>
+<span id="cb4-27"><a href="#cb4-27"></a><span class="kw">|</span>   <span class="ex">+--</span> development.nix</span>
+<span id="cb4-28"><a href="#cb4-28"></a><span class="kw">|</span>   <span class="ex">+--</span> ...</span>
+<span id="cb4-29"><a href="#cb4-29"></a><span class="ex">+--</span> users</span>
+<span id="cb4-30"><a href="#cb4-30"></a><span class="kw">|</span>   <span class="ex">+--</span> tim</span>
+<span id="cb4-31"><a href="#cb4-31"></a>    <span class="kw">|</span>  <span class="ex">+--</span> default.nix</span></code></pre></div>
+</section>
+</article>
+
+<!--<section>
+<div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'blogclementd',
+                disqus_url = window.location.href.split('/').splice(0,3).join("/")+'/posts/2021-07-14-declarative-and-reproducible-system-and-user-management-with-nixos.html';
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+-->
+<section>
+<div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://maths-and-stuff.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+    </section>
+    <footer>
+        <p>
+        <a href="http://jaspervdj.be/hakyll/index.html">Generated with Hakyll</a> -
+        <a href="http://github.com/tholzschuh/tholzschuh.github.io">Source code</a>
+        </p>
+        <p>
+        <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />This
+        work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+        </p>
+
+    </footer>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-9207155-5']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+</body>
+</html>

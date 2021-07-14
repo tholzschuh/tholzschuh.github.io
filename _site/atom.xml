@@ -8,8 +8,98 @@
         <name>Tim Holzschuh</name>
         <email>tholzschuh@e.email</email>
     </author>
-    <updated>2021-01-12T00:00:00Z</updated>
+    <updated>2021-07-14T00:00:00Z</updated>
     <entry>
+    <title>Declarative and Reproducible System and User Management with Nix(OS)</title>
+    <link href="https://tholzschuh.github.io/posts/2021-07-14-declarative-and-reproducible-system-and-user-management-with-nixos.html" />
+    <id>https://tholzschuh.github.io/posts/2021-07-14-declarative-and-reproducible-system-and-user-management-with-nixos.html</id>
+    <published>2021-07-14T00:00:00Z</published>
+    <updated>2021-07-14T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://tholzschuh.github.io/css/article.css" />
+<article>
+<header>
+<h1>Declarative and Reproducible System and User Management with Nix(OS)</h1>
+<p>by <em>Tim Holzschuh</em> on <strong>July 14, 2021</strong></p>
+<p>Tagged as: <a title="All pages tagged 'nixos'." href="https://tholzschuh.github.io/tags/nixos.html">nixos</a>.</p>
+</header>
+
+<section>
+<p>I’ve been using <a href="https://nixos.org/">NixOS</a> as my main operating system for quite some time now.</p>
+<p>As I recently upgraded my computer equipment by acquiring a new laptop, I decided that it’s time to invest some more time into further capitalizing on the feature of NixOS. The main purpose of this post is to collect all the things I learned while doing so in a single place so that I’ll always be able to look it up again if need be.</p>
+<h1 id="overview">Overview</h1>
+<p>In NixOS, the whole system configuration takes place in a single file, <code>/etc/nixos/configuration.nix</code>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb1-1"><a href="https://tholzschuh.github.io#cb1-1"></a>  <span class="kw">{</span> <span class="ex">config</span>, pkgs, ... <span class="kw">}</span> <span class="bu">:</span></span>
+<span id="cb1-2"><a href="https://tholzschuh.github.io#cb1-2"></a></span>
+<span id="cb1-3"><a href="https://tholzschuh.github.io#cb1-3"></a>  <span class="kw">{</span></span>
+<span id="cb1-4"><a href="https://tholzschuh.github.io#cb1-4"></a>    <span class="co"># boot configuration</span></span>
+<span id="cb1-5"><a href="https://tholzschuh.github.io#cb1-5"></a>    <span class="ex">boot.loader.systemd-boot.enable</span>      = true<span class="kw">;</span></span>
+<span id="cb1-6"><a href="https://tholzschuh.github.io#cb1-6"></a>    <span class="ex">boot.loader.efi.canTouchEfiVariables</span> = true<span class="kw">;</span></span>
+<span id="cb1-7"><a href="https://tholzschuh.github.io#cb1-7"></a></span>
+<span id="cb1-8"><a href="https://tholzschuh.github.io#cb1-8"></a>    <span class="ex">...</span></span>
+<span id="cb1-9"><a href="https://tholzschuh.github.io#cb1-9"></a></span>
+<span id="cb1-10"><a href="https://tholzschuh.github.io#cb1-10"></a>    <span class="co"># set timezone to Berlin</span></span>
+<span id="cb1-11"><a href="https://tholzschuh.github.io#cb1-11"></a>    <span class="ex">time.timeZone</span> = <span class="st">&quot;Europe/Berlin&quot;</span><span class="kw">;</span></span>
+<span id="cb1-12"><a href="https://tholzschuh.github.io#cb1-12"></a></span>
+<span id="cb1-13"><a href="https://tholzschuh.github.io#cb1-13"></a>    <span class="ex">...</span></span>
+<span id="cb1-14"><a href="https://tholzschuh.github.io#cb1-14"></a></span>
+<span id="cb1-15"><a href="https://tholzschuh.github.io#cb1-15"></a>    <span class="co"># set up user &quot;tim&quot;</span></span>
+<span id="cb1-16"><a href="https://tholzschuh.github.io#cb1-16"></a>    <span class="ex">users.users.tim</span> = {</span>
+<span id="cb1-17"><a href="https://tholzschuh.github.io#cb1-17"></a>      <span class="ex">isNormalUser</span> = true<span class="kw">;</span></span>
+<span id="cb1-18"><a href="https://tholzschuh.github.io#cb1-18"></a>      <span class="ex">...</span></span>
+<span id="cb1-19"><a href="https://tholzschuh.github.io#cb1-19"></a>    <span class="kw">}</span>;</span>
+<span id="cb1-20"><a href="https://tholzschuh.github.io#cb1-20"></a></span>
+<span id="cb1-21"><a href="https://tholzschuh.github.io#cb1-21"></a>    <span class="co"># install firefox</span></span>
+<span id="cb1-22"><a href="https://tholzschuh.github.io#cb1-22"></a>    <span class="ex">environment.systemPackages</span> = [ pkgs.firefox ]<span class="kw">;</span> </span>
+<span id="cb1-23"><a href="https://tholzschuh.github.io#cb1-23"></a>  }</span></code></pre></div>
+<p>I want to use a single repository of customized nix configurations to set up both my laptop as well as my desktop as easily as possible.</p>
+<p>As I usually use my laptop and my desktop for similar but not exactly identical tasks, I want the configuration to be as <em>modular</em> as possible: For example, there should be a module enabling and setting up LaTeX exactly as I use it: texlive with this and that package, my favorite text editor <a href="https://www.vim.org/download.php">vim</a> set up with additional plugins to support LaTeX syntax highlighting et cetera.</p>
+<p>If I now plan to use LaTeX on a computer, I essentially just want to add something like</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb2-1"><a href="https://tholzschuh.github.io#cb2-1"></a>  <span class="ex">custom.latex.enable</span> = true<span class="kw">;</span></span></code></pre></div>
+<p>in my <code>configuration.nix</code> to have my LaTeX tools installed and customized exactly like I want them to be.</p>
+<p>For practical as well aesthetical reasons, I’d like this configuration to be user-specific whenever possible: I don’t want to configure <code>vim</code> globally on the whole machine, but just the user I’m writing LaTeX code on. (What if someone else would want to write some LaTeX on my laptop?) Turns out the <a href="https://github.com/nix-community/home-manager">home-manager</a> project is adding tons of user-specific configuration options to the NixOS Ecosystem.</p>
+<p>To keep the configurations of my laptop and my desktop in sync with each other, I want to store my configuration in some git repository (added benefit: version control). This way, whenever I for example add a <code>vim</code> macro for my editing a LaTeX file, I’ll only have to commit my changes to the git repository and execute</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="https://tholzschuh.github.io#cb3-1"></a><span class="fu">git</span> pull origin master</span>
+<span id="cb3-2"><a href="https://tholzschuh.github.io#cb3-2"></a><span class="fu">sudo</span> nixos-rebuild switch</span></code></pre></div>
+<p>on my desktop to have the exact same configuration applied on my desktop as well.</p>
+<h1 id="my-current-setup">My current setup</h1>
+<p>As both NixOS as well as home-manager still often lack proper documentation, I ended up mostly reading other people’s configuration files and stealing things from there.</p>
+<p>My current configuration looks roughly like this:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="https://tholzschuh.github.io#cb4-1"></a><span class="ex">nixos-conf</span></span>
+<span id="cb4-2"><a href="https://tholzschuh.github.io#cb4-2"></a><span class="ex">+--</span> machines</span>
+<span id="cb4-3"><a href="https://tholzschuh.github.io#cb4-3"></a><span class="kw">|</span>   <span class="ex">+--</span> defaultMachine.nix</span>
+<span id="cb4-4"><a href="https://tholzschuh.github.io#cb4-4"></a><span class="kw">|</span>   <span class="ex">+--</span> thinkpad.nix</span>
+<span id="cb4-5"><a href="https://tholzschuh.github.io#cb4-5"></a><span class="kw">|</span>   <span class="ex">+--</span> desktop.nix</span>
+<span id="cb4-6"><a href="https://tholzschuh.github.io#cb4-6"></a><span class="kw">|</span>   <span class="ex">+--</span> ...</span>
+<span id="cb4-7"><a href="https://tholzschuh.github.io#cb4-7"></a><span class="ex">+--</span> modules</span>
+<span id="cb4-8"><a href="https://tholzschuh.github.io#cb4-8"></a><span class="kw">|</span>   <span class="ex">+--</span> nixos</span>
+<span id="cb4-9"><a href="https://tholzschuh.github.io#cb4-9"></a>    <span class="kw">|</span>   <span class="ex">+--</span> sys</span>
+<span id="cb4-10"><a href="https://tholzschuh.github.io#cb4-10"></a>        <span class="kw">|</span>   <span class="ex">+--</span> ...</span>
+<span id="cb4-11"><a href="https://tholzschuh.github.io#cb4-11"></a>    <span class="kw">|</span>   <span class="ex">+--</span> wm</span>
+<span id="cb4-12"><a href="https://tholzschuh.github.io#cb4-12"></a>        <span class="kw">|</span>   <span class="ex">+--</span> gnome</span>
+<span id="cb4-13"><a href="https://tholzschuh.github.io#cb4-13"></a>	    <span class="kw">|</span>   <span class="ex">+--</span> ...</span>
+<span id="cb4-14"><a href="https://tholzschuh.github.io#cb4-14"></a>        <span class="ex">+--</span> ...    </span>
+<span id="cb4-15"><a href="https://tholzschuh.github.io#cb4-15"></a><span class="kw">|</span>   <span class="ex">+--</span> hm</span>
+<span id="cb4-16"><a href="https://tholzschuh.github.io#cb4-16"></a>    <span class="kw">|</span>   <span class="ex">+--</span> dev</span>
+<span id="cb4-17"><a href="https://tholzschuh.github.io#cb4-17"></a>        <span class="kw">|</span>   <span class="ex">+--</span> latex</span>
+<span id="cb4-18"><a href="https://tholzschuh.github.io#cb4-18"></a>            <span class="kw">|</span>   <span class="ex">+--</span> latex.nix</span>
+<span id="cb4-19"><a href="https://tholzschuh.github.io#cb4-19"></a>            <span class="kw">|</span>   <span class="ex">+--</span> config</span>
+<span id="cb4-20"><a href="https://tholzschuh.github.io#cb4-20"></a>	            <span class="kw">|</span>   <span class="ex">+--</span> tex.vim</span>
+<span id="cb4-21"><a href="https://tholzschuh.github.io#cb4-21"></a>	    <span class="kw">|</span>   <span class="ex">+--</span> haskell</span>
+<span id="cb4-22"><a href="https://tholzschuh.github.io#cb4-22"></a>            <span class="kw">|</span>  <span class="ex">+--</span> haskell.nix</span>
+<span id="cb4-23"><a href="https://tholzschuh.github.io#cb4-23"></a>	        <span class="kw">|</span>  <span class="ex">+--</span> config</span>
+<span id="cb4-24"><a href="https://tholzschuh.github.io#cb4-24"></a>               <span class="kw">|</span>   <span class="ex">+--</span> hs.vim</span>
+<span id="cb4-25"><a href="https://tholzschuh.github.io#cb4-25"></a>	<span class="kw">|</span>   <span class="ex">+--</span> ...</span>
+<span id="cb4-26"><a href="https://tholzschuh.github.io#cb4-26"></a><span class="ex">+--</span> profiles</span>
+<span id="cb4-27"><a href="https://tholzschuh.github.io#cb4-27"></a><span class="kw">|</span>   <span class="ex">+--</span> development.nix</span>
+<span id="cb4-28"><a href="https://tholzschuh.github.io#cb4-28"></a><span class="kw">|</span>   <span class="ex">+--</span> ...</span>
+<span id="cb4-29"><a href="https://tholzschuh.github.io#cb4-29"></a><span class="ex">+--</span> users</span>
+<span id="cb4-30"><a href="https://tholzschuh.github.io#cb4-30"></a><span class="kw">|</span>   <span class="ex">+--</span> tim</span>
+<span id="cb4-31"><a href="https://tholzschuh.github.io#cb4-31"></a>    <span class="kw">|</span>  <span class="ex">+--</span> default.nix</span></code></pre></div>
+</section>
+</article>
+]]></summary>
+</entry>
+<entry>
     <title>Using LaTeX with Hakyll</title>
     <link href="https://tholzschuh.github.io/posts/2021-01-12-using-latex-with-hakyll.html" />
     <id>https://tholzschuh.github.io/posts/2021-01-12-using-latex-with-hakyll.html</id>
