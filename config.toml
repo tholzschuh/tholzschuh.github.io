@@ -48,15 +48,15 @@ pygmentsStyle          = "monokai"
     url    = "/posts/"
     weight = 3
 
-  [[menu.main]]
-    name   = "projects"
-    url    = "/projects/"
-    weight = 4
+#  [[menu.main]]
+#    name   = "projects"
+#    url    = "/projects/"
+#    weight = 4
 
-  [[menu.main]]
-    name   = "tags"
-    url    = "/tags/"
-    weight = 5
+#  [[menu.main]]
+#    name   = "tags"
+#    url    = "/tags/"
+#    weight = 5
 
 #  [[menu.main]]
 #    identifier = "github"
