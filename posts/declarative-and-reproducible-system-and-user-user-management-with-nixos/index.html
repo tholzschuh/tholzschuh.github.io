@@ -1,0 +1,212 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{--accent-color:#0982f0}</style><title>Declarative and Reproducible System and User User Management With Nixos</title><meta name=description content><meta name=keywords content="blog,gokarna,hugo"><meta property="og:url" content="https://tholzschuh.github.io/test/posts/declarative-and-reproducible-system-and-user-user-management-with-nixos/"><meta property="og:type" content="website"><meta property="og:title" content="Declarative and Reproducible System and User User Management With Nixos"><meta property="og:description" content><meta property="og:image" content="/images/octopus.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:title content="Declarative and Reproducible System and User User Management With Nixos"><meta name=twitter:description content><meta property="twitter:domain" content="https://tholzschuh.github.io/test/posts/declarative-and-reproducible-system-and-user-user-management-with-nixos/"><meta property="twitter:url" content="https://tholzschuh.github.io/test/posts/declarative-and-reproducible-system-and-user-user-management-with-nixos/"><meta name=twitter:image content="/images/octopus.png"><link rel=canonical href=https://tholzschuh.github.io/test/posts/declarative-and-reproducible-system-and-user-user-management-with-nixos/><link rel=stylesheet type=text/css href=https://tholzschuh.github.io/test/css/normalize.min.css media=print onload='this.media="all"'><link rel=stylesheet type=text/css href=https://tholzschuh.github.io/test/css/main.css><link disabled id=dark-theme rel=stylesheet href=https://tholzschuh.github.io/test/css/dark.css><script src=https://tholzschuh.github.io/test/js/svg-injector.min.js></script>
+<script src=https://tholzschuh.github.io/test/js/feather-icons.min.js></script>
+<script src=https://tholzschuh.github.io/test/js/main.js></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.css integrity=sha384-6LkG2wmY8FK9E0vU9OOr8UvLwsaqUg9SETfpq4uTCN1agNe8HRdE9ABlk+fVx6gZ crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.js integrity=sha384-31El76TwmbHj4rF9DyLsygbq6xoIobG0W+jqXim+a3dU9W53tdH3A/ngRPxOzzaB crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/contrib/auto-render.min.js integrity=sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl crossorigin=anonymous onload=renderMathInElement(document.body)></script></head><body><script type=text/javascript>setThemeByUserPref()</script><header class=header><nav class=header-nav><div class=avatar><a href=https://tholzschuh.github.io/test><img src=https://tholzschuh.github.io/test/images/octopus.png alt=avatar></a></div><div class=nav-title><a class=nav-brand href=https://tholzschuh.github.io/test>Tim Holzschuh</a></div><div class=nav-links><div class=nav-link><a href=https://tholzschuh.github.io/test/>about</a></div><div class=nav-link><a href=https://tholzschuh.github.io/test/posts/maths>maths</a></div><div class=nav-link><a href=https://tholzschuh.github.io/test/posts/>blog</a></div><span class=nav-icons-divider></span><div class="nav-link dark-theme-toggle"><a><span id=theme-toggle-icon data-feather=moon></span></a></div><div class=nav-link id=hamburger-menu-toggle><a><span data-feather=menu></span></a></div><ul class="nav-hamburger-list visibility-hidden"><li class=nav-item><a href=https://tholzschuh.github.io/test/>about</a></li><li class=nav-item><a href=https://tholzschuh.github.io/test/posts/maths>maths</a></li><li class=nav-item><a href=https://tholzschuh.github.io/test/posts/>blog</a></li><li class="nav-item dark-theme-toggle"><a><span id=theme-toggle-icon data-feather=moon></span></a></li></ul></div></nav></header><main id=content><div class="post container"><div class=post-header-section><h1>Declarative and Reproducible System and User User Management With Nixos</h1><small role=doc-subtitle></small><p class=post-date>July 14, 2021</p><ul class=post-tags></ul></div><div class=post-content><p><p>I&rsquo;ve been using <a href=https://nixos.org/>NixOS</a> as my main operating system for quite some time now.</p><p>As I recently upgraded my computer equipment by acquiring a new laptop, I decided that it&rsquo;s time to invest some more time into further capitalizing on the feature of NixOS.
+The main purpose of this post is to collect all the things I learned while doing so in a single place so that I&rsquo;ll always be able to look it up again if need be.</p><h1 id=overview>Overview</h1><p>In NixOS, the whole system configuration takes place in a single file, <code>/etc/nixos/configuration.nix</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-nix data-lang=nix><span style=display:flex><span>  { config<span style=color:#f92672>,</span> pkgs<span style=color:#f92672>,</span> <span style=color:#f92672>...</span> } :
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    <span style=color:#75715e># boot configuration</span>
+</span></span><span style=display:flex><span>    boot<span style=color:#f92672>.</span>loader<span style=color:#f92672>.</span>systemd-boot<span style=color:#f92672>.</span>enable      <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>;
+</span></span><span style=display:flex><span>    boot<span style=color:#f92672>.</span>loader<span style=color:#f92672>.</span>efi<span style=color:#f92672>.</span>canTouchEfiVariables <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>...</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># set timezone to Berlin</span>
+</span></span><span style=display:flex><span>    time<span style=color:#f92672>.</span>timeZone <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Europe/Berlin&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>...</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># set up user &#34;tim&#34;</span>
+</span></span><span style=display:flex><span>    users<span style=color:#f92672>.</span>users<span style=color:#f92672>.</span>tim <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>      isNormalUser <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>;
+</span></span><span style=display:flex><span>      <span style=color:#f92672>...</span>
+</span></span><span style=display:flex><span>    };
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># install firefox</span>
+</span></span><span style=display:flex><span>    environment<span style=color:#f92672>.</span>systemPackages <span style=color:#f92672>=</span> [ pkgs<span style=color:#f92672>.</span>firefox ];
+</span></span><span style=display:flex><span>  }
+</span></span></code></pre></div><p>I want to use a single repository of customized nix configurations to set up both my laptop as well as my desktop as easily as possible.</p><p>As I usually use my laptop and my desktop for similar but not exactly identical tasks, I want the configuration to be as <em>modular</em> as possible:
+For example, there should be a module enabling and setting up LaTeX exactly as I use it: texlive with this and that package, my favorite text editor <a href=https://www.vim.org/download.php>vim</a> set up with additional plugins to support LaTeX syntax highlighting et cetera.</p><p>If I now plan to use LaTeX on a computer, I essentially just want to add something like</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-nix data-lang=nix><span style=display:flex><span>  custom<span style=color:#f92672>.</span>latex<span style=color:#f92672>.</span>enable <span style=color:#960050;background-color:#1e0010>=</span> <span style=color:#66d9ef>true</span>;
+</span></span></code></pre></div><p>in my <code>configuration.nix</code> to have my LaTeX tools installed and customized exactly like I want them to be.</p><p>For practical as well aesthetical reasons, I&rsquo;d like this configuration to be user-specific whenever possible:
+I don&rsquo;t want to configure <code>vim</code> globally on the whole machine, but just the user I&rsquo;m writing LaTeX code on.
+(What if someone else would want to write some LaTeX on my laptop?)
+Turns out the <a href=https://github.com/nix-community/home-manager>home-manager</a> project is adding tons of user-specific configuration options to the NixOS ecosystem.</p><p>To keep the configurations of my laptop and my desktop in sync with each other, I want to store my configuration in some git repository (added benefit: version control).
+This way, whenever I for example add a <code>vim</code> macro for editing LaTeX files, I&rsquo;ll only have to commit my changes to the git repository and execute (something similar to)</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git pull origin master
+</span></span><span style=display:flex><span>sudo nixos-rebuild switch
+</span></span></code></pre></div><p>on my desktop to have the exact same configuration applied on my desktop as well.</p><h1 id=my-current-setup>My current setup</h1><p>As both NixOS as well as home-manager still often lack proper documentation, I ended up mostly reading other people&rsquo;s configuration files and stealing things from there.</p><p>Since it seems like the next major update of the nix package manager will introduce <a href=https://nixos.wiki/wiki/Flakes>nix flakes</a>, I decided to set up my system configuration using flakes as a (fairly stable) experimental feature.
+My current <code>flake.nix</code> file looks as follows:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-nix data-lang=nix><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  description <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;tim&#39;s personal flake&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  inputs <span style=color:#f92672>=</span> <span style=color:#66d9ef>rec</span> {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    nixpkgs <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>      url <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;github:NixOS/nixpkgs/nixos-21.05&#34;</span>;
+</span></span><span style=display:flex><span>    };
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    unstable <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>      url <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;github:NixOS/nixpkgs/nixos-unstable&#34;</span>;
+</span></span><span style=display:flex><span>    };
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    home-manager <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>      url <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;github:nix-community/home-manager/release-21.05&#34;</span>;
+</span></span><span style=display:flex><span>      inputs<span style=color:#f92672>.</span>nixpkgs<span style=color:#f92672>.</span>follows <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;nixpkgs&#34;</span>;
+</span></span><span style=display:flex><span>    };
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    nixos-hardware <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>      url <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;github:NixOS/nixos-hardware&#34;</span>;
+</span></span><span style=display:flex><span>    };
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    nur <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>      url <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;github:nix-community/NUR&#34;</span>;
+</span></span><span style=display:flex><span>    };
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  outputs <span style=color:#f92672>=</span> {self<span style=color:#f92672>,</span> nixpkgs<span style=color:#f92672>,</span> unstable<span style=color:#f92672>,</span> home-manager<span style=color:#f92672>,</span> nixos-hardware<span style=color:#f92672>,</span> nur} :
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>let</span>
+</span></span><span style=display:flex><span>    lib <span style=color:#f92672>=</span> nixpkgs<span style=color:#f92672>.</span>lib;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>in</span>
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    nixosConfigurations <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      thinkpad <span style=color:#f92672>=</span> lib<span style=color:#f92672>.</span>nixosSystem {
+</span></span><span style=display:flex><span>        system <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;x86_64-linux&#34;</span>;
+</span></span><span style=display:flex><span>        modules <span style=color:#f92672>=</span> [
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>          nixos-hardware<span style=color:#f92672>.</span>nixosModules<span style=color:#f92672>.</span>lenovo-thinkpad-t14s-amd-gen1
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>          home-manager<span style=color:#f92672>.</span>nixosModules<span style=color:#f92672>.</span>home-manager
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>          <span style=color:#e6db74>./machines/thinkpad/configuration.nix</span>
+</span></span><span style=display:flex><span>        ];
+</span></span><span style=display:flex><span>      };
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    };
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    thinkpad <span style=color:#f92672>=</span> self<span style=color:#f92672>.</span>nixosConfigurations<span style=color:#f92672>.</span>thinkpad<span style=color:#f92672>.</span>config<span style=color:#f92672>.</span>system<span style=color:#f92672>.</span>build<span style=color:#f92672>.</span>toplevel;
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>The <code>inputs</code> record consists of all repositories that would otherwise be manually added to the available <code>nix-channels</code>.
+In my case, I usually use the most recent stable version of NixOS and its package tree <code>nixpkgs</code>.
+In case I need some test features (like <code>flakes</code>!), I have the <code>unstable</code> input source pointing to the current <code>nixos-unstable</code> git repository.
+<code>home-manager</code> also comes with its own set of nix expressions, <code>nixos-hardware</code> has some hardware-specific nix expressions that come in handy for my laptop and finally <code>nur</code> is the Nix User Repository.</p><p>Then I declare one configuration for my laptop <code>thinkpad</code> that uses the laptop-specific nix expressions of <code>nixos-hardware</code>, enables <code>home-manager</code> and refers to a <code>configuration.nix</code> file that I specifically prepared for this machine with it&rsquo;s hardware-specific like partitioning etc.</p><p>This configuration file also includes all the remaining configuration I want to use.</p><p>The rough setup is as follows:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>tims-flake/
+</span></span><span style=display:flex><span>├── flake.lock
+</span></span><span style=display:flex><span>├── flake.nix
+</span></span><span style=display:flex><span>├── machines/
+</span></span><span style=display:flex><span>│   ├── defaultMachine.nix
+</span></span><span style=display:flex><span>│   └── thinkpad/
+</span></span><span style=display:flex><span>│       ├── configuration.nix
+</span></span><span style=display:flex><span>│       ├── hardware-configuration.nix
+</span></span><span style=display:flex><span>│       └── thinkpad.nix
+</span></span><span style=display:flex><span>├── modules/
+</span></span><span style=display:flex><span>│   ├── custom/
+</span></span><span style=display:flex><span>│   │   ├── hm/
+</span></span><span style=display:flex><span>│   │   │   ├── default.nix
+</span></span><span style=display:flex><span>│   │   │   ├── dev/
+</span></span><span style=display:flex><span>│   │   │   │   ├── nix/
+</span></span><span style=display:flex><span>│   │   │   │   │   └── nix.nix
+</span></span><span style=display:flex><span>│   │   │   │   └── latex/
+</span></span><span style=display:flex><span>│   │   │   │       ├── latex.nix
+</span></span><span style=display:flex><span>│   │   │   │       └── config/
+</span></span><span style=display:flex><span>│   │   │   │           └── tex.vim
+</span></span><span style=display:flex><span>│   │   │   └── media/
+</span></span><span style=display:flex><span>│   │   │       └── ...
+</span></span><span style=display:flex><span>│   │   └── nixos/
+</span></span><span style=display:flex><span>│   │       ├── sys/
+</span></span><span style=display:flex><span>│   │       │   ├── ...
+</span></span><span style=display:flex><span>│   │       │   └── ...
+</span></span><span style=display:flex><span>│   │       ├── wm/
+</span></span><span style=display:flex><span>│   │       │   ├── x11/
+</span></span><span style=display:flex><span>│   │       │   │   └── x11.nix
+</span></span><span style=display:flex><span>│   │       │   └── gnome/
+</span></span><span style=display:flex><span>│   │       │       └── gnome.nix
+</span></span><span style=display:flex><span>│   │       └── default.nix
+</span></span><span style=display:flex><span>│   └── default.nix
+</span></span><span style=display:flex><span>├── profiles/
+</span></span><span style=display:flex><span>│   ├── default.nix
+</span></span><span style=display:flex><span>│   ├── development.nix
+</span></span><span style=display:flex><span>│   ├── multimedia.nix
+</span></span><span style=display:flex><span>│   └── research.nix
+</span></span><span style=display:flex><span>└── users/
+</span></span><span style=display:flex><span>    └── tim/
+</span></span><span style=display:flex><span>        ├── base.nix
+</span></span><span style=display:flex><span>        ├── default.nix
+</span></span><span style=display:flex><span>        └── networks/
+</span></span><span style=display:flex><span>            └── eduroam.nix
+</span></span></code></pre></div><p>With this general setup, I now implement the system configuration as I see fit.
+For example, here&rsquo;s the content of the <code>latex.nix</code> file of above:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e>### HOME MANAGER MODULE</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span> config, lib, pkgs, ... <span style=color:#f92672>}</span> :
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>with lib;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>let cfg <span style=color:#f92672>=</span> config.custom.hm.dev.latex;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>in
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e>### interface</span>
+</span></span><span style=display:flex><span>  options <span style=color:#f92672>=</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    custom.hm.dev.latex.enable     <span style=color:#f92672>=</span> mkEnableOption <span style=color:#e6db74>&#34;config for latex&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    custom.hm.dev.latex.vim.enable <span style=color:#f92672>=</span> mkEnableOption <span style=color:#e6db74>&#34;enable vim with latex plugins&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>}</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e>### implementation</span>
+</span></span><span style=display:flex><span>  config <span style=color:#f92672>=</span> mkMerge <span style=color:#f92672>[</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>(</span>mkIf cfg.enable <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      home.packages <span style=color:#f92672>=</span> with pkgs; <span style=color:#f92672>[</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># install texlive with all available packages</span>
+</span></span><span style=display:flex><span>        texlive.combined.scheme-full
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># install the zathura pdf viewer (vim keybindings)</span>
+</span></span><span style=display:flex><span>        zathura
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># also install texstudio</span>
+</span></span><span style=display:flex><span>        texstudio
+</span></span><span style=display:flex><span>      <span style=color:#f92672>]</span>;
+</span></span><span style=display:flex><span>    <span style=color:#f92672>})</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>(</span>mkIf cfg.vim.enable <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      programs.vim <span style=color:#f92672>=</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        enable <span style=color:#f92672>=</span> true;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        plugins <span style=color:#f92672>=</span> with pkgs.vimPlugins; <span style=color:#f92672>[</span>
+</span></span><span style=display:flex><span>          vimtex
+</span></span><span style=display:flex><span>          ultisnips
+</span></span><span style=display:flex><span>          YouCompleteMe
+</span></span><span style=display:flex><span>        <span style=color:#f92672>]</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># enable custom settings for each filetype</span>
+</span></span><span style=display:flex><span>        extraConfig <span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#39;&#39;</span>
+</span></span><span style=display:flex><span>        filetype plugin on
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#39;&#39;</span>;
+</span></span><span style=display:flex><span>      <span style=color:#f92672>}</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#75715e># use custom settings for .tex files</span>
+</span></span><span style=display:flex><span>      home.file <span style=color:#f92672>=</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;.vim/ftplugin/tex.vim&#34;</span>.source <span style=color:#f92672>=</span> ./config/tex.vim;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>}</span>;
+</span></span><span style=display:flex><span>    <span style=color:#f92672>})</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>]</span>;
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span></code></pre></div><h1 id=workflow>Workflow</h1><p>Since I&rsquo;m using nix flakes, I need to change the update procedure a little bit:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>sudo nix flake update .
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>git add -A
+</span></span><span style=display:flex><span>git commit -m <span style=color:#e6db74>&#34;flake update.&#34;</span>
+</span></span><span style=display:flex><span>git push origin master
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>sudo nixos-rebuild --switch --flake .
+</span></span></code></pre></div><p>First, I update the flake, then I upload the changes to its git repository and then I tell NixOS to rebuild itself using the updated flake.</p></p></div></div></main><footer class=footer><span>&copy; 2022 Tim Holzschuh</span></footer></body></html>
