@@ -12,7 +12,7 @@ pygmentsStyle          = "monokai"
 [params]
   footer         = "Tim Holzschuh"
   greeting       = "Hi!"
-  firstSubtitle  = "I'm a mathematician based at Heidelberg University working with Alexander Schmidt."
+  firstSubtitle  = "I'm a mathematician based at Heidelberg University working with </a href="https://www.mathi.uni-heidelberg.de/~schmidt/">Alexander Schmidt</a>."
   secondSubtitle = "I like to think about all things arithmetic homotopy theory."
   description    = ""
   email          = "tholzschuh [at] mathi.uni-heidelberg.de"
