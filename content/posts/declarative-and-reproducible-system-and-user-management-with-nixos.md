@@ -1,12 +1,13 @@
 ---
-title: "Declarative and Reproducible System and User User Management With Nixos"
+title: "Declarative and Reproducible System and User Management With Nixos"
 date: 2021-07-14T18:15:26+02:00
+tags: ["nixos", "nix"]
 type: "post"
 ---
 
 I've been using [NixOS](https://nixos.org/) as my main operating system for quite some time now.
 
-As I recently upgraded my computer equipment by acquiring a new laptop, I decided that it's time to invest some more time into further capitalizing on the feature of NixOS.
+As I recently upgraded my computer equipment by acquiring a new laptop, I decided that it's time to invest some more time into further capitalizing on the features of NixOS.
 The main purpose of this post is to collect all the things I learned while doing so in a single place so that I'll always be able to look it up again if need be.
 
 # Overview

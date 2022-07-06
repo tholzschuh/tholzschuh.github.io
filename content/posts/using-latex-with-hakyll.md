@@ -1,6 +1,7 @@
 ---
 title: "Using Latex With Hakyll"
 date: 2021-01-12T18:13:04+02:00
+tags: ["latex", "hakyll", "haskell"]
 type: "post"
 ---
 

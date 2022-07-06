@@ -10,6 +10,9 @@ enableRobotsTXT        = true
 pygmentsStyle          = "monokai"
 
 [params]
+  socialIcons = [
+    {name="twitter", url="https://example.com"},
+  ]
   footer         = "Tim Holzschuh"
   greeting       = "Hi!"
   email          = "tholzschuh [at] mathi.uni-heidelberg.de"
@@ -31,7 +34,8 @@ pygmentsStyle          = "monokai"
 #    {name = "instagram", url = "https://example.com"},
 #    {name = "twitch", url = "https://example.com"},
 #  ]
-  metaKeywords = ["blog", "gokarna", "hugo"]
+
+  metaKeywords = ["blog", "academic", "mathematics", "functional programming", "nixos", "nix", "haskelly", "hakyll"]
 
 [menu]
   [[menu.main]]
@@ -40,7 +44,7 @@ pygmentsStyle          = "monokai"
     weight = 1
   [[menu.main]]
     name   = "maths"
-    url    = "/posts/maths"
+    url    = "/maths"
     weight = 2
 
   [[menu.main]]
@@ -53,15 +57,15 @@ pygmentsStyle          = "monokai"
 #    url    = "/projects/"
 #    weight = 4
 
-#  [[menu.main]]
-#    name   = "tags"
-#    url    = "/tags/"
-#    weight = 5
+  [[menu.main]]
+    name   = "tags"
+    url    = "/tags/"
+    weight = 5
 
 #  [[menu.main]]
 #    identifier = "github"
 #    pre        = "<span data-feather='github'></span>"
-#    url        = "https://github.com/user/tholzschuh"
+#    url        = "https://github.com/tholzschuh"
 #    weight     = 5
 
 #  [[menu.main]]
