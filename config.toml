@@ -11,9 +11,12 @@ pygmentsStyle          = "monokai"
 
 [params]
   footer         = "Tim Holzschuh"
-  description    = "Hi!"
+  greeting       = "Hi!"
+  description    = "I'm a mathematician based at <a href="https://www.mathinf.uni-heidelberg.de/en">Heidelberg University</a> working with <a href="https://www.mathi.uni-heidelberg.de/~schmidt/">Alexander Schmidt</a>."
+  email          = "tholzschuh[at]mathi.uni-heidelberg.de"
   avatarURL      = "/images/octopus.png"
   avatarSize     = "size-m"
+  accentColor    = "#0982f0"
   customHeadHTML = """
     <!-- KaTeX -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.css" integrity="sha384-6LkG2wmY8FK9E0vU9OOr8UvLwsaqUg9SETfpq4uTCN1agNe8HRdE9ABlk+fVx6gZ" crossorigin="anonymous">
