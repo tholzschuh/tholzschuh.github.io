@@ -40,7 +40,7 @@ pygmentsStyle          = "monokai"
     weight = 1
   [[menu.main]]
     name   = "maths"
-    url    = "/maths/"
+    url    = "/posts/maths"
     weight = 2
 
   [[menu.main]]
