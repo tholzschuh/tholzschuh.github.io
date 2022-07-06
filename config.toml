@@ -1,5 +1,5 @@
-baseURL = "https://gokarna-hugo.netlify.app"
-title = "Gokarna"
+baseURL = "https://tholzschuh.github.io/test"
+title = "Tim Holzschuh"
 theme = "gokarna"
 languageCode = "en"
 defaultContentLanguage = "en"
@@ -10,9 +10,9 @@ enableRobotsTXT = true
 pygmentsStyle = "monokai"
 
 [params]
-  footer = "The Marauders"
-  description = "Sky above, sand below and peace within"
-  avatarURL = "/images/avatar.webp"
+  footer = "Tim Holzschuh"
+  description = "Hi!"
+  avatarURL = "/images/octopus.png"
   avatarSize = "size-m"
   customHeadHTML = """
     <!-- KaTeX -->
@@ -21,48 +21,46 @@ pygmentsStyle = "monokai"
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
         onload="renderMathInElement(document.body);"></script>
   """
-  socialIcons = [
-    {name = "twitter", url = "https://example.com"},
-    {name = "linkedin", url = "https://example.com"},
-    {name = "stackoverflow", url = "https://example.com"},
-    {name = "dribbble", url = "https://example.com"},
-    {name = "instagram", url = "https://example.com"},
-    {name = "twitch", url = "https://example.com"},
-  ]
+#  socialIcons = [
+#    {name = "twitter", url = "https://example.com"},
+#    {name = "linkedin", url = "https://example.com"},
+#    {name = "stackoverflow", url = "https://example.com"},
+#    {name = "dribbble", url = "https://example.com"},
+#    {name = "instagram", url = "https://example.com"},
+#    {name = "twitch", url = "https://example.com"},
+#  ]
   metaKeywords = ["blog", "gokarna", "hugo"]
 
 [menu]
   [[menu.main]]
-    name = "Home"
-    url = "/"
+    name   = "about"
+    url    = "/"
     weight = 1
-
   [[menu.main]]
-    name = "Posts"
-    url = "/posts/"
+    name   = "maths"
+    url    = "/maths/"
     weight = 2
 
   [[menu.main]]
-    name = "Projects"
-    url = "/projects/"
+    name = "blog"
+    url = "/posts/"
     weight = 3
 
   [[menu.main]]
-    name = "Tags"
-    url = "/tags/"
+    name = "projects"
+    url = "/projects/"
     weight = 4
+
+  [[menu.main]]
+    name = "tags"
+    url = "/tags/"
+    weight = 5
 
   [[menu.main]]
     identifier = "github"
     pre = "<span data-feather='github'></span>"
-    url = "https://github.com/526avijitgupta/gokarna"
+    url = "https://github.com/user/tholzschuh"
     weight = 5
-
-  [[menu.main]]
-    identifier = "buymeacoffee"
-    pre = "<span data-feather='coffee'></span>"
-    url = "https://www.buymeacoffee.com/avijitgupta"
-    weight = 6
 
   [[menu.main]]
     identifier = "rss"
