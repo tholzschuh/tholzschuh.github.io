@@ -12,6 +12,7 @@ pygmentsStyle          = "monokai"
 [params]
   socialIcons = [
     {name="twitter", url="https://example.com"},
+    {name="github", url="https://example.com"},
   ]
   footer         = "Tim Holzschuh"
   greeting       = "Hi!"
