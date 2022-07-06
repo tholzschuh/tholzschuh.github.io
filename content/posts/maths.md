@@ -5,7 +5,8 @@ type: "page"
 ---
 
 ### notes
-* [An étale homotopy-theoretic reformulation of the Section Conjecture](https://github.com/tholzschuh/uni-files/raw/master/articles/reformulation.pdf), Septemer 1, 2021
-
+* [An étale homotopy-theoretic reformulation of the Section Conjecture](https://github.com/tholzschuh/uni-files/raw/master/articles/reformulation.pdf)
+<br> <em>September 1, 2021</em>
 * [Computing simple factors of certain Jacobian varieties over finite fields](https://github.com/tholzschuh/uni-files/raw/master/articles/computing-simple-factors-of-certain-jacobian-varieties.pdf), September 1, 2019
+<br> <em>September 1, 2019</em>
 
