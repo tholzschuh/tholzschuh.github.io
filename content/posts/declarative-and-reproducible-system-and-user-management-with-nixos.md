@@ -1,8 +1,9 @@
 ---
-title: "Declarative and Reproducible System and User Management With Nixos"
+title: "Declarative and reproducible system and user management with NixOS"
 date: 2021-07-14T18:15:26+02:00
 tags: ["nixos", "nix"]
 type: "post"
+showTableOfContents: true
 ---
 
 I've been using [NixOS](https://nixos.org/) as my main operating system for quite some time now.
