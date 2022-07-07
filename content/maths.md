@@ -5,8 +5,6 @@ type: "page"
 showTableOfContents: true
 ---
 
-# research
-
 <hr style="width:100%">
 
 ## misc
@@ -22,9 +20,9 @@ showTableOfContents: true
 # teaching
 
 ## Winter 2022
-* TA:      [Galois Cohomology I](/test/math/teaching/w22_galois-cohomology-1) | <em>GER</em>
+* TA:      [Galois Cohomology I](/test/math/teaching/w22_galois-cohomology-1)
 
 ## Summer 2022
-* GAUS AG: [The Grothendieck conjecture for affine curves](/test/math/teaching/s22_grothendieck-conjecture-affine-curves) | <em>EN</em>
-* Seminar: [Galois and fundamental groups](/test/math/teaching/s22_galois-and-fundamental-groups) | <em>GER</em>
+* GAUS AG: [The Grothendieck conjecture for affine curves](/test/math/teaching/s22_grothendieck-conjecture-affine-curves)
+* Seminar: [Galois and fundamental groups](/test/math/teaching/s22_galois-and-fundamental-groups)
 

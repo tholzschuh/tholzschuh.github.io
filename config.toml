@@ -14,7 +14,7 @@ pygmentsStyle          = "monokai"
   greeting       = "Hi!"
   email          = "tholzschuh [at] mathi.uni-heidelberg.de"
   avatarURL      = "/images/octopus.png"
-  avatarSize     = "size-m"
+  avatarSize     = "size-xl"
   accentColor    = "#0982f0"
   customHeadHTML = """
     <!-- KaTeX -->
