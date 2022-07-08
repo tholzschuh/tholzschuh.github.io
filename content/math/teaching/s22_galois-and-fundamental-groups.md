@@ -1,6 +1,6 @@
 ---
 title: "Galois and Fundamental Groups"
-date: 2022-01-12
+date: 2022-02-24
 type: "teaching-post"
 ---
 

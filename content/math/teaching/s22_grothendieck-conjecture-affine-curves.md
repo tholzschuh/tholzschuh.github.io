@@ -1,6 +1,6 @@
 ---
 title: "The Grothendieck conjecture for affine curves"
-date: 2022-01-12
+date: 2022-04-07
 type: "teaching-post"
 ---
 
