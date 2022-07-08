@@ -7,6 +7,8 @@ showTableOfContents: true
 
 <hr style="width:100%">
 
+## notes
+
 ## misc
 * An étale homotopy-theoretic reformulation of the Section Conjecture (2021) 
 <br> <em>Master's thesis.</em> |  [pdf](https://github.com/tholzschuh/uni-files/raw/master/articles/reformulation.pdf)
