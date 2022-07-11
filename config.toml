@@ -1,4 +1,4 @@
-baseURL                = "https://tholzschuh.github.io/test"
+baseURL                = "https://tholzschuh.github.io/"
 title                  = "Tim Holzschuh"
 theme                  = "gokarna"
 languageCode           = "en"

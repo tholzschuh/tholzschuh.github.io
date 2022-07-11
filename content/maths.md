@@ -24,15 +24,15 @@ showTableOfContents: true
 # teaching
 
 <div class="tabular-list">
-            <a class="tabular-list-item" href="/test/math/teaching/winter22/galois-cohomology-1/">
+            <a class="tabular-list-item" href="/math/teaching/winter22/galois-cohomology-1/">
               <div class="title">Galois Cohomology 1 (Winter 2022)</div>
 	      <p><em>More details tba.</em></p>
             </a>
-            <a class="tabular-list-item" href="/test/math/teaching/summer22/grothendieck-conjecture-affine-curves">
+            <a class="tabular-list-item" href="/math/teaching/summer22/grothendieck-conjecture-affine-curves">
               <div class="title">The Grothendieck conjecture for affine curves (Summer 2022)</div>
 	      <p>GAUS AG on Tamagawa's proof of the isomorphism conjecture for affine curves in anabelian geometry.</p>
             </a>
-            <a class="tabular-list-item" href="/test/math/teaching/summer22/galois-and-fundamental-groups">
+            <a class="tabular-list-item" href="/math/teaching/summer22/galois-and-fundamental-groups">
               <div class="title">Galois and fundamental groups (Summer 2022)</div>
 	      <p>Seminar on Galois categories and the étale fundamental group.</p>
             </a>
