@@ -7,24 +7,33 @@ showTableOfContents: true
 
 <hr style="width:100%">
 
-## notes
+# research
 
 ## misc
-* An étale homotopy-theoretic reformulation of the Section Conjecture (2021) 
-<br> <em>Master's thesis.</em> |  [pdf](https://github.com/tholzschuh/uni-files/raw/master/articles/reformulation.pdf)
-
-
-* Computing simple factors of certain Jacobian varieties over finite fields (2019) 
-<br> <em>Bachelor's thesis.</em> | [pdf](https://github.com/tholzschuh/uni-files/raw/master/articles/computing-simple-factors-of-certain-jacobian-varieties.pdf)
-
-<hr style="width:100%">
+<div class="tabular-list">
+            <a class="tabular-list-item" href="https://github.com/tholzschuh/uni-files/raw/master/articles/reformulation.pdf">
+              <div class="title">An étale homotopy-theoretic reformulation of the Section Conjecture (2021)</div>
+              <p><em>Master's thesis.</em></p>
+            </a>
+            <a class="tabular-list-item" href="https://github.com/tholzschuh/uni-files/raw/master/articles/computing-simple-factors-of-certain-jacobian-varieties.pdf">
+              <div class="title">Computing simple factors of certain Jacobian varieties over finite fields (2019)</div>
+              <p><em>Bachelor's thesis.</em></p>
+            </a>
+</div>
 
 # teaching
 
-## Winter 2022
-* TA:      [Galois Cohomology I](/test/math/teaching/w22_galois-cohomology-1)
-
-## Summer 2022
-* GAUS AG: [The Grothendieck conjecture for affine curves](/test/math/teaching/s22_grothendieck-conjecture-affine-curves)
-* Seminar: [Galois and fundamental groups](/test/math/teaching/s22_galois-and-fundamental-groups)
-
+<div class="tabular-list">
+            <a class="tabular-list-item" href="/test/math/teaching/winter22/galois-cohomology-1/">
+              <div class="title">Galois Cohomology 1 (Winter 2022)</div>
+	      <p><em>More details tba.</em></p>
+            </a>
+            <a class="tabular-list-item" href="/test/math/teaching/summer22/grothendieck-conjecture-affine-curves">
+              <div class="title">The Grothendieck conjecture for affine curves (Summer 2022)</div>
+	      <p>GAUS AG on Tamagawa's proof of the isomorphism conjecture for affine curves in anabelian geometry.</p>
+            </a>
+            <a class="tabular-list-item" href="/test/math/teaching/summer22/galois-and-fundamental-groups">
+              <div class="title">Galois and fundamental groups (Summer 2022)</div>
+	      <p>Seminar on Galois categories and the étale fundamental group.</p>
+            </a>
+</div>
