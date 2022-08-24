@@ -1,6 +1,6 @@
 baseURL                = "https://tholzschuh.github.io/"
 title                  = "Tim Holzschuh"
-theme                  = [ "gokarna", "hugo-shortcode-gallery" ]
+theme                  = ["gokarna", "hugo-shortcode-gallery"]
 languageCode           = "en"
 defaultContentLanguage = "en"
 enableEmoji            = true
@@ -50,8 +50,8 @@ pygmentsStyle          = "monokai"
     weight = 4
 
 #  [[menu.main]]
-#    name   = "projects"
-#    url    = "/projects/"
+#    name   = "other"
+#    url    = "/other/"
 #    weight = 5
 
   [[menu.main]]
