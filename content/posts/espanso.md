@@ -19,7 +19,7 @@ While the official [package hub](https://hub.espanso.org/) offers some packages 
 
 # supported symbols
 
-Currently, I implemented snippets for stuff like the following:
+Currently, I implemented snippets for stuff like the following: 
 
 | Type | Examples | Type | Example
 | ------- | ------- | ------- | ------- | 
