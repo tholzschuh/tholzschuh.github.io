@@ -5,7 +5,7 @@ type: "page"
 showTableOfContents: true
 ---
 
-<hr>
+<hr width="100%">
 
 # research
 
@@ -62,7 +62,7 @@ showTableOfContents: true
             </div>
 </div>
 
-<hr>
+<hr style="width:100%">
 
 # teaching
 
