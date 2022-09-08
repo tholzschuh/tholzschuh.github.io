@@ -3,4 +3,4 @@
 	url = git@github.com:tholzschuh/gokarna.git
 [submodule "themes/hugo-shortcode-gallery"]
 	path = themes/hugo-shortcode-gallery
-	url = https://github.com/tholzschuh/hugo-shortcode-gallery.git
+	url = git@github.com:tholzschuh/hugo-shortcode-gallery.git
