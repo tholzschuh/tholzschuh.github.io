@@ -5,37 +5,105 @@ type: "page"
 showTableOfContents: true
 ---
 
-<hr style="width:100%">
+<hr>
 
 # research
 
-## misc
+## papers
+
 <div class="tabular-list">
-            <a class="tabular-list-item" href="https://github.com/tholzschuh/uni-files/raw/master/articles/reformulation.pdf">
-              <div class="title">An étale homotopy-theoretic reformulation of the Section Conjecture (2021)</div>
-              <p><em>Master's thesis.</em></p>
-            </a>
-            <a class="tabular-list-item" href="https://github.com/tholzschuh/uni-files/raw/master/articles/computing-simple-factors-of-certain-jacobian-varieties.pdf">
-              <div class="title">Computing simple factors of certain Jacobian varieties over finite fields (2019)</div>
-              <p><em>Bachelor's thesis.</em></p>
-            </a>
+            <div class="tabular-list-item" >
+              <div class="title">
+                <a href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/papers/etale_fundamental_fiber_sequence.pdf">
+                  The fundamental fiber sequence in étale homotopy theory
+                </a> 
+                <div class="year">
+                  2022
+                </div>
+              </div>
+              <p>
+                <em>with
+                  <a href="https://math.berkeley.edu/~phaine/#">
+                    Peter Haine
+                  </a> 
+                  and 
+                  <a href="https://homepages.uni-regensburg.de/~wos07573/index.html">
+                    Sebastian Wolf
+                  </a>
+                  .
+                </em> 
+              </p> 
+            </div>
 </div>
 
-{{< gallery match="images/*" sortOrder="desc" rowHeight="150" margins="5" thumbnailResizeOptions="600x600 q90 Lanczos" showExif=true previewType="blur" embedPreview="true" >}}
+## misc
+<div class="tabular-list">
+            <div class="tabular-list-item">
+              <div class="title">
+                <a href="https://github.com/tholzschuh/uni-files/raw/master/articles/reformulation.pdf">
+                  An étale homotopy-theoretic reformulation of the Section Conjecture
+                </a>    
+                <div class="year">
+                  2021
+                </div>
+              </div>
+              <p><em>Master's thesis.</em></p>
+            </div>
+            <div class="tabular-list-item">
+              <div class="title">
+                <a href="https://github.com/tholzschuh/uni-files/raw/master/articles/computing-simple-factors-of-certain-jacobian-varieties.pdf">
+                  Computing simple factors of certain Jacobian varieties over finite fields
+                </a>
+                <div class="year">
+                  2019
+                </div>
+              </div>
+              <p><em>Bachelor's thesis.</em></p>
+            </div>
+</div>
+
+<hr>
 
 # teaching
 
 <div class="tabular-list">
-            <a class="tabular-list-item" href="/math/teaching/winter22/galois-cohomology-1/">
-              <div class="title">Galois Cohomology 1 (Winter 2022)</div>
-	      <p><em>More details tba.</em></p>
-            </a>
-            <a class="tabular-list-item" href="/math/teaching/summer22/grothendieck-conjecture-affine-curves">
-              <div class="title">The Grothendieck conjecture for affine curves (Summer 2022)</div>
-	      <p>GAUS AG on Tamagawa's proof of the isomorphism conjecture for affine curves in anabelian geometry.</p>
-            </a>
-            <a class="tabular-list-item" href="/math/teaching/summer22/galois-and-fundamental-groups">
-              <div class="title">Galois and fundamental groups (Summer 2022)</div>
-	      <p>Seminar on Galois categories and the étale fundamental group.</p>
-            </a>
+            <div class="tabular-list-item">
+              <div class="title">
+                <a href="/math/teaching/winter22/galois-cohomology-1/">
+                  Galois Cohomology 1
+                </a> 
+                <div class="year">
+                  Winter 2022
+                </div>
+              </div>
+	            <p><em>More details tba.</em></p>
+            </div>
+            <div class="tabular-list-item">
+              <div class="title">
+                <a href="/math/teaching/summer22/grothendieck-conjecture-affine-curves">
+                  The Grothendieck conjecture for affine curves
+                </a>
+                <div class="year">
+                  Summer 2022
+                </div>
+              </div>
+              <a style="float: right" href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/teaching/GAUS-AG-TamagawaGC.pdf">
+                programme
+              </a>
+              <p><em>GAUS AG on Tamagawa's proof of the isomorphism conjecture for affine curves.</em></p>
+            </div>
+            <div class="tabular-list-item">
+              <div class="title">
+                <a href="/math/teaching/summer22/galois-and-fundamental-groups">
+                  Galois and fundamental groups
+                </a>
+                <div class="year">
+                  Summer 2022
+                </div>
+              </div>
+              <a style="float: right" href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/teaching/galfundgp.pdf">
+                programme
+              </a>
+	            <p><em>Seminar on Galois categories and the étale fundamental group.</em></p>
+            </div>
 </div>
