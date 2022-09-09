@@ -154,14 +154,24 @@ img {
 }
 
 .tabular-list .tabular-list-item .title {
-  font-weight: bold; color: var(--accent-color); margin-bottom: 10px;
+  font-weight: bold; 
+  color: var(--accent-color); 
+  margin-bottom: 10px;
 }
 
 .tabular-list .tabular-list-item .year {
   float: right;
+  color: var(--light-text-color);
 }
 
-.tabular-list .tabular-list-item p { margin: 0px; }
+.tabular-list .tabular-list-item .files {
+  float: right;
+  color: var(--accent-color);
+}
+
+.tabular-list .tabular-list-item p { 
+  margin: 0px; 
+}
 
 
 

@@ -124,11 +124,14 @@ video {
 }
 
 .tabular-list .tabular-list-item .title {
-  font-weight: bold; color: var(--accent-color); margin-bottom: 10px;
+  font-weight: bold; 
+  color: var(--accent-color); 
+  margin-bottom: 10px;
 }
 
 .tabular-list .tabular-list-item .year {
   float: right;
+  color: var(--dark-text-color);
 }
 
 .tabular-list .tabular-list-item p { margin: 0px; }
