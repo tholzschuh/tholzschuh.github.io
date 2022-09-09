@@ -5,11 +5,9 @@ type: "page"
 showTableOfContents: true
 ---
 
-<hr width="100%">
-
 # research
 
-## papers
+#### papers
 
 <div class="tabular-list">
             <div class="tabular-list-item" >
@@ -22,6 +20,11 @@ showTableOfContents: true
                 </div>
               </div>
               <p>
+                <div class="files">
+                  <a href="https://arxiv.org/abs/2209.03476">
+                    arXiv
+                  </a>
+                </div>
                 <em>with
                   <a href="https://math.berkeley.edu/~phaine/#">
                     Peter Haine
@@ -36,7 +39,7 @@ showTableOfContents: true
             </div>
 </div>
 
-## misc
+#### misc
 <div class="tabular-list">
             <div class="tabular-list-item">
               <div class="title">
@@ -62,8 +65,6 @@ showTableOfContents: true
             </div>
 </div>
 
-<hr style="width:100%">
-
 # teaching
 
 <div class="tabular-list">
@@ -87,10 +88,16 @@ showTableOfContents: true
                   Summer 2022
                 </div>
               </div>
-              <a style="float: right" href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/teaching/GAUS-AG-TamagawaGC.pdf">
-                programme
-              </a>
-              <p><em>GAUS AG on Tamagawa's proof of the isomorphism conjecture for affine curves.</em></p>
+              <p>
+                <div class="files">
+                    <a href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/teaching/GAUS-AG-TamagawaGC.pdf">
+                    programme
+                  </a>
+                </div>
+                <em>
+                  GAUS AG on Tamagawa's proof of the isomorphism conjecture for affine curves.
+                </em>
+              </p>
             </div>
             <div class="tabular-list-item">
               <div class="title">
@@ -101,9 +108,15 @@ showTableOfContents: true
                   Summer 2022
                 </div>
               </div>
-              <a style="float: right" href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/teaching/galfundgp.pdf">
-                programme
-              </a>
-	            <p><em>Seminar on Galois categories and the étale fundamental group.</em></p>
+	            <p>
+                <div class="files">
+                  <a href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/teaching/galfundgp.pdf">
+                    programme
+                  </a>
+                </div>
+                <em>
+                  Seminar on Galois categories and the étale fundamental group.
+                </em>
+              </p>
             </div>
 </div>
