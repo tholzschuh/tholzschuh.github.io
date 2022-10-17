@@ -39,6 +39,7 @@ showTableOfContents: true
             </div>
 </div>
 
+<!--
 #### misc
 <div class="tabular-list">
             <div class="tabular-list-item">
@@ -64,6 +65,7 @@ showTableOfContents: true
               <p><em>Bachelor's thesis.</em></p>
             </div>
 </div>
+-->
 
 # teaching
 
@@ -77,7 +79,7 @@ showTableOfContents: true
                   Winter 2022
                 </div>
               </div>
-	            <p><em>More details tba.</em></p>
+	            <p><em>Exercise Sessions: Wednesdays, 2:15pm in SR3 of the Mathematikon.</em></p>
             </div>
             <div class="tabular-list-item">
               <div class="title">
