@@ -79,7 +79,11 @@ showTableOfContents: true
                   Winter 2022
                 </div>
               </div>
-	            <p><em>Exercise Sessions: Wednesdays, 2:15pm in SR3 of the Mathematikon.</em></p>
+	            <p>
+                <em>
+                  Exercise Sessions: Wednesdays, 2:00pm in SR3 of the Mathematikon.
+                </em>
+              </p>
             </div>
             <div class="tabular-list-item">
               <div class="title">

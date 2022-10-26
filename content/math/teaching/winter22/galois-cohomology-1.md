@@ -8,7 +8,7 @@ During the winter term in 2022, I'm TAing the course [Galois Cohomology I](https
 <br>
 The exercise sheets will be accessible through the [relevant Mampf course](https://mampf.mathi.uni-heidelberg.de/lectures/142) on Wednesdays, and will be discussed in the exercise session of the subsequent week:
 
-* _When?_  Wednesday, 2:15 pm
+* _When?_  Wednesday, 2:00 pm
 * _Where?_  SR3
 * _First session:_  26.10.  
 * Contact: _tholzschuh@mathi.uni-heidelberg.de_
