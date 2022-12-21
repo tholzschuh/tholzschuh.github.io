@@ -13,7 +13,7 @@ showTableOfContents: true
             <div class="tabular-list-item" >
               <div class="title">
                 <a href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/papers/etale_fundamental_fiber_sequence.pdf">
-                  The fundamental fiber sequence in étale homotopy theory
+                  The fundamental fiber sequence in étale homotopy theory. 
                 </a> 
                 <div class="year">
                   2022
@@ -33,6 +33,11 @@ showTableOfContents: true
                   <a href="https://homepages.uni-regensburg.de/~wos07573/index.html">
                     Sebastian Wolf
                   </a>
+                  .
+                  To appear in
+                  <a href="https://academic.oup.com/imrn">
+                    IMRN
+                  </a> 
                   .
                 </em> 
               </p> 
