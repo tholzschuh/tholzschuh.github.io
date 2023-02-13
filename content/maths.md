@@ -34,11 +34,9 @@ showTableOfContents: true
                     Sebastian Wolf
                   </a>
                   .
-                  To appear in
-                  <a href="https://academic.oup.com/imrn">
+                  <a href="https://academic.oup.com/imrn/advance-article-abstract/doi/10.1093/imrn/rnad018/7034035?redirectedFrom=fulltext">
                     IMRN
                   </a> 
-                  .
                 </em> 
               </p> 
             </div>
