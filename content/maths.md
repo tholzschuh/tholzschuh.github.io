@@ -21,6 +21,10 @@ showTableOfContents: true
               </div>
               <p>
                 <div class="files">
+                  <a href="https://academic.oup.com/imrn/advance-article-abstract/doi/10.1093/imrn/rnad018/7034035?redirectedFrom=fulltext">
+                    IMRN
+                  </a> 
+                  &nbsp;
                   <a href="https://arxiv.org/abs/2209.03476">
                     arXiv
                   </a>
@@ -34,9 +38,6 @@ showTableOfContents: true
                     Sebastian Wolf
                   </a>
                   .
-                  <a href="https://academic.oup.com/imrn/advance-article-abstract/doi/10.1093/imrn/rnad018/7034035?redirectedFrom=fulltext">
-                    IMRN
-                  </a> 
                 </em> 
               </p> 
             </div>
