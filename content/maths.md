@@ -12,6 +12,39 @@ showTableOfContents: true
 <div class="tabular-list">
             <div class="tabular-list-item" >
               <div class="title">
+                <a href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/papers/nonabelian_basechange_etale_homotopy.pdf">
+                  Nonabelian basechange theorems & étale homotopy theory 
+                </a> 
+                <div class="year">
+                  2023
+                </div>
+              </div>
+              <p>
+                <!--
+                <div class="files">
+                  <a href="https://academic.oup.com/imrn/advance-article-abstract/doi/10.1093/imrn/rnad018/7034035?redirectedFrom=fulltext">
+                    IMRN
+                  </a> 
+                  &nbsp;
+                  <a href="https://arxiv.org/abs/2209.03476">
+                    arXiv
+                  </a>
+                </div>
+                -->
+                <em>with
+                  <a href="https://math.berkeley.edu/~phaine/#">
+                    Peter Haine
+                  </a> 
+                  and 
+                  <a href="https://homepages.uni-regensburg.de/~wos07573/index.html">
+                    Sebastian Wolf
+                  </a>
+                  .
+                </em> 
+              </p>
+            </div>
+            <div class="tabular-list-item" >
+              <div class="title">
                 <a href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/papers/etale_fundamental_fiber_sequence.pdf">
                   The fundamental fiber sequence in étale homotopy theory. 
                 </a> 
@@ -76,8 +109,23 @@ showTableOfContents: true
 <div class="tabular-list">
             <div class="tabular-list-item">
               <div class="title">
+                <a href="/math/teaching/summer23/galois-cohomology-2/">
+                  Galois Cohomology II
+                </a> 
+                <div class="year">
+                  Summer 2023
+                </div>
+              </div>
+	            <p>
+                <em>
+                  Exercise Sessions: tba.
+                </em>
+              </p>
+            </div>
+            <div class="tabular-list-item">
+              <div class="title">
                 <a href="/math/teaching/winter22/galois-cohomology-1/">
-                  Galois Cohomology 1
+                  Galois Cohomology I
                 </a> 
                 <div class="year">
                   Winter 2022
