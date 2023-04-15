@@ -39,7 +39,6 @@ showTableOfContents: true
                   <a href="https://homepages.uni-regensburg.de/~wos07573/index.html">
                     Sebastian Wolf
                   </a>
-                  .
                 </em> 
               </p>
             </div>
@@ -70,7 +69,6 @@ showTableOfContents: true
                   <a href="https://homepages.uni-regensburg.de/~wos07573/index.html">
                     Sebastian Wolf
                   </a>
-                  .
                 </em> 
               </p> 
             </div>
