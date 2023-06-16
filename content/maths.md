@@ -116,7 +116,7 @@ showTableOfContents: true
               </div>
 	            <p>
                 <em>
-                  Exercise Sessions: tba.
+                  Exercise Sessions: Wednesdays, 2:00pm in SR6 of Mathematikon.
                 </em>
               </p>
             </div>
