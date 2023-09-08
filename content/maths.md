@@ -136,7 +136,7 @@ showTableOfContents: true
                   </a>
                 </div>
                 <em>
-                GAUS-AG focusing on <a href="https://sites.google.com/view/bresciani/home">Bresciani</a>'s work on anabelian geometry using the étale fundamental gerbe.
+                GAUS AG on <a href="https://sites.google.com/view/bresciani/home">Bresciani</a>'s work on anabelian geometry using the étale fundamental gerbe.
                 </em>
               </p>
             </div>
