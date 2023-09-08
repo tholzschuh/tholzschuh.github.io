@@ -107,16 +107,36 @@ showTableOfContents: true
 <div class="tabular-list">
             <div class="tabular-list-item">
               <div class="title">
-                <a href="/math/teaching/summer23/galois-cohomology-2/">
-                  Galois Cohomology II
+                <a href="/math/teaching/winter23/etale-cohomology-1/">
+                  Étale Cohomology I
                 </a> 
                 <div class="year">
-                  Summer 2023
+                  Winter 2023
                 </div>
               </div>
 	            <p>
                 <em>
-                  Exercise Sessions: Wednesdays, 2:00pm in SR6 of Mathematikon.
+                  Exercise Sessions: <em>tba.</em>
+                </em>
+              </p>
+            </div>
+            <div class="tabular-list-item">
+              <div class="title">
+                <a href="/math/teaching/winter23/etale-fundamental-gerbe/">
+                  Applications of the étale fundamental gerbe to anabelian geometry
+                </a> 
+                <div class="year">
+                  Winter 2023
+                </div>
+              </div>
+              <p>
+                <div class="files">
+                  <a href="/math/teaching/winter23/etale-fundamental-gerbe/">
+                    tba
+                  </a>
+                </div>
+                <em>
+                GAUS-AG focusing on <a href="https://sites.google.com/view/bresciani/home">Bresciani</a>'s work on anabelian geometry using the étale fundamental gerbe.
                 </em>
               </p>
             </div>
