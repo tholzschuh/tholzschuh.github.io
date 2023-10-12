@@ -142,6 +142,21 @@ showTableOfContents: true
             </div>
             <div class="tabular-list-item">
               <div class="title">
+                <a href="/math/teaching/summer23/galois-cohomology-2/">
+                  Galois Cohomology II
+                </a> 
+                <div class="year">
+                  Summer 2023
+                </div>
+              </div>
+	            <p>
+                <em>
+                  Exercise Sessions: Wednesdays, 2:00pm in SR3 of the Mathematikon.
+                </em>
+              </p>
+            </div>
+            <div class="tabular-list-item">
+              <div class="title">
                 <a href="/math/teaching/winter22/galois-cohomology-1/">
                   Galois Cohomology I
                 </a> 
