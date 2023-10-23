@@ -116,7 +116,7 @@ showTableOfContents: true
               </div>
 	            <p>
                 <em>
-                  Exercise Sessions: <em>tba.</em>
+                  Exercise Sessions: Thursdays, 11:00am in SR3 of the Mathematikon.
                 </em>
               </p>
             </div>
@@ -151,7 +151,7 @@ showTableOfContents: true
               </div>
 	            <p>
                 <em>
-                  Exercise Sessions: Wednesdays, 2:00pm in SR3 of the Mathematikon.
+                  Exercise Sessions: Wednesdays, 2:00pm in SR6 of the Mathematikon.
                 </em>
               </p>
             </div>
