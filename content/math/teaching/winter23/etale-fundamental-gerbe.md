@@ -5,7 +5,7 @@ type: "teaching-post"
 ---
 
 Together with [Jakob Stix](https://www.uni-frankfurt.de/115666234/Prof__Dr__Jakob_Stix) and [Marcin Lara](https://marcin-lara.github.io/) I'm organizing a [GAUS-AG](https://crc326gaus.de/gaus-ag/) on the use of the étale fundamental gerbe in anabelian geometry.
-A detailed programme can be found *tba*.
+A detailed programme can be found [here](https://raw.githubusercontent.com/tholzschuh/uni-files/master/teaching/GAUS-AG-EtFdtlGerbe.pdf).
 
 * <em>When?</em> Roughly every two weeks on Wednesday.
 * <em>Where?</em> We're rotating between Heidelberg and Frankfurt.

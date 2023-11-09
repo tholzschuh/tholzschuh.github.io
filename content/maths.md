@@ -131,8 +131,8 @@ showTableOfContents: true
               </div>
               <p>
                 <div class="files">
-                  <a href="/math/teaching/winter23/etale-fundamental-gerbe/">
-                    tba
+                  <a href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/teaching/GAUS-AG-EtFdtlGerbe.pdf">
+                    programme
                   </a>
                 </div>
                 <em>
