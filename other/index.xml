@@ -1,1 +1,643 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>other on Tim Holzschuh</title><link>https://tholzschuh.github.io/other/</link><description>Recent content in other on Tim Holzschuh</description><generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="https://tholzschuh.github.io/other/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://tholzschuh.github.io/other/gallery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/other/gallery/</guid><description/></item><item><title>Blüdhaven</title><link>https://tholzschuh.github.io/other/bludhaven/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/other/bludhaven/</guid><description>History Blüdhaven was a former whaling town, which was officially incorporated as a &amp;ldquo;Commonwealth&amp;rdquo; in 1912. The town had a generally poor socio-economic populace, owing in part to failed efforts to transform itself into a manufacturing and shipping center.</description></item><item><title>Hydra</title><link>https://tholzschuh.github.io/other/hydra/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/other/hydra/</guid><description>Motto Cut off one head and two will take their place</description></item><item><title>Tatooine</title><link>https://tholzschuh.github.io/other/tatooine/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/other/tatooine/</guid><description>A long time ago in a galaxy far, far away&amp;hellip;. A project was planned, but never completed</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>other on Tim Holzschuh</title><link>https://tholzschuh.github.io/other/</link><description>Recent content in other on Tim Holzschuh</description><generator>Hugo</generator><language>en</language><atom:link href="https://tholzschuh.github.io/other/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://tholzschuh.github.io/other/gallery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/other/gallery/</guid><description>&lt;script src="https://tholzschuh.github.io/shortcode-gallery/jquery-3.6.0.min.js">&lt;/script>
+	
+	
+	
+		&lt;script src="https://tholzschuh.github.io/shortcode-gallery/lazy/jquery.lazy.min.js">&lt;/script>
+	
+
+	&lt;script src="https://tholzschuh.github.io/shortcode-gallery/swipebox/js/jquery.swipebox.min.js">&lt;/script>
+	&lt;link rel="stylesheet" href="https://tholzschuh.github.io/shortcode-gallery/swipebox/css/swipebox.min.css">
+
+	&lt;script src="https://tholzschuh.github.io/shortcode-gallery/justified_gallery/jquery.justifiedGallery.min.js">&lt;/script>
+	&lt;link rel="stylesheet" href="https://tholzschuh.github.io/shortcode-gallery/justified_gallery/justifiedGallery.min.css"/>
+
+
+&lt;style>
+	
+		.jg-entry img {
+			transition: transform .25s ease-in-out !important;
+		}
+
+		.jg-entry img:hover {
+			transform: scale(1.1);
+		}
+	
+
+	
+&lt;/style>
+
+
+
+
+
+&lt;div id="gallery-99e6555d14a7c28f0c29b458517804da-0-wrapper" class="gallery-wrapper">
+&lt;div id="gallery-99e6555d14a7c28f0c29b458517804da-0" class="justified-gallery">
+	
+		
+	
+		
+		
+				
+			
+			
+			
+				
+				
+			
+
+			
+			
+				
+					
+				
+			
+
+
+			
+			
+			
+
+			
+			
+
+
+			&lt;div>
+				
+				
+					
+				
+				&lt;a href="https://tholzschuh.github.io/other/gallery/images/DSC_0008.jpg" 
+					class="galleryImg"
+					
+						
+							title="金閣寺"
+						
+
+						
+							data-description=" + &lt;br/>mm f/ sec ISO "
+						
+
+						
+					
+					>
+					&lt;img			
+						width="600" height="413"
+
+						
+							
+							style="filter: blur(25px);"
+							
+								src="data:image/jpeg;base64,/9j/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4&amp;#43;JS5ESUM8SDc9PjsBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIABYAIAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&amp;#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&amp;#43;Tl5ufo6ery8/T19vf4&amp;#43;fr/2gAMAwEAAhEDEQA/AN&amp;#43;3aGH7Pe297AFaFVZEdVyMcgjocc49Oa0bDWbWFnkE8L7T1Eq4H615CNMdh5nnJHk7VQ8bj7YFTtoNypISSKXA5IY9fTnFZKpdXRTVnqevLr1hK&amp;#43;6TWLCId83C5H61di8SaE7eW&amp;#43;r2b&amp;#43;WM7hMg6e&amp;#43;f5V47FpF9A8jxP8uzkR4k3/7IHWqh0&amp;#43;/ltJLgQNHEn3iw28fjR7SXYdlYghlMoMbE5UAhh1Hpz61dt9RltZ1RyZA3Q9CfqKzrb/Wt/uCpZv8Aj6h&amp;#43;hrli3GdkbSScbsu/2pHNcFREwRuDk81YtNSXTw0VsrlZB&amp;#43;8EhDBh6YrFt/8AXj/eqyf9YK64arU5j//Z"
+							
+							class="lazy"
+							data-src="https://tholzschuh.github.io/other/gallery/images/DSC_0008_hu16983534529865693261.jpg"
+						
+
+						
+							
+						
+					>
+				&lt;/a>
+			&lt;/div>
+		
+	
+		
+	
+		
+		
+				
+			
+			
+			
+				
+				
+			
+
+			
+			
+				
+					
+				
+			
+
+
+			
+			
+			
+
+			
+			
+
+
+			&lt;div>
+				
+				
+					
+				
+				&lt;a href="https://tholzschuh.github.io/other/gallery/images/DSC_0007.jpg" 
+					class="galleryImg"
+					
+						
+							title="somewhere in the woods of brombach"
+						
+
+						
+							data-description=" + &lt;br/>mm f/ sec ISO "
+						
+
+						
+					
+					>
+					&lt;img			
+						width="600" height="450"
+
+						
+							
+							style="filter: blur(25px);"
+							
+								src="data:image/jpeg;base64,/9j/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4&amp;#43;JS5ESUM8SDc9PjsBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIABgAIAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&amp;#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&amp;#43;Tl5ufo6ery8/T19vf4&amp;#43;fr/2gAMAwEAAhEDEQA/AOP1O0ddOt5Mhg0xUY6kCr9tYTM7RRRHYJZApIJxyeP0FO1bxHbappdhZxacls0Eu4uHB3e2MV0um&amp;#43;L9GW0hNzpcm8StIzqR3fdiptaNkHLdnNizul1RcbY5VJ/hx/drFjiiD3KzyPhJCmVPYH8q6YeJ9OXxQdVvLZ7hXiKtGdp&amp;#43;Ynk/yrJg1LTlu7n/AESR45brzAMDhMEY/M5/Ci7DlMLMUckeC24Plu&amp;#43;MVZ81GkBB5AxVI/6xvqakT/WUyi2ZI3TLD5l74pu9ZHBGRjsahH3Hpyfe/wA&amp;#43;tAH/2Q=="
+							
+							class="lazy"
+							data-src="https://tholzschuh.github.io/other/gallery/images/DSC_0007_hu15963869385862690830.jpg"
+						
+
+						
+							
+						
+					>
+				&lt;/a>
+			&lt;/div>
+		
+	
+		
+	
+		
+		
+				
+			
+			
+			
+				
+				
+			
+
+			
+			
+				
+					
+				
+			
+
+
+			
+			
+			
+
+			
+			
+
+
+			&lt;div>
+				
+				
+					
+				
+				&lt;a href="https://tholzschuh.github.io/other/gallery/images/DSC_0006.jpg" 
+					class="galleryImg"
+					
+						
+							title="somewhere in the woods of schlierbach"
+						
+
+						
+							data-description=" + &lt;br/>mm f/ sec ISO "
+						
+
+						
+					
+					>
+					&lt;img			
+						width="600" height="452"
+
+						
+							
+							style="filter: blur(25px);"
+							
+								src="data:image/jpeg;base64,/9j/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4&amp;#43;JS5ESUM8SDc9PjsBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIABgAIAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&amp;#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&amp;#43;Tl5ufo6ery8/T19vf4&amp;#43;fr/2gAMAwEAAhEDEQA/AKi38IkV5F3MLXBx6j0/GtPTtRszqV0JdxiaJWw3XdtA6/hXFi6JnUuMfJs/DGasWmpSJcPIAW3hTwOlR7WV9gcEa8N7axtMjSK58t8deArjHt71Y&amp;#43;1WUlnJLJM63AkDIB65Geo/rXLPK6StmPGc8fX/ACaBPKQVII7/AKY/wodSQuUa0uWUsvI6n0FPRk5kA5b09Kgl/i&amp;#43;i1JF/qj9P6ULc1HiZWPzAfWpsRtyAMnuPpiqX8Qq3b/w0NAf/2Q=="
+							
+							class="lazy"
+							data-src="https://tholzschuh.github.io/other/gallery/images/DSC_0006_hu9728084019465886034.jpg"
+						
+
+						
+							
+						
+					>
+				&lt;/a>
+			&lt;/div>
+		
+	
+		
+	
+		
+		
+				
+			
+			
+			
+				
+				
+			
+
+			
+			
+				
+					
+				
+			
+
+
+			
+			
+			
+
+			
+			
+
+
+			&lt;div>
+				
+				
+					
+				
+				&lt;a href="https://tholzschuh.github.io/other/gallery/images/DSC_0005.jpg" 
+					class="galleryImg"
+					
+						
+							title="near wilhelmsfeld"
+						
+
+						
+							data-description=" + &lt;br/>mm f/ sec ISO "
+						
+
+						
+					
+					>
+					&lt;img			
+						width="600" height="452"
+
+						
+							
+							style="filter: blur(25px);"
+							
+								src="data:image/jpeg;base64,/9j/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4&amp;#43;JS5ESUM8SDc9PjsBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIABgAIAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&amp;#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&amp;#43;Tl5ufo6ery8/T19vf4&amp;#43;fr/2gAMAwEAAhEDEQA/ALMdsyjoatRW5IJJAwM4PBNVU8UWrcfYH4OCA44qePxHbdrB8jn7wz/KvW&amp;#43;sQPL9nI0rRSCQDtx/eYf1q1JBOyZ8huB95RmslfEdmy7jZkjpww/wpB4rt1/1dvPgf3X6VLqX1RSXc89vdWhZJWSI7hwkhOGHPU468VVstSvrdWuo5CsioQC3JwR1FUp/9VL9F/nU6f8AHmf&amp;#43;uRrx3tY7bCi8mvrp5Zp3Zy2WYtyR/nFMmMkEu6KQg7sHBxjPIqvZf62b6f1qzcfff/gNWtAsf//Z"
+							
+							class="lazy"
+							data-src="https://tholzschuh.github.io/other/gallery/images/DSC_0005_hu5406357944008420953.jpg"
+						
+
+						
+							
+						
+					>
+				&lt;/a>
+			&lt;/div>
+		
+	
+		
+	
+		
+		
+				
+			
+			
+			
+				
+				
+			
+
+			
+			
+				
+					
+				
+			
+
+
+			
+			
+			
+
+			
+			
+
+
+			&lt;div>
+				
+				
+					
+				
+				&lt;a href="https://tholzschuh.github.io/other/gallery/images/DSC_0004.jpg" 
+					class="galleryImg"
+					
+						
+							title="toter mann and chill"
+						
+
+						
+							data-description=" + &lt;br/>mm f/ sec ISO "
+						
+
+						
+					
+					>
+					&lt;img			
+						width="600" height="452"
+
+						
+							
+							style="filter: blur(25px);"
+							
+								src="data:image/jpeg;base64,/9j/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4&amp;#43;JS5ESUM8SDc9PjsBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIABgAIAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&amp;#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&amp;#43;Tl5ufo6ery8/T19vf4&amp;#43;fr/2gAMAwEAAhEDEQA/ALyaPEwyylD2xzVm1024hJaA717jGP0rjLf4kXSfLLaxYz2JH&amp;#43;NaVt8QoJHMa2irnklZBz&amp;#43;YrrVZs53Cx39hc3FoNiqQXHzcY/Wquqo06syjeT/d/wAKwE8bxuuTD2/vj/CqN946iQjyYi5I5y3AqG7alLsc1HcngGQnPSpDKy43FfUZPWqKfeh/GrF10i&amp;#43;leZY7rhPLPxJEYFVR8wkXj65qT7RbyKP3MLjHUYNQXf8Ax4TfQ/yqpZf6hP8AdFV0E3qf/9k="
+							
+							class="lazy"
+							data-src="https://tholzschuh.github.io/other/gallery/images/DSC_0004_hu3165727321495773183.jpg"
+						
+
+						
+							
+						
+					>
+				&lt;/a>
+			&lt;/div>
+		
+	
+		
+	
+		
+		
+				
+			
+			
+			
+				
+				
+			
+
+			
+			
+				
+					
+				
+			
+
+
+			
+			
+			
+
+			
+			
+
+
+			&lt;div>
+				
+				
+					
+				
+				&lt;a href="https://tholzschuh.github.io/other/gallery/images/DSC_0003.jpg" 
+					class="galleryImg"
+					
+						
+							title="toter mann"
+						
+
+						
+							data-description=" + &lt;br/>mm f/ sec ISO "
+						
+
+						
+					
+					>
+					&lt;img			
+						width="600" height="449"
+
+						
+							
+							style="filter: blur(25px);"
+							
+								src="data:image/jpeg;base64,/9j/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4&amp;#43;JS5ESUM8SDc9PjsBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIABgAIAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&amp;#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&amp;#43;Tl5ufo6ery8/T19vf4&amp;#43;fr/2gAMAwEAAhEDEQA/AO1tllNrAVyhJAYoPmBxir0ejLHdJLJcPIFI2tjn/wCtXktl4t14Qr9pnZG/ixsGffir3/Cd6tAgEMzu5OMsBge/ANdPNG3xIwabfws9O1KWxs42miuImlc7i0nz8A47dBXFXOuQLdPPbWa31xniWVSFX3Hf88Vxza74ulz5uuR7XbJULn8Pu9KVtT8QEn/ieYJIIAhHH6VzKpBbm7hLoZUeC3ySNwc4D5wal3hlBf5j1GCcH8Kp2H&amp;#43;tl&amp;#43;pqyn3I/wDdrmNUPjw6sA05yR96QDA9sU9meNWLjZnhQxO6mW/b/dFS6r/r4vr/AFpSepS2P//Z"
+							
+							class="lazy"
+							data-src="https://tholzschuh.github.io/other/gallery/images/DSC_0003_hu11625480109701749149.jpg"
+						
+
+						
+							
+						
+					>
+				&lt;/a>
+			&lt;/div>
+		
+	
+		
+	
+		
+		
+				
+			
+			
+			
+				
+				
+			
+
+			
+			
+				
+					
+				
+			
+
+
+			
+			
+			
+
+			
+			
+
+
+			&lt;div>
+				
+				
+					
+				
+				&lt;a href="https://tholzschuh.github.io/other/gallery/images/DSC_0002.jpg" 
+					class="galleryImg"
+					
+						
+							title="more wet leaves"
+						
+
+						
+							data-description=" + &lt;br/>mm f/ sec ISO "
+						
+
+						
+					
+					>
+					&lt;img			
+						width="600" height="452"
+
+						
+							
+							style="filter: blur(25px);"
+							
+								src="data:image/jpeg;base64,/9j/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4&amp;#43;JS5ESUM8SDc9PjsBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIABgAIAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&amp;#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&amp;#43;Tl5ufo6ery8/T19vf4&amp;#43;fr/2gAMAwEAAhEDEQA/AMw60iRzvDPDdylsO5/dk84wBjp1PWooJrzV3/d5t4Yx8wB&amp;#43;&amp;#43;f8AOPyqnYNp8uoLG0CxYJAC4w/PbH1rq7GCL7M9tp0LxiXjeVyqep/L&amp;#43;ledGmk20tzknK2iKzaIywoFQvkg53cj2FZup6Jexwh7kxloQf3SKFx6nPU/jXRXdzJpTxL80yuwU8DAHQk1heIdcW4tp4FheMEhX3AAr3yCKvkj03IjOXQ5u4nfR71vLCkKcqSM7R1GKv2Hjq7QH9w0pI4JbAPtgDj8KzPEP/H1J/uj&amp;#43;VZem9Pz/rVra5qopxuztL3xJdajbIsHmR5U8k/c3Yzj16evasVb8B2juj5jZ&amp;#43;9k/P8A596ks/8AUxfQVmXH/HyPo/8AKnsRFJux/9k="
+							
+							class="lazy"
+							data-src="https://tholzschuh.github.io/other/gallery/images/DSC_0002_hu8005185745399484858.jpg"
+						
+
+						
+							
+						
+					>
+				&lt;/a>
+			&lt;/div>
+		
+	
+		
+	
+		
+		
+				
+			
+			
+			
+				
+				
+			
+
+			
+			
+				
+					
+				
+			
+
+
+			
+			
+			
+				
+				
+				
+				
+				
+				
+				
+				
+			
+
+			
+			
+
+
+			&lt;div>
+				
+				
+					
+				
+				&lt;a href="https://tholzschuh.github.io/other/gallery/images/DSC_0001.jpg" 
+					class="galleryImg"
+					
+						
+							title="wet leaf"
+						
+
+						
+							data-description="Pixel 6 + Pixel 6 back camera 6.81mm f/1.85&lt;br/>681/100mm f/37/20 6087/1000000sec ISO "
+						
+
+						
+					
+					>
+					&lt;img			
+						width="600" height="452"
+
+						
+							
+							style="filter: blur(25px);"
+							
+								src="data:image/jpeg;base64,/9j/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4&amp;#43;JS5ESUM8SDc9PjsBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIABgAIAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&amp;#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&amp;#43;Tl5ufo6ery8/T19vf4&amp;#43;fr/2gAMAwEAAhEDEQA/AMTTdJF9A5WFtzH5WJxjHXHNWV0C8shM5hdolAUycdD2J/z2qrDfTRRLDaTxw7Dx5o5fJJJB/Hp&amp;#43;Vb0ErnSiklw/70/Nub7/AKVyx5Xucc9/I5y/s4FRpTPsIGOoGPzqr4U1ZdJ1NWmcfZ5hsc465PBo1yINbSOkpyhHyqeG&amp;#43;tUrS0zFEJVD5Odqj5h6f1qebldwSvHUs3MauGIm3Kpxu6cn0psd9fpAYoir4GACMmkf/j0f/roP5U6z/wCPn8qUd7GktEVXVruSRpGwSASi8YJFaGg7riRLVM72ZlWQnJXgcfTHNUYP9fL9BWj4T/5C0P8A11b/ANANVZOyFa9z/9k="
+							
+							class="lazy"
+							data-src="https://tholzschuh.github.io/other/gallery/images/DSC_0001_hu3446904058354960137.jpg"
+						
+
+						
+							
+						
+					>
+				&lt;/a>
+			&lt;/div>
+		
+	
+&lt;/div>
+&lt;/div>
+
+&lt;script>
+	if (!jQuery) {
+		alert("jquery is not loaded");
+	}
+
+	$( document ).ready(() => {
+		const gallery = $("#gallery-99e6555d14a7c28f0c29b458517804da-0");
+		
+
+		
+		let swipeboxInstance = null;
+
+		
+		
+		gallery.on('jg.complete', () => {
+			
+				
+				
+				$(() => {
+					$('.lazy').Lazy({
+						visibleOnly: true,
+						afterLoad: element => element.css({filter: "none", transition: "filter 1.0s ease-in-out"})
+					});
+				});
+			
+
+			swipeboxInstance = $('.galleryImg').swipebox(
+				jQuery.extend({},
+					{ }
+				)
+			);
+		});
+
+		
+		gallery.justifiedGallery({
+			rowHeight : "150",
+			margins : "5",
+			border : 0,
+			waitThumbnailsLoad : false,
+			lastRow : "justify",
+			captions : false,
+			
+			
+		});
+
+		
+		
+	});
+&lt;/script></description></item><item><title>Blüdhaven</title><link>https://tholzschuh.github.io/other/bludhaven/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/other/bludhaven/</guid><description>&lt;h3 id="history">History&lt;/h3>
+&lt;p>Blüdhaven was a former whaling town, which was officially incorporated as a &amp;ldquo;Commonwealth&amp;rdquo; in 1912. The town had a generally poor socio-economic populace, owing in part to failed efforts to transform itself into a manufacturing and shipping center.&lt;/p></description></item><item><title>Hydra</title><link>https://tholzschuh.github.io/other/hydra/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/other/hydra/</guid><description>&lt;h3 id="motto">Motto&lt;/h3>
+&lt;p>Cut off one head and two will take their place&lt;/p></description></item><item><title>Tatooine</title><link>https://tholzschuh.github.io/other/tatooine/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/other/tatooine/</guid><description>&lt;h3 id="a-long-time-ago-in-a-galaxy-far-far-away">A long time ago in a galaxy far, far away&amp;hellip;.&lt;/h3>
+&lt;p>A project was planned, but never completed&lt;/p></description></item></channel></rss>
