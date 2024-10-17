@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Math on Tim Holzschuh</title>
+    <link>http://localhost:1313/tags/math/</link>
+    <description>Recent content in Math on Tim Holzschuh</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 23 Aug 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/math/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using espanso to conveniently type unicode characters</title>
+      <link>http://localhost:1313/posts/espanso/</link>
+      <pubDate>Tue, 23 Aug 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/espanso/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://math.berkeley.edu/~phaine/&#34;&gt;Peter Haine&lt;/a&gt; recently made me aware of the possibility of using a &lt;code&gt;text expander&lt;/code&gt; to conveniently type unicode characters like Π, ⟶ and 𝒞 by typing things like &lt;code&gt;:Pi:&lt;/code&gt;, &lt;code&gt;:to:&lt;/code&gt; and &lt;code&gt;:scC:&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;After a quick search for available options, I decided to give &lt;a href=&#34;https://espanso.org/&#34;&gt;&lt;code&gt;espanso&lt;/code&gt;&lt;/a&gt; a try.&lt;/p&gt;&#xA;&lt;p&gt;While the official &lt;a href=&#34;https://hub.espanso.org/&#34;&gt;package hub&lt;/a&gt; offers some packages with snippets relevant to mathematicians, I wasn&amp;rsquo;t really satisfied with any of the available options and instead started adding all the symbols I might need manually.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

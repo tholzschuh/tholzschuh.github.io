@@ -12,6 +12,29 @@ showTableOfContents: true
 <div class="tabular-list">
             <div class="tabular-list-item" >
               <div class="title">
+                <a href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/papers/real-section-conjecture.pdf">
+                  On the generalised real Section Conjecture
+                </a> 
+                <div class="year">
+                  2024
+                </div>
+              </div>
+              <p>     
+                <div class="files">
+                  <!--
+                  <a href="https://academic.oup.com/imrn/advance-article-abstract/doi/10.1093/imrn/rnad018/7034035?redirectedFrom=fulltext">
+                    IMRN
+                  </a> 
+                  &nbsp;
+                  -->
+                </div>
+                <em>
+                  My doctoral thesis (preprint currently in preparation)
+                </em> 
+              </p>
+            </div>
+            <div class="tabular-list-item" >
+              <div class="title">
                 <a href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/papers/nonabelian_basechange_etale_homotopy.pdf">
                   Nonabelian basechange theorems & étale homotopy theory 
                 </a> 
@@ -39,6 +62,7 @@ showTableOfContents: true
                   <a href="https://homepages.uni-regensburg.de/~wos07573/index.html">
                     Sebastian Wolf
                   </a>
+                  (to appear in Journal of Topology)
                 </em> 
               </p>
             </div>
