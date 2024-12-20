@@ -87,12 +87,9 @@ The exercise sheets will be accessible through the &lt;a href="https://mampf.mat
  &lt;/div>
  &lt;p> 
  &lt;div class="files">
- &lt;!--
- &lt;a href="https://academic.oup.com/imrn/advance-article-abstract/doi/10.1093/imrn/rnad018/7034035?redirectedFrom=fulltext">
- IMRN
+ &lt;a href="https://londmathsoc.onlinelibrary.wiley.com/doi/full/10.1112/topo.70009">
+ J. Topol.
  &lt;/a> 
- &amp;nbsp;
- -->
  &lt;a href="https://arxiv.org/abs/2304.00938">
  arXiv
  &lt;/a>
@@ -105,7 +102,6 @@ The exercise sheets will be accessible through the &lt;a href="https://mampf.mat
  &lt;a href="https://homepages.uni-regensburg.de/~wos07573/index.html">
  Sebastian Wolf
  &lt;/a>
- (to appear in Journal of Topology)
  &lt;/em> 
  &lt;/p>
  &lt;/div>
@@ -152,7 +148,18 @@ The exercise sheets will be accessible through the &lt;a href="https://mampf.mat
  2021
  &lt;/div>
  &lt;/div>
- &lt;p>&lt;em>Master's thesis.&lt;/em>&lt;/p></description></item><item><title>The Grothendieck conjecture for affine curves</title><link>https://tholzschuh.github.io/math/teaching/summer22/grothendieck-conjecture-affine-curves/</link><pubDate>Thu, 07 Apr 2022 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/math/teaching/summer22/grothendieck-conjecture-affine-curves/</guid><description>&lt;p>Together with &lt;a href="https://www.uni-frankfurt.de/115666234/Prof__Dr__Jakob_Stix">Jakob Stix&lt;/a> I&amp;rsquo;m organizing a &lt;a href="https://crc326gaus.de/gaus-ag/">GAUS-AG&lt;/a> on Tamagawa&amp;rsquo;s seminal paper &lt;em>&lt;a href="https://www.cambridge.org/core/journals/compositio-mathematica/article/grothendieck-conjecture-for-affine-curves/1992BA14A2D63FA076DB39A34EC45E83">The Grothendieck conjecture for affine curves&lt;/a>&lt;/em>.
+ &lt;p>&lt;em>Master's thesis.&lt;/em>&lt;/p>
+ &lt;/div>
+ &lt;div class="tabular-list-item">
+ &lt;div class="title">
+ &lt;a href="https://github.com/tholzschuh/uni-files/raw/master/articles/computing-simple-factors-of-certain-jacobian-varieties.pdf">
+ Computing simple factors of certain Jacobian varieties over finite fields
+ &lt;/a>
+ &lt;div class="year">
+ 2019
+ &lt;/div>
+ &lt;/div>
+ &lt;p>&lt;em>Bachelor's thesis.&lt;/em>&lt;/p></description></item><item><title>The Grothendieck conjecture for affine curves</title><link>https://tholzschuh.github.io/math/teaching/summer22/grothendieck-conjecture-affine-curves/</link><pubDate>Thu, 07 Apr 2022 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/math/teaching/summer22/grothendieck-conjecture-affine-curves/</guid><description>&lt;p>Together with &lt;a href="https://www.uni-frankfurt.de/115666234/Prof__Dr__Jakob_Stix">Jakob Stix&lt;/a> I&amp;rsquo;m organizing a &lt;a href="https://crc326gaus.de/gaus-ag/">GAUS-AG&lt;/a> on Tamagawa&amp;rsquo;s seminal paper &lt;em>&lt;a href="https://www.cambridge.org/core/journals/compositio-mathematica/article/grothendieck-conjecture-for-affine-curves/1992BA14A2D63FA076DB39A34EC45E83">The Grothendieck conjecture for affine curves&lt;/a>&lt;/em>.
 A detailed programme can be found &lt;a href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/teaching/GAUS-AG-TamagawaGC.pdf">here&lt;/a>.&lt;/p>
 &lt;ul>
 &lt;li>&lt;em>When?&lt;/em> Roughly every two weeks on Wednesday.&lt;/li>
