@@ -12,6 +12,45 @@ showTableOfContents: true
 <div class="tabular-list">
             <div class="tabular-list-item" >
               <div class="title">
+                <a href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/papers/condensed_homotopy_type_of_a_scheme.pdf">
+                  The condensed homotopy type of a scheme
+                </a> 
+                <div class="year">
+                  2025
+                </div>
+              </div>
+              <p>     
+                <div class="files">
+<!--                  <a href="https://londmathsoc.onlinelibrary.wiley.com/doi/full/10.1112/topo.70009">
+                    J. Topol.
+                  </a>
+-->
+                  <a href="https://arxiv.org/abs/2510.07443">
+                    arXiv
+                  </a>
+                </div>
+                <em>with
+                  <a href="https://peterjhaine.github.io">
+                    Peter Haine
+                  </a>,
+                  <a href="https://marcin-lara.github.io">
+                    Marcin Lara
+                  </a>,
+                  <a href="https://www.mathematik.tu-darmstadt.de/fb/personal/details/catrin_mair.de.jsp">
+                    Catrin Mair
+                  </a>,
+                  <a href="https://louismartini.de">
+                    Louis Martini
+                  </a>
+                  , and 
+                  <a href="https://wos07573.github.io/index.html">
+                    Sebastian Wolf
+                  </a>
+                </em> 
+              </p>
+            </div>
+            <div class="tabular-list-item" >
+              <div class="title">
                 <a href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/papers/real-section-conjecture.pdf">
                   On the generalised real Section Conjecture
                 </a> 
@@ -52,11 +91,11 @@ showTableOfContents: true
                   </a>
                 </div>
                 <em>with
-                  <a href="https://math.berkeley.edu/~phaine/#">
+                  <a href="https://peterjhaine.github.io">
                     Peter Haine
                   </a> 
                   and 
-                  <a href="https://homepages.uni-regensburg.de/~wos07573/index.html">
+                  <a href="https://wos07573.github.io/index.html">
                     Sebastian Wolf
                   </a>
                 </em> 
@@ -82,11 +121,11 @@ showTableOfContents: true
                   </a>
                 </div>
                 <em>with
-                  <a href="https://math.berkeley.edu/~phaine/#">
+                  <a href="https://peterjhaine.github.io">
                     Peter Haine
                   </a> 
                   and 
-                  <a href="https://homepages.uni-regensburg.de/~wos07573/index.html">
+                  <a href="https://wos07573.github.io/index.html">
                     Sebastian Wolf
                   </a>
                 </em> 

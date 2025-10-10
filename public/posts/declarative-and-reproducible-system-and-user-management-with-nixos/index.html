@@ -187,7 +187,7 @@ The main purpose of this post is to collect all the things I learned while doing
 <p>As I usually use my laptop and my desktop for similar but not exactly identical tasks, I want the configuration to be as <em>modular</em> as possible:
 For example, there should be a module enabling and setting up LaTeX exactly as I use it: texlive with this and that package, my favorite text editor <a href="https://www.vim.org/download.php">vim</a> set up with additional plugins to support LaTeX syntax highlighting et cetera.</p>
 <p>If I now plan to use LaTeX on a computer, I essentially just want to add something like</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nix" data-lang="nix"><span style="display:flex;"><span>  custom<span style="color:#f92672">.</span>latex<span style="color:#f92672">.</span>enable <span style="color:#960050;background-color:#1e0010">=</span> <span style="color:#66d9ef">true</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nix" data-lang="nix"><span style="display:flex;"><span>  custom<span style="color:#f92672">.</span>latex<span style="color:#f92672">.</span>enable <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
 </span></span></code></pre></div><p>in my <code>configuration.nix</code> to have my LaTeX tools installed and customized exactly like I want them to be.</p>
 <p>For practical as well aesthetical reasons, I&rsquo;d like this configuration to be user-specific whenever possible:
 I don&rsquo;t want to configure <code>vim</code> globally on the whole machine, but just the user I&rsquo;m writing LaTeX code on.
@@ -410,7 +410,7 @@ For example, here&rsquo;s the content of the <code>latex.nix</code> file of abov
     
 
         </main><footer class="footer">
-    <span>&copy; 2024 Tim Holzschuh</span>
+    <span>&copy; 2025 Tim Holzschuh</span>
 </footer>
 </body>
 </html>
