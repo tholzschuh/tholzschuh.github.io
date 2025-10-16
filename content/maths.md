@@ -52,10 +52,10 @@ showTableOfContents: true
             <div class="tabular-list-item" >
               <div class="title">
                 <a href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/papers/real-section-conjecture.pdf">
-                  On the generalised real Section Conjecture
+                  On the real Section Conjecture in étale homotopy theory
                 </a> 
                 <div class="year">
-                  2024
+                  2025
                 </div>
               </div>
               <p>     
@@ -66,9 +66,12 @@ showTableOfContents: true
                   </a> 
                   &nbsp;
                   -->
+                  <a href="https://arxiv.org/abs/2510.13325">
+                    arXiv
+                  </a>
                 </div>
                 <em>
-                  My doctoral thesis (preprint currently in preparation)
+                  Preprint
                 </em> 
               </p>
             </div>
