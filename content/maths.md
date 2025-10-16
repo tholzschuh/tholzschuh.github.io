@@ -44,8 +44,13 @@ showTableOfContents: true
                   </a>
                   , and 
                   <a href="https://wos07573.github.io/index.html">
-                    Sebastian Wolf
+                    Sebastian Wolf.
                   </a>
+                  <br>
+                  With an appendix by 
+                  <a href="https://bogdanzavyalov.com">
+                    Bogdan Zavyalov
+                  </a>.
                 </em> 
               </p>
             </div>
