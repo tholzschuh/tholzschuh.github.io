@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Snippets on Tim Holzschuh</title><link>https://tholzschuh.github.io/tags/snippets/</link><description>Recent content in Snippets on Tim Holzschuh</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 11 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tholzschuh.github.io/tags/snippets/index.xml" rel="self" type="application/rss+xml"/><item><title>tikzcd snippets for VS Code</title><link>https://tholzschuh.github.io/posts/latex-snippets/</link><pubDate>Thu, 11 Aug 2022 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/posts/latex-snippets/</guid><description>&lt;p>For writing LaTeX documents, I use &lt;a href="https://code.visualstudio.com/">VS Code&lt;/a> together with the &lt;a href="https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop">&lt;code>latex-workshop&lt;/code>&lt;/a> extension.&lt;/p>
-&lt;p>One thing I particularly like about VS Code is its built-in support for &lt;a href="https://code.visualstudio.com/docs/editor/userdefinedsnippets">snippets&lt;/a> and how easy it is to implement your own.&lt;/p>
-&lt;p>As there aren&amp;rsquo;t any extensions in the &lt;a href="https://marketplace.visualstudio.com/vscode">marketplace&lt;/a> providing snippets for commutative diagrams, I implemented some using &lt;code>tikz-cd&lt;/code> on my own:&lt;/p>
-&lt;h1 id="demonstration">Demonstration&lt;/h1>
-&lt;p>This is what using the snippets looks like:&lt;/p>
-&lt;p>&lt;img src="https://tholzschuh.github.io/images/latex-snippets_demo.gif" alt="snippet">&lt;/p>
-&lt;details>
-&lt;summary>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Snippets on Tim Holzschuh</title><link>https://tholzschuh.github.io/tags/snippets/</link><description>Recent content in Snippets on Tim Holzschuh</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 11 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tholzschuh.github.io/tags/snippets/index.xml" rel="self" type="application/rss+xml"/><item><title>tikzcd snippets for VS Code</title><link>https://tholzschuh.github.io/posts/latex-snippets/</link><pubDate>Thu, 11 Aug 2022 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/posts/latex-snippets/</guid><description>&lt;p&gt;For writing LaTeX documents, I use &lt;a href="https://code.visualstudio.com/"&gt;VS Code&lt;/a&gt; together with the &lt;a href="https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop"&gt;&lt;code&gt;latex-workshop&lt;/code&gt;&lt;/a&gt; extension.&lt;/p&gt;
+&lt;p&gt;One thing I particularly like about VS Code is its built-in support for &lt;a href="https://code.visualstudio.com/docs/editor/userdefinedsnippets"&gt;snippets&lt;/a&gt; and how easy it is to implement your own.&lt;/p&gt;
+&lt;p&gt;As there aren&amp;rsquo;t any extensions in the &lt;a href="https://marketplace.visualstudio.com/vscode"&gt;marketplace&lt;/a&gt; providing snippets for commutative diagrams, I implemented some using &lt;code&gt;tikz-cd&lt;/code&gt; on my own:&lt;/p&gt;
+&lt;h1 id="demonstration"&gt;Demonstration&lt;/h1&gt;
+&lt;p&gt;This is what using the snippets looks like:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://tholzschuh.github.io/images/latex-snippets_demo.gif" alt="snippet"&gt;&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;
 Result:
-&lt;/summary>
-&lt;p>&lt;img src="https://tholzschuh.github.io/images/latex-snippets_diagram.png" alt="result">&lt;/p>
-&lt;/details>
-&lt;p>I cycle through the preselected &lt;code>X&lt;/code>, &lt;code>Y&lt;/code>, &lt;code>S&lt;/code>, &lt;code>T&lt;/code> by pressing &lt;code>tab&lt;/code>, which makes it very convenient to change the objects&amp;rsquo; names appearing in the diagram.&lt;/p></description></item></channel></rss>
+&lt;/summary&gt;
+&lt;p&gt;&lt;img src="https://tholzschuh.github.io/images/latex-snippets_diagram.png" alt="result"&gt;&lt;/p&gt;
+&lt;/details&gt;
+&lt;p&gt;I cycle through the preselected &lt;code&gt;X&lt;/code&gt;, &lt;code&gt;Y&lt;/code&gt;, &lt;code&gt;S&lt;/code&gt;, &lt;code&gt;T&lt;/code&gt; by pressing &lt;code&gt;tab&lt;/code&gt;, which makes it very convenient to change the objects&amp;rsquo; names appearing in the diagram.&lt;/p&gt;</description></item></channel></rss>

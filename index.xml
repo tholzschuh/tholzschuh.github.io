@@ -1,837 +1,211 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tim Holzschuh</title><link>https://tholzschuh.github.io/</link><description>Recent content on Tim Holzschuh</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 08 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tholzschuh.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Étale Cohomology I</title><link>https://tholzschuh.github.io/math/teaching/winter23/etale-cohomology-1/</link><pubDate>Fri, 08 Sep 2023 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/math/teaching/winter23/etale-cohomology-1/</guid><description>&lt;p>During the winter term in 2023, I&amp;rsquo;m TAing the course &lt;a href="https://www.mathi.uni-heidelberg.de/~schmidt/lehre/Alexander%20Schmidt%20%20Wintersemester%202023_24.htm">Étale Cohomology I&lt;/a> by &lt;a href="https://www.mathi.uni-heidelberg.de/~schmidt/">Prof. Alexander Schmidt&lt;/a>.
-&lt;br>
-The exercise sheets will be accessible through the &lt;a href="https://mampf.mathi.uni-heidelberg.de/lectures/167">relevant Mampf course&lt;/a>, and will be discussed in the exercise session of the subsequent week:&lt;/p>
-&lt;ul>
-&lt;li>&lt;em>When?&lt;/em> Thursday, 11:00 am&lt;/li>
-&lt;li>&lt;em>Where?&lt;/em> SR3&lt;/li>
-&lt;li>Contact: &lt;em>tholzschuh [at] mathi [dot] uni-heidelberg [dot] de&lt;/em>&lt;/li>
-&lt;/ul>
-&lt;p>You won&amp;rsquo;t have to hand in written solutions to the exercises, but I &lt;strong>strongly&lt;/strong> encourage you to spend a fair amount of time thinking about them in order to get the most out of the exercise sessions.&lt;/p></description></item><item><title>GAUS AG: Applications of the étale fundamental gerbe to anabelian geometry</title><link>https://tholzschuh.github.io/math/teaching/winter23/etale-fundamental-gerbe/</link><pubDate>Fri, 08 Sep 2023 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/math/teaching/winter23/etale-fundamental-gerbe/</guid><description>&lt;p>Together with &lt;a href="https://www.uni-frankfurt.de/115666234/Prof__Dr__Jakob_Stix">Jakob Stix&lt;/a> and &lt;a href="https://marcin-lara.github.io/">Marcin Lara&lt;/a> I&amp;rsquo;m organizing a &lt;a href="https://crc326gaus.de/gaus-ag/">GAUS-AG&lt;/a> on the use of the étale fundamental gerbe in anabelian geometry.
-A detailed programme can be found &lt;a href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/teaching/GAUS-AG-EtFdtlGerbe.pdf">here&lt;/a>.&lt;/p>
-&lt;ul>
-&lt;li>&lt;em>When?&lt;/em> Roughly every two weeks on Wednesday.&lt;/li>
-&lt;li>&lt;em>Where?&lt;/em> We&amp;rsquo;re rotating between Heidelberg and Frankfurt.&lt;/li>
-&lt;li>Check out the programme for specific dates and places.&lt;/li>
-&lt;li>Contact:
-&lt;ul>
-&lt;li>&lt;em>tholzschuh[at]mathi.uni-heidelberg.de&lt;/em>&lt;/li>
-&lt;li>&lt;em>lara[at]math.uni-frankfurt.de&lt;/em>&lt;/li>
-&lt;li>&lt;em>stix[at]math.uni-frankfurt.de&lt;/em>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul></description></item><item><title>Galois Cohomology II</title><link>https://tholzschuh.github.io/math/teaching/summer23/galois-cohomology-2/</link><pubDate>Mon, 03 Apr 2023 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/math/teaching/summer23/galois-cohomology-2/</guid><description>&lt;p>During the summer term in 2023, together with &lt;a href="https://www.mathi.uni-heidelberg.de/%7Emleonhardt/">Marius Leonhardt&lt;/a> I&amp;rsquo;m creating the exercises and TAing the course &lt;a href="https://mampf.mathi.uni-heidelberg.de/lectures/149">Galois Cohomology II&lt;/a> held by &lt;a href="https://www.unibw.de/timor/mitarbeiter/dr-alessandro-cobbe">Dr. Alessandro Cobbe&lt;/a>.
-&lt;br>
-The exercise sheets will be accessible through the &lt;a href="https://mampf.mathi.uni-heidelberg.de/lectures/149">relevant Mampf course&lt;/a> on Thursdays, and will be discussed in the exercise session of the subsequent week:&lt;/p>
-&lt;ul>
-&lt;li>&lt;em>When?&lt;/em> Wednesday, 2:00 pm&lt;/li>
-&lt;li>&lt;em>Where?&lt;/em> SR6&lt;/li>
-&lt;li>Contact: &lt;em>tholzschuh@mathi.uni-heidelberg.de&lt;/em>&lt;/li>
-&lt;/ul>
-&lt;p>You won&amp;rsquo;t have to hand in written solutions to the exercises, but I &lt;strong>strongly&lt;/strong> encourage you to spend a fair amount of time thinking about them in order to get the most out of the exercise sessions.&lt;/p></description></item><item><title>Using espanso to conveniently type unicode characters</title><link>https://tholzschuh.github.io/posts/espanso/</link><pubDate>Tue, 23 Aug 2022 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/posts/espanso/</guid><description>&lt;p>&lt;a href="https://math.berkeley.edu/~phaine/">Peter Haine&lt;/a> recently made me aware of the possibility of using a &lt;code>text expander&lt;/code> to conveniently type unicode characters like Π, ⟶ and 𝒞 by typing things like &lt;code>:Pi:&lt;/code>, &lt;code>:to:&lt;/code> and &lt;code>:scC:&lt;/code>.&lt;/p>
-&lt;p>After a quick search for available options, I decided to give &lt;a href="https://espanso.org/">&lt;code>espanso&lt;/code>&lt;/a> a try.&lt;/p>
-&lt;p>While the official &lt;a href="https://hub.espanso.org/">package hub&lt;/a> offers some packages with snippets relevant to mathematicians, I wasn&amp;rsquo;t really satisfied with any of the available options and instead started adding all the symbols I might need manually.&lt;/p></description></item><item><title>tikzcd snippets for VS Code</title><link>https://tholzschuh.github.io/posts/latex-snippets/</link><pubDate>Thu, 11 Aug 2022 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/posts/latex-snippets/</guid><description>&lt;p>For writing LaTeX documents, I use &lt;a href="https://code.visualstudio.com/">VS Code&lt;/a> together with the &lt;a href="https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop">&lt;code>latex-workshop&lt;/code>&lt;/a> extension.&lt;/p>
-&lt;p>One thing I particularly like about VS Code is its built-in support for &lt;a href="https://code.visualstudio.com/docs/editor/userdefinedsnippets">snippets&lt;/a> and how easy it is to implement your own.&lt;/p>
-&lt;p>As there aren&amp;rsquo;t any extensions in the &lt;a href="https://marketplace.visualstudio.com/vscode">marketplace&lt;/a> providing snippets for commutative diagrams, I implemented some using &lt;code>tikz-cd&lt;/code> on my own:&lt;/p>
-&lt;h1 id="demonstration">Demonstration&lt;/h1>
-&lt;p>This is what using the snippets looks like:&lt;/p>
-&lt;p>&lt;img src="https://tholzschuh.github.io/images/latex-snippets_demo.gif" alt="snippet">&lt;/p>
-&lt;details>
-&lt;summary>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tim Holzschuh</title><link>https://tholzschuh.github.io/</link><description>Recent content on Tim Holzschuh</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 08 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tholzschuh.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Étale Cohomology I</title><link>https://tholzschuh.github.io/math/teaching/winter23/etale-cohomology-1/</link><pubDate>Fri, 08 Sep 2023 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/math/teaching/winter23/etale-cohomology-1/</guid><description>&lt;p&gt;During the winter term in 2023, I&amp;rsquo;m TAing the course &lt;a href="https://www.mathi.uni-heidelberg.de/~schmidt/lehre/Alexander%20Schmidt%20%20Wintersemester%202023_24.htm"&gt;Étale Cohomology I&lt;/a&gt; by &lt;a href="https://www.mathi.uni-heidelberg.de/~schmidt/"&gt;Prof. Alexander Schmidt&lt;/a&gt;.
+&lt;br&gt;
+The exercise sheets will be accessible through the &lt;a href="https://mampf.mathi.uni-heidelberg.de/lectures/167"&gt;relevant Mampf course&lt;/a&gt;, and will be discussed in the exercise session of the subsequent week:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;When?&lt;/em&gt; Thursday, 11:00 am&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Where?&lt;/em&gt; SR3&lt;/li&gt;
+&lt;li&gt;Contact: &lt;em&gt;tholzschuh [at] mathi [dot] uni-heidelberg [dot] de&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You won&amp;rsquo;t have to hand in written solutions to the exercises, but I &lt;strong&gt;strongly&lt;/strong&gt; encourage you to spend a fair amount of time thinking about them in order to get the most out of the exercise sessions.&lt;/p&gt;</description></item><item><title>GAUS AG: Applications of the étale fundamental gerbe to anabelian geometry</title><link>https://tholzschuh.github.io/math/teaching/winter23/etale-fundamental-gerbe/</link><pubDate>Fri, 08 Sep 2023 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/math/teaching/winter23/etale-fundamental-gerbe/</guid><description>&lt;p&gt;Together with &lt;a href="https://www.uni-frankfurt.de/115666234/Prof__Dr__Jakob_Stix"&gt;Jakob Stix&lt;/a&gt; and &lt;a href="https://marcin-lara.github.io/"&gt;Marcin Lara&lt;/a&gt; I&amp;rsquo;m organizing a &lt;a href="https://crc326gaus.de/gaus-ag/"&gt;GAUS-AG&lt;/a&gt; on the use of the étale fundamental gerbe in anabelian geometry.
+A detailed programme can be found &lt;a href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/teaching/GAUS-AG-EtFdtlGerbe.pdf"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;When?&lt;/em&gt; Roughly every two weeks on Wednesday.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Where?&lt;/em&gt; We&amp;rsquo;re rotating between Heidelberg and Frankfurt.&lt;/li&gt;
+&lt;li&gt;Check out the programme for specific dates and places.&lt;/li&gt;
+&lt;li&gt;Contact:
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;tholzschuh[at]mathi.uni-heidelberg.de&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;lara[at]math.uni-frankfurt.de&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;stix[at]math.uni-frankfurt.de&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Galois Cohomology II</title><link>https://tholzschuh.github.io/math/teaching/summer23/galois-cohomology-2/</link><pubDate>Mon, 03 Apr 2023 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/math/teaching/summer23/galois-cohomology-2/</guid><description>&lt;p&gt;During the summer term in 2023, together with &lt;a href="https://www.mathi.uni-heidelberg.de/%7Emleonhardt/"&gt;Marius Leonhardt&lt;/a&gt; I&amp;rsquo;m creating the exercises and TAing the course &lt;a href="https://mampf.mathi.uni-heidelberg.de/lectures/149"&gt;Galois Cohomology II&lt;/a&gt; held by &lt;a href="https://www.unibw.de/timor/mitarbeiter/dr-alessandro-cobbe"&gt;Dr. Alessandro Cobbe&lt;/a&gt;.
+&lt;br&gt;
+The exercise sheets will be accessible through the &lt;a href="https://mampf.mathi.uni-heidelberg.de/lectures/149"&gt;relevant Mampf course&lt;/a&gt; on Thursdays, and will be discussed in the exercise session of the subsequent week:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;When?&lt;/em&gt; Wednesday, 2:00 pm&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Where?&lt;/em&gt; SR6&lt;/li&gt;
+&lt;li&gt;Contact: &lt;em&gt;tholzschuh@mathi.uni-heidelberg.de&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You won&amp;rsquo;t have to hand in written solutions to the exercises, but I &lt;strong&gt;strongly&lt;/strong&gt; encourage you to spend a fair amount of time thinking about them in order to get the most out of the exercise sessions.&lt;/p&gt;</description></item><item><title>Using espanso to conveniently type unicode characters</title><link>https://tholzschuh.github.io/posts/espanso/</link><pubDate>Tue, 23 Aug 2022 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/posts/espanso/</guid><description>&lt;p&gt;&lt;a href="https://math.berkeley.edu/~phaine/"&gt;Peter Haine&lt;/a&gt; recently made me aware of the possibility of using a &lt;code&gt;text expander&lt;/code&gt; to conveniently type unicode characters like Π, ⟶ and 𝒞 by typing things like &lt;code&gt;:Pi:&lt;/code&gt;, &lt;code&gt;:to:&lt;/code&gt; and &lt;code&gt;:scC:&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;After a quick search for available options, I decided to give &lt;a href="https://espanso.org/"&gt;&lt;code&gt;espanso&lt;/code&gt;&lt;/a&gt; a try.&lt;/p&gt;
+&lt;p&gt;While the official &lt;a href="https://hub.espanso.org/"&gt;package hub&lt;/a&gt; offers some packages with snippets relevant to mathematicians, I wasn&amp;rsquo;t really satisfied with any of the available options and instead started adding all the symbols I might need manually.&lt;/p&gt;</description></item><item><title>tikzcd snippets for VS Code</title><link>https://tholzschuh.github.io/posts/latex-snippets/</link><pubDate>Thu, 11 Aug 2022 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/posts/latex-snippets/</guid><description>&lt;p&gt;For writing LaTeX documents, I use &lt;a href="https://code.visualstudio.com/"&gt;VS Code&lt;/a&gt; together with the &lt;a href="https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop"&gt;&lt;code&gt;latex-workshop&lt;/code&gt;&lt;/a&gt; extension.&lt;/p&gt;
+&lt;p&gt;One thing I particularly like about VS Code is its built-in support for &lt;a href="https://code.visualstudio.com/docs/editor/userdefinedsnippets"&gt;snippets&lt;/a&gt; and how easy it is to implement your own.&lt;/p&gt;
+&lt;p&gt;As there aren&amp;rsquo;t any extensions in the &lt;a href="https://marketplace.visualstudio.com/vscode"&gt;marketplace&lt;/a&gt; providing snippets for commutative diagrams, I implemented some using &lt;code&gt;tikz-cd&lt;/code&gt; on my own:&lt;/p&gt;
+&lt;h1 id="demonstration"&gt;Demonstration&lt;/h1&gt;
+&lt;p&gt;This is what using the snippets looks like:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://tholzschuh.github.io/images/latex-snippets_demo.gif" alt="snippet"&gt;&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;
 Result:
-&lt;/summary>
-&lt;p>&lt;img src="https://tholzschuh.github.io/images/latex-snippets_diagram.png" alt="result">&lt;/p>
-&lt;/details>
-&lt;p>I cycle through the preselected &lt;code>X&lt;/code>, &lt;code>Y&lt;/code>, &lt;code>S&lt;/code>, &lt;code>T&lt;/code> by pressing &lt;code>tab&lt;/code>, which makes it very convenient to change the objects&amp;rsquo; names appearing in the diagram.&lt;/p></description></item><item><title>Galois Cohomology I</title><link>https://tholzschuh.github.io/math/teaching/winter22/galois-cohomology-1/</link><pubDate>Thu, 07 Jul 2022 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/math/teaching/winter22/galois-cohomology-1/</guid><description>&lt;p>During the winter term in 2022, I&amp;rsquo;m TAing the course &lt;a href="https://www.mathi.uni-heidelberg.de/~schmidt/lehre/Alexander%20Schmidt%20%20Wintersemester%202022_23.html">Galois Cohomology I&lt;/a> by &lt;a href="https://www.mathi.uni-heidelberg.de/~schmidt/">Prof. Alexander Schmidt&lt;/a>.
-&lt;br>
-The exercise sheets will be accessible through the &lt;a href="https://mampf.mathi.uni-heidelberg.de/lectures/142">relevant Mampf course&lt;/a> on Wednesdays, and will be discussed in the exercise session of the subsequent week:&lt;/p>
-&lt;ul>
-&lt;li>&lt;em>When?&lt;/em> Wednesday, 2:00 pm&lt;/li>
-&lt;li>&lt;em>Where?&lt;/em> SR3&lt;/li>
-&lt;li>&lt;em>First session:&lt;/em> 26.10.&lt;/li>
-&lt;li>Contact: &lt;em>tholzschuh@mathi.uni-heidelberg.de&lt;/em>&lt;/li>
-&lt;/ul>
-&lt;p>You won&amp;rsquo;t have to hand in written solutions to the exercises, but I &lt;strong>strongly&lt;/strong> encourage you to spend a fair amount of time thinking about them in order to get the most out of the exercise sessions.&lt;/p></description></item><item><title/><link>https://tholzschuh.github.io/maths/</link><pubDate>Wed, 06 Jul 2022 17:07:00 +0200</pubDate><guid>https://tholzschuh.github.io/maths/</guid><description>&lt;h1 id="research">research&lt;/h1>
-&lt;h4 id="papers">papers&lt;/h4>
-&lt;div class="tabular-list">
- &lt;div class="tabular-list-item" >
- &lt;div class="title">
- &lt;a href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/papers/real-section-conjecture.pdf">
- On the generalised real Section Conjecture
- &lt;/a> 
- &lt;div class="year">
- 2024
- &lt;/div>
- &lt;/div>
- &lt;p> 
- &lt;div class="files">
- &lt;!--
- &lt;a href="https://academic.oup.com/imrn/advance-article-abstract/doi/10.1093/imrn/rnad018/7034035?redirectedFrom=fulltext">
- IMRN
- &lt;/a> 
- &amp;nbsp;
- -->
- &lt;/div>
- &lt;em>
- My doctoral thesis (preprint currently in preparation)
- &lt;/em> 
- &lt;/p>
- &lt;/div>
- &lt;div class="tabular-list-item" >
- &lt;div class="title">
- &lt;a href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/papers/nonabelian_basechange_etale_homotopy.pdf">
- Nonabelian basechange theorems &amp; étale homotopy theory 
- &lt;/a> 
- &lt;div class="year">
- 2023
- &lt;/div>
- &lt;/div>
- &lt;p> 
- &lt;div class="files">
- &lt;a href="https://londmathsoc.onlinelibrary.wiley.com/doi/full/10.1112/topo.70009">
+&lt;/summary&gt;
+&lt;p&gt;&lt;img src="https://tholzschuh.github.io/images/latex-snippets_diagram.png" alt="result"&gt;&lt;/p&gt;
+&lt;/details&gt;
+&lt;p&gt;I cycle through the preselected &lt;code&gt;X&lt;/code&gt;, &lt;code&gt;Y&lt;/code&gt;, &lt;code&gt;S&lt;/code&gt;, &lt;code&gt;T&lt;/code&gt; by pressing &lt;code&gt;tab&lt;/code&gt;, which makes it very convenient to change the objects&amp;rsquo; names appearing in the diagram.&lt;/p&gt;</description></item><item><title>Galois Cohomology I</title><link>https://tholzschuh.github.io/math/teaching/winter22/galois-cohomology-1/</link><pubDate>Thu, 07 Jul 2022 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/math/teaching/winter22/galois-cohomology-1/</guid><description>&lt;p&gt;During the winter term in 2022, I&amp;rsquo;m TAing the course &lt;a href="https://www.mathi.uni-heidelberg.de/~schmidt/lehre/Alexander%20Schmidt%20%20Wintersemester%202022_23.html"&gt;Galois Cohomology I&lt;/a&gt; by &lt;a href="https://www.mathi.uni-heidelberg.de/~schmidt/"&gt;Prof. Alexander Schmidt&lt;/a&gt;.
+&lt;br&gt;
+The exercise sheets will be accessible through the &lt;a href="https://mampf.mathi.uni-heidelberg.de/lectures/142"&gt;relevant Mampf course&lt;/a&gt; on Wednesdays, and will be discussed in the exercise session of the subsequent week:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;When?&lt;/em&gt; Wednesday, 2:00 pm&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Where?&lt;/em&gt; SR3&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;First session:&lt;/em&gt; 26.10.&lt;/li&gt;
+&lt;li&gt;Contact: &lt;em&gt;tholzschuh@mathi.uni-heidelberg.de&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You won&amp;rsquo;t have to hand in written solutions to the exercises, but I &lt;strong&gt;strongly&lt;/strong&gt; encourage you to spend a fair amount of time thinking about them in order to get the most out of the exercise sessions.&lt;/p&gt;</description></item><item><title/><link>https://tholzschuh.github.io/maths/</link><pubDate>Wed, 06 Jul 2022 17:07:00 +0200</pubDate><guid>https://tholzschuh.github.io/maths/</guid><description>&lt;h1 id="research"&gt;research&lt;/h1&gt;
+&lt;h4 id="papers"&gt;papers&lt;/h4&gt;
+&lt;div class="tabular-list"&gt;
+ &lt;div class="tabular-list-item" &gt;
+ &lt;div class="title"&gt;
+ &lt;a href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/papers/condensed_homotopy_type_of_a_scheme.pdf"&gt;
+ The condensed homotopy type of a scheme
+ &lt;/a&gt; 
+ &lt;div class="year"&gt;
+ 2025
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;p&gt; 
+ &lt;div class="files"&gt;
+&lt;!-- &lt;a href="https://londmathsoc.onlinelibrary.wiley.com/doi/full/10.1112/topo.70009"&gt;
  J. Topol.
- &lt;/a> 
- &lt;a href="https://arxiv.org/abs/2304.00938">
+ &lt;/a&gt;
+--&gt;
+ &lt;a href="https://arxiv.org/abs/2510.07443"&gt;
  arXiv
- &lt;/a>
- &lt;/div>
- &lt;em>with
- &lt;a href="https://math.berkeley.edu/~phaine/#">
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;em&gt;with
+ &lt;a href="https://peterjhaine.github.io"&gt;
  Peter Haine
- &lt;/a> 
- and 
- &lt;a href="https://homepages.uni-regensburg.de/~wos07573/index.html">
+ &lt;/a&gt;,
+ &lt;a href="https://marcin-lara.github.io"&gt;
+ Marcin Lara
+ &lt;/a&gt;,
+ &lt;a href="https://www.mathematik.tu-darmstadt.de/fb/personal/details/catrin_mair.de.jsp"&gt;
+ Catrin Mair
+ &lt;/a&gt;,
+ &lt;a href="https://louismartini.de"&gt;
+ Louis Martini
+ &lt;/a&gt;
+ , and 
+ &lt;a href="https://wos07573.github.io/index.html"&gt;
  Sebastian Wolf
- &lt;/a>
- &lt;/em> 
- &lt;/p>
- &lt;/div>
- &lt;div class="tabular-list-item" >
- &lt;div class="title">
- &lt;a href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/papers/etale_fundamental_fiber_sequence.pdf">
- The fundamental fiber sequence in étale homotopy theory. 
- &lt;/a> 
- &lt;div class="year">
- 2022
- &lt;/div>
- &lt;/div>
- &lt;p>
- &lt;div class="files">
- &lt;a href="https://academic.oup.com/imrn/advance-article-abstract/doi/10.1093/imrn/rnad018/7034035?redirectedFrom=fulltext">
+ &lt;/a&gt;
+ &lt;/em&gt; 
+ &lt;/p&gt;
+ &lt;/div&gt;
+ &lt;div class="tabular-list-item" &gt;
+ &lt;div class="title"&gt;
+ &lt;a href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/papers/real-section-conjecture.pdf"&gt;
+ On the real Section Conjecture in étale homotopy theory
+ &lt;/a&gt; 
+ &lt;div class="year"&gt;
+ 2025
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;p&gt; 
+ &lt;div class="files"&gt;
+ &lt;!--
+ &lt;a href="https://academic.oup.com/imrn/advance-article-abstract/doi/10.1093/imrn/rnad018/7034035?redirectedFrom=fulltext"&gt;
  IMRN
- &lt;/a> 
+ &lt;/a&gt; 
  &amp;nbsp;
- &lt;a href="https://arxiv.org/abs/2209.03476">
+ --&gt;
+ &lt;a href="https://arxiv.org/abs/2510.13325"&gt;
  arXiv
- &lt;/a>
- &lt;/div>
- &lt;em>with
- &lt;a href="https://math.berkeley.edu/~phaine/#">
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;em&gt;
+ Preprint
+ &lt;/em&gt; 
+ &lt;/p&gt;
+ &lt;/div&gt;
+ &lt;div class="tabular-list-item" &gt;
+ &lt;div class="title"&gt;
+ &lt;a href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/papers/nonabelian_basechange_etale_homotopy.pdf"&gt;
+ Nonabelian basechange theorems &amp; étale homotopy theory 
+ &lt;/a&gt; 
+ &lt;div class="year"&gt;
+ 2023
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;p&gt; 
+ &lt;div class="files"&gt;
+ &lt;a href="https://londmathsoc.onlinelibrary.wiley.com/doi/full/10.1112/topo.70009"&gt;
+ J. Topol.
+ &lt;/a&gt; 
+ &lt;a href="https://arxiv.org/abs/2304.00938"&gt;
+ arXiv
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;em&gt;with
+ &lt;a href="https://peterjhaine.github.io"&gt;
  Peter Haine
- &lt;/a> 
+ &lt;/a&gt; 
  and 
- &lt;a href="https://homepages.uni-regensburg.de/~wos07573/index.html">
+ &lt;a href="https://wos07573.github.io/index.html"&gt;
  Sebastian Wolf
- &lt;/a>
- &lt;/em> 
- &lt;/p> 
- &lt;/div>
-&lt;/div>
-&lt;!--
-#### misc
-&lt;div class="tabular-list">
- &lt;div class="tabular-list-item">
- &lt;div class="title">
- &lt;a href="https://github.com/tholzschuh/uni-files/raw/master/articles/reformulation.pdf">
- An étale homotopy-theoretic reformulation of the Section Conjecture
- &lt;/a> 
- &lt;div class="year">
- 2021
- &lt;/div>
- &lt;/div>
- &lt;p>&lt;em>Master's thesis.&lt;/em>&lt;/p>
- &lt;/div>
- &lt;div class="tabular-list-item">
- &lt;div class="title">
- &lt;a href="https://github.com/tholzschuh/uni-files/raw/master/articles/computing-simple-factors-of-certain-jacobian-varieties.pdf">
- Computing simple factors of certain Jacobian varieties over finite fields
- &lt;/a>
- &lt;div class="year">
- 2019
- &lt;/div>
- &lt;/div>
- &lt;p>&lt;em>Bachelor's thesis.&lt;/em>&lt;/p></description></item><item><title>The Grothendieck conjecture for affine curves</title><link>https://tholzschuh.github.io/math/teaching/summer22/grothendieck-conjecture-affine-curves/</link><pubDate>Thu, 07 Apr 2022 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/math/teaching/summer22/grothendieck-conjecture-affine-curves/</guid><description>&lt;p>Together with &lt;a href="https://www.uni-frankfurt.de/115666234/Prof__Dr__Jakob_Stix">Jakob Stix&lt;/a> I&amp;rsquo;m organizing a &lt;a href="https://crc326gaus.de/gaus-ag/">GAUS-AG&lt;/a> on Tamagawa&amp;rsquo;s seminal paper &lt;em>&lt;a href="https://www.cambridge.org/core/journals/compositio-mathematica/article/grothendieck-conjecture-for-affine-curves/1992BA14A2D63FA076DB39A34EC45E83">The Grothendieck conjecture for affine curves&lt;/a>&lt;/em>.
-A detailed programme can be found &lt;a href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/teaching/GAUS-AG-TamagawaGC.pdf">here&lt;/a>.&lt;/p>
-&lt;ul>
-&lt;li>&lt;em>When?&lt;/em> Roughly every two weeks on Wednesday.&lt;/li>
-&lt;li>&lt;em>Where?&lt;/em> We&amp;rsquo;re rotating between Heidelberg and Frankfurt.&lt;/li>
-&lt;li>Check out the programme for specific dates and places.&lt;/li>
-&lt;li>Contact:
-&lt;ul>
-&lt;li>&lt;em>tholzschuh[at]mathi.uni-heidelberg.de&lt;/em>&lt;/li>
-&lt;li>&lt;em>stix[at]math.uni-frankfurt.de&lt;/em>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul></description></item><item><title>Galois and Fundamental Groups</title><link>https://tholzschuh.github.io/math/teaching/summer22/galois-and-fundamental-groups/</link><pubDate>Thu, 24 Feb 2022 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/math/teaching/summer22/galois-and-fundamental-groups/</guid><description>&lt;p>Together with &lt;a href="https://www.mathi.uni-heidelberg.de/~mleonhardt/">Marius Leonhardt&lt;/a> I&amp;rsquo;m supervising a seminar on &lt;em>Galois and fundamental groups&lt;/em>.
-&lt;br>
-The announcement (in german) is &lt;a href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/teaching/galfundgp.pdf">here&lt;/a>.
-If you&amp;rsquo;re interested, subscribe via &lt;a href="https://muesli.mathi.uni-heidelberg.de/user/login">MÜSLI&lt;/a> or send us an email.&lt;/p>
-&lt;ul>
-&lt;li>&lt;em>When?&lt;/em> Thursdays, 02:15pm - 03:45pm&lt;/li>
-&lt;li>&lt;em>Where?&lt;/em> Mathematikon, SR 6 (Group A) and SR 7 (Group B)&lt;/li>
-&lt;li>Contact:
-&lt;ul>
-&lt;li>&lt;em>tholzschuh[at]mathi.uni-heidelberg.de&lt;/em>&lt;/li>
-&lt;li>&lt;em>mleonhardt[at]mathi.uni-heidelberg.de&lt;/em>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;p>Handouts of all the talks can be found &lt;a href="https://mampf.mathi.uni-heidelberg.de/lectures/122">MaMpf&lt;/a>.&lt;/p></description></item><item><title>Declarative and reproducible system and user management with NixOS</title><link>https://tholzschuh.github.io/posts/declarative-and-reproducible-system-and-user-management-with-nixos/</link><pubDate>Wed, 14 Jul 2021 18:15:26 +0200</pubDate><guid>https://tholzschuh.github.io/posts/declarative-and-reproducible-system-and-user-management-with-nixos/</guid><description>&lt;p>I&amp;rsquo;ve been using &lt;a href="https://nixos.org/">NixOS&lt;/a> as my main operating system for quite some time now.&lt;/p>
-&lt;p>As I recently upgraded my computer equipment by acquiring a new laptop, I decided that it&amp;rsquo;s time to invest some more time into further capitalizing on the features of NixOS.
-The main purpose of this post is to collect all the things I learned while doing so in a single place so that I&amp;rsquo;ll always be able to look it up again if need be.&lt;/p></description></item><item><title>Using LaTeX with Hakyll</title><link>https://tholzschuh.github.io/posts/using-latex-with-hakyll/</link><pubDate>Tue, 12 Jan 2021 18:13:04 +0200</pubDate><guid>https://tholzschuh.github.io/posts/using-latex-with-hakyll/</guid><description>&lt;p>Since &lt;a href="https://jaspervdj.be/hakyll/">Hakyll&lt;/a> is tightly integrated with &lt;a href="https://pandoc.org/">Pandoc&lt;/a>, it&amp;rsquo;s easy to use LaTeX with Hakyll by enabling Pandoc&amp;rsquo;s LaTeX compile features.
-Most explanations I found online, like &lt;a href="http://travis.athougies.net/posts/2013-08-13-using-math-on-your-hakyll-blog.html">this&lt;/a> one, seem to be quite outdated though and they don&amp;rsquo;t work verbatim.&lt;/p>
-&lt;p>The basic idea still is to set up a custom pandoc compiler using the&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-haskell" data-lang="haskell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">pandocCompilerWith&lt;/span> &lt;span style="color:#f92672">::&lt;/span> &lt;span style="color:#66d9ef">ReaderOptions&lt;/span> &lt;span style="color:#f92672">-&amp;gt;&lt;/span> &lt;span style="color:#66d9ef">WriterOptions&lt;/span> &lt;span style="color:#f92672">-&amp;gt;&lt;/span> &lt;span style="color:#66d9ef">Compiler&lt;/span> (&lt;span style="color:#66d9ef">Item&lt;/span> &lt;span style="color:#66d9ef">String&lt;/span>)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>function, but the internals used in the &lt;code>WriterOptions&lt;/code> have changed.
-Specifically, enabling several extensions at once is no longer passed around as a &lt;code>Set Extension&lt;/code>. Instead, there is a new data type &lt;code>Extensions&lt;/code> introduced to handle several Extensions at once.&lt;/p></description></item><item><title/><link>https://tholzschuh.github.io/other/gallery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/other/gallery/</guid><description>&lt;script src="https://tholzschuh.github.io/shortcode-gallery/jquery-3.6.0.min.js">&lt;/script>
-	
-	
-	
-		&lt;script src="https://tholzschuh.github.io/shortcode-gallery/lazy/jquery.lazy.min.js">&lt;/script>
-	
-
-	&lt;script src="https://tholzschuh.github.io/shortcode-gallery/swipebox/js/jquery.swipebox.min.js">&lt;/script>
-	&lt;link rel="stylesheet" href="https://tholzschuh.github.io/shortcode-gallery/swipebox/css/swipebox.min.css">
-
-	&lt;script src="https://tholzschuh.github.io/shortcode-gallery/justified_gallery/jquery.justifiedGallery.min.js">&lt;/script>
-	&lt;link rel="stylesheet" href="https://tholzschuh.github.io/shortcode-gallery/justified_gallery/justifiedGallery.min.css"/>
-
-
-&lt;style>
-	
-		.jg-entry img {
-			transition: transform .25s ease-in-out !important;
-		}
-
-		.jg-entry img:hover {
-			transform: scale(1.1);
-		}
-	
-
-	
-&lt;/style>
-
-
-
-
-
-&lt;div id="gallery-99e6555d14a7c28f0c29b458517804da-0-wrapper" class="gallery-wrapper">
-&lt;div id="gallery-99e6555d14a7c28f0c29b458517804da-0" class="justified-gallery">
-	
-		
-	
-		
-		
-				
-			
-			
-			
-				
-				
-			
-
-			
-			
-				
-					
-				
-			
-
-
-			
-			
-			
-
-			
-			
-
-
-			&lt;div>
-				
-				
-					
-				
-				&lt;a href="https://tholzschuh.github.io/other/gallery/images/DSC_0008.jpg" 
-					class="galleryImg"
-					
-						
-							title="金閣寺"
-						
-
-						
-							data-description=" + &lt;br/>mm f/ sec ISO "
-						
-
-						
-					
-					>
-					&lt;img			
-						width="600" height="413"
-
-						
-							
-							style="filter: blur(25px);"
-							
-								src="data:image/jpeg;base64,/9j/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4&amp;#43;JS5ESUM8SDc9PjsBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIABYAIAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&amp;#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&amp;#43;Tl5ufo6ery8/T19vf4&amp;#43;fr/2gAMAwEAAhEDEQA/AN&amp;#43;3aGH7Pe297AFaFVZEdVyMcgjocc49Oa0bDWbWFnkE8L7T1Eq4H615CNMdh5nnJHk7VQ8bj7YFTtoNypISSKXA5IY9fTnFZKpdXRTVnqevLr1hK&amp;#43;6TWLCId83C5H61di8SaE7eW&amp;#43;r2b&amp;#43;WM7hMg6e&amp;#43;f5V47FpF9A8jxP8uzkR4k3/7IHWqh0&amp;#43;/ltJLgQNHEn3iw28fjR7SXYdlYghlMoMbE5UAhh1Hpz61dt9RltZ1RyZA3Q9CfqKzrb/Wt/uCpZv8Aj6h&amp;#43;hrli3GdkbSScbsu/2pHNcFREwRuDk81YtNSXTw0VsrlZB&amp;#43;8EhDBh6YrFt/8AXj/eqyf9YK64arU5j//Z"
-							
-							class="lazy"
-							data-src="https://tholzschuh.github.io/other/gallery/images/DSC_0008_hu16983534529865693261.jpg"
-						
-
-						
-							
-						
-					>
-				&lt;/a>
-			&lt;/div>
-		
-	
-		
-	
-		
-		
-				
-			
-			
-			
-				
-				
-			
-
-			
-			
-				
-					
-				
-			
-
-
-			
-			
-			
-
-			
-			
-
-
-			&lt;div>
-				
-				
-					
-				
-				&lt;a href="https://tholzschuh.github.io/other/gallery/images/DSC_0007.jpg" 
-					class="galleryImg"
-					
-						
-							title="somewhere in the woods of brombach"
-						
-
-						
-							data-description=" + &lt;br/>mm f/ sec ISO "
-						
-
-						
-					
-					>
-					&lt;img			
-						width="600" height="450"
-
-						
-							
-							style="filter: blur(25px);"
-							
-								src="data:image/jpeg;base64,/9j/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4&amp;#43;JS5ESUM8SDc9PjsBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIABgAIAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&amp;#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&amp;#43;Tl5ufo6ery8/T19vf4&amp;#43;fr/2gAMAwEAAhEDEQA/AOP1O0ddOt5Mhg0xUY6kCr9tYTM7RRRHYJZApIJxyeP0FO1bxHbappdhZxacls0Eu4uHB3e2MV0um&amp;#43;L9GW0hNzpcm8StIzqR3fdiptaNkHLdnNizul1RcbY5VJ/hx/drFjiiD3KzyPhJCmVPYH8q6YeJ9OXxQdVvLZ7hXiKtGdp&amp;#43;Ynk/yrJg1LTlu7n/AESR45brzAMDhMEY/M5/Ci7DlMLMUckeC24Plu&amp;#43;MVZ81GkBB5AxVI/6xvqakT/WUyi2ZI3TLD5l74pu9ZHBGRjsahH3Hpyfe/wA&amp;#43;tAH/2Q=="
-							
-							class="lazy"
-							data-src="https://tholzschuh.github.io/other/gallery/images/DSC_0007_hu15963869385862690830.jpg"
-						
-
-						
-							
-						
-					>
-				&lt;/a>
-			&lt;/div>
-		
-	
-		
-	
-		
-		
-				
-			
-			
-			
-				
-				
-			
-
-			
-			
-				
-					
-				
-			
-
-
-			
-			
-			
-
-			
-			
-
-
-			&lt;div>
-				
-				
-					
-				
-				&lt;a href="https://tholzschuh.github.io/other/gallery/images/DSC_0006.jpg" 
-					class="galleryImg"
-					
-						
-							title="somewhere in the woods of schlierbach"
-						
-
-						
-							data-description=" + &lt;br/>mm f/ sec ISO "
-						
-
-						
-					
-					>
-					&lt;img			
-						width="600" height="452"
-
-						
-							
-							style="filter: blur(25px);"
-							
-								src="data:image/jpeg;base64,/9j/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4&amp;#43;JS5ESUM8SDc9PjsBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIABgAIAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&amp;#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&amp;#43;Tl5ufo6ery8/T19vf4&amp;#43;fr/2gAMAwEAAhEDEQA/AKi38IkV5F3MLXBx6j0/GtPTtRszqV0JdxiaJWw3XdtA6/hXFi6JnUuMfJs/DGasWmpSJcPIAW3hTwOlR7WV9gcEa8N7axtMjSK58t8deArjHt71Y&amp;#43;1WUlnJLJM63AkDIB65Geo/rXLPK6StmPGc8fX/ACaBPKQVII7/AKY/wodSQuUa0uWUsvI6n0FPRk5kA5b09Kgl/i&amp;#43;i1JF/qj9P6ULc1HiZWPzAfWpsRtyAMnuPpiqX8Qq3b/w0NAf/2Q=="
-							
-							class="lazy"
-							data-src="https://tholzschuh.github.io/other/gallery/images/DSC_0006_hu9728084019465886034.jpg"
-						
-
-						
-							
-						
-					>
-				&lt;/a>
-			&lt;/div>
-		
-	
-		
-	
-		
-		
-				
-			
-			
-			
-				
-				
-			
-
-			
-			
-				
-					
-				
-			
-
-
-			
-			
-			
-
-			
-			
-
-
-			&lt;div>
-				
-				
-					
-				
-				&lt;a href="https://tholzschuh.github.io/other/gallery/images/DSC_0005.jpg" 
-					class="galleryImg"
-					
-						
-							title="near wilhelmsfeld"
-						
-
-						
-							data-description=" + &lt;br/>mm f/ sec ISO "
-						
-
-						
-					
-					>
-					&lt;img			
-						width="600" height="452"
-
-						
-							
-							style="filter: blur(25px);"
-							
-								src="data:image/jpeg;base64,/9j/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4&amp;#43;JS5ESUM8SDc9PjsBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIABgAIAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&amp;#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&amp;#43;Tl5ufo6ery8/T19vf4&amp;#43;fr/2gAMAwEAAhEDEQA/ALMdsyjoatRW5IJJAwM4PBNVU8UWrcfYH4OCA44qePxHbdrB8jn7wz/KvW&amp;#43;sQPL9nI0rRSCQDtx/eYf1q1JBOyZ8huB95RmslfEdmy7jZkjpww/wpB4rt1/1dvPgf3X6VLqX1RSXc89vdWhZJWSI7hwkhOGHPU468VVstSvrdWuo5CsioQC3JwR1FUp/9VL9F/nU6f8AHmf&amp;#43;uRrx3tY7bCi8mvrp5Zp3Zy2WYtyR/nFMmMkEu6KQg7sHBxjPIqvZf62b6f1qzcfff/gNWtAsf//Z"
-							
-							class="lazy"
-							data-src="https://tholzschuh.github.io/other/gallery/images/DSC_0005_hu5406357944008420953.jpg"
-						
-
-						
-							
-						
-					>
-				&lt;/a>
-			&lt;/div>
-		
-	
-		
-	
-		
-		
-				
-			
-			
-			
-				
-				
-			
-
-			
-			
-				
-					
-				
-			
-
-
-			
-			
-			
-
-			
-			
-
-
-			&lt;div>
-				
-				
-					
-				
-				&lt;a href="https://tholzschuh.github.io/other/gallery/images/DSC_0004.jpg" 
-					class="galleryImg"
-					
-						
-							title="toter mann and chill"
-						
-
-						
-							data-description=" + &lt;br/>mm f/ sec ISO "
-						
-
-						
-					
-					>
-					&lt;img			
-						width="600" height="452"
-
-						
-							
-							style="filter: blur(25px);"
-							
-								src="data:image/jpeg;base64,/9j/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4&amp;#43;JS5ESUM8SDc9PjsBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIABgAIAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&amp;#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&amp;#43;Tl5ufo6ery8/T19vf4&amp;#43;fr/2gAMAwEAAhEDEQA/ALyaPEwyylD2xzVm1024hJaA717jGP0rjLf4kXSfLLaxYz2JH&amp;#43;NaVt8QoJHMa2irnklZBz&amp;#43;YrrVZs53Cx39hc3FoNiqQXHzcY/Wquqo06syjeT/d/wAKwE8bxuuTD2/vj/CqN946iQjyYi5I5y3AqG7alLsc1HcngGQnPSpDKy43FfUZPWqKfeh/GrF10i&amp;#43;leZY7rhPLPxJEYFVR8wkXj65qT7RbyKP3MLjHUYNQXf8Ax4TfQ/yqpZf6hP8AdFV0E3qf/9k="
-							
-							class="lazy"
-							data-src="https://tholzschuh.github.io/other/gallery/images/DSC_0004_hu3165727321495773183.jpg"
-						
-
-						
-							
-						
-					>
-				&lt;/a>
-			&lt;/div>
-		
-	
-		
-	
-		
-		
-				
-			
-			
-			
-				
-				
-			
-
-			
-			
-				
-					
-				
-			
-
-
-			
-			
-			
-
-			
-			
-
-
-			&lt;div>
-				
-				
-					
-				
-				&lt;a href="https://tholzschuh.github.io/other/gallery/images/DSC_0003.jpg" 
-					class="galleryImg"
-					
-						
-							title="toter mann"
-						
-
-						
-							data-description=" + &lt;br/>mm f/ sec ISO "
-						
-
-						
-					
-					>
-					&lt;img			
-						width="600" height="449"
-
-						
-							
-							style="filter: blur(25px);"
-							
-								src="data:image/jpeg;base64,/9j/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4&amp;#43;JS5ESUM8SDc9PjsBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIABgAIAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&amp;#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&amp;#43;Tl5ufo6ery8/T19vf4&amp;#43;fr/2gAMAwEAAhEDEQA/AO1tllNrAVyhJAYoPmBxir0ejLHdJLJcPIFI2tjn/wCtXktl4t14Qr9pnZG/ixsGffir3/Cd6tAgEMzu5OMsBge/ANdPNG3xIwabfws9O1KWxs42miuImlc7i0nz8A47dBXFXOuQLdPPbWa31xniWVSFX3Hf88Vxza74ulz5uuR7XbJULn8Pu9KVtT8QEn/ieYJIIAhHH6VzKpBbm7hLoZUeC3ySNwc4D5wal3hlBf5j1GCcH8Kp2H&amp;#43;tl&amp;#43;pqyn3I/wDdrmNUPjw6sA05yR96QDA9sU9meNWLjZnhQxO6mW/b/dFS6r/r4vr/AFpSepS2P//Z"
-							
-							class="lazy"
-							data-src="https://tholzschuh.github.io/other/gallery/images/DSC_0003_hu11625480109701749149.jpg"
-						
-
-						
-							
-						
-					>
-				&lt;/a>
-			&lt;/div>
-		
-	
-		
-	
-		
-		
-				
-			
-			
-			
-				
-				
-			
-
-			
-			
-				
-					
-				
-			
-
-
-			
-			
-			
-
-			
-			
-
-
-			&lt;div>
-				
-				
-					
-				
-				&lt;a href="https://tholzschuh.github.io/other/gallery/images/DSC_0002.jpg" 
-					class="galleryImg"
-					
-						
-							title="more wet leaves"
-						
-
-						
-							data-description=" + &lt;br/>mm f/ sec ISO "
-						
-
-						
-					
-					>
-					&lt;img			
-						width="600" height="452"
-
-						
-							
-							style="filter: blur(25px);"
-							
-								src="data:image/jpeg;base64,/9j/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4&amp;#43;JS5ESUM8SDc9PjsBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIABgAIAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&amp;#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&amp;#43;Tl5ufo6ery8/T19vf4&amp;#43;fr/2gAMAwEAAhEDEQA/AMw60iRzvDPDdylsO5/dk84wBjp1PWooJrzV3/d5t4Yx8wB&amp;#43;&amp;#43;f8AOPyqnYNp8uoLG0CxYJAC4w/PbH1rq7GCL7M9tp0LxiXjeVyqep/L&amp;#43;ledGmk20tzknK2iKzaIywoFQvkg53cj2FZup6Jexwh7kxloQf3SKFx6nPU/jXRXdzJpTxL80yuwU8DAHQk1heIdcW4tp4FheMEhX3AAr3yCKvkj03IjOXQ5u4nfR71vLCkKcqSM7R1GKv2Hjq7QH9w0pI4JbAPtgDj8KzPEP/H1J/uj&amp;#43;VZem9Pz/rVra5qopxuztL3xJdajbIsHmR5U8k/c3Yzj16evasVb8B2juj5jZ&amp;#43;9k/P8A596ks/8AUxfQVmXH/HyPo/8AKnsRFJux/9k="
-							
-							class="lazy"
-							data-src="https://tholzschuh.github.io/other/gallery/images/DSC_0002_hu8005185745399484858.jpg"
-						
-
-						
-							
-						
-					>
-				&lt;/a>
-			&lt;/div>
-		
-	
-		
-	
-		
-		
-				
-			
-			
-			
-				
-				
-			
-
-			
-			
-				
-					
-				
-			
-
-
-			
-			
-			
-				
-				
-				
-				
-				
-				
-				
-				
-			
-
-			
-			
-
-
-			&lt;div>
-				
-				
-					
-				
-				&lt;a href="https://tholzschuh.github.io/other/gallery/images/DSC_0001.jpg" 
-					class="galleryImg"
-					
-						
-							title="wet leaf"
-						
-
-						
-							data-description="Pixel 6 + Pixel 6 back camera 6.81mm f/1.85&lt;br/>681/100mm f/37/20 6087/1000000sec ISO "
-						
-
-						
-					
-					>
-					&lt;img			
-						width="600" height="452"
-
-						
-							
-							style="filter: blur(25px);"
-							
-								src="data:image/jpeg;base64,/9j/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4&amp;#43;JS5ESUM8SDc9PjsBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIABgAIAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&amp;#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&amp;#43;Tl5ufo6ery8/T19vf4&amp;#43;fr/2gAMAwEAAhEDEQA/AMTTdJF9A5WFtzH5WJxjHXHNWV0C8shM5hdolAUycdD2J/z2qrDfTRRLDaTxw7Dx5o5fJJJB/Hp&amp;#43;Vb0ErnSiklw/70/Nub7/AKVyx5Xucc9/I5y/s4FRpTPsIGOoGPzqr4U1ZdJ1NWmcfZ5hsc465PBo1yINbSOkpyhHyqeG&amp;#43;tUrS0zFEJVD5Odqj5h6f1qebldwSvHUs3MauGIm3Kpxu6cn0psd9fpAYoir4GACMmkf/j0f/roP5U6z/wCPn8qUd7GktEVXVruSRpGwSASi8YJFaGg7riRLVM72ZlWQnJXgcfTHNUYP9fL9BWj4T/5C0P8A11b/ANANVZOyFa9z/9k="
-							
-							class="lazy"
-							data-src="https://tholzschuh.github.io/other/gallery/images/DSC_0001_hu3446904058354960137.jpg"
-						
-
-						
-							
-						
-					>
-				&lt;/a>
-			&lt;/div>
-		
-	
-&lt;/div>
-&lt;/div>
-
-&lt;script>
-	if (!jQuery) {
-		alert("jquery is not loaded");
-	}
-
-	$( document ).ready(() => {
-		const gallery = $("#gallery-99e6555d14a7c28f0c29b458517804da-0");
-		
-
-		
-		let swipeboxInstance = null;
-
-		
-		
-		gallery.on('jg.complete', () => {
-			
-				
-				
-				$(() => {
-					$('.lazy').Lazy({
-						visibleOnly: true,
-						afterLoad: element => element.css({filter: "none", transition: "filter 1.0s ease-in-out"})
-					});
-				});
-			
-
-			swipeboxInstance = $('.galleryImg').swipebox(
-				jQuery.extend({},
-					{ }
-				)
-			);
-		});
-
-		
-		gallery.justifiedGallery({
-			rowHeight : "150",
-			margins : "5",
-			border : 0,
-			waitThumbnailsLoad : false,
-			lastRow : "justify",
-			captions : false,
-			
-			
-		});
-
-		
-		
-	});
-&lt;/script></description></item><item><title>Blüdhaven</title><link>https://tholzschuh.github.io/other/bludhaven/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/other/bludhaven/</guid><description>&lt;h3 id="history">History&lt;/h3>
-&lt;p>Blüdhaven was a former whaling town, which was officially incorporated as a &amp;ldquo;Commonwealth&amp;rdquo; in 1912. The town had a generally poor socio-economic populace, owing in part to failed efforts to transform itself into a manufacturing and shipping center.&lt;/p></description></item><item><title>Hydra</title><link>https://tholzschuh.github.io/other/hydra/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/other/hydra/</guid><description>&lt;h3 id="motto">Motto&lt;/h3>
-&lt;p>Cut off one head and two will take their place&lt;/p></description></item><item><title>Tatooine</title><link>https://tholzschuh.github.io/other/tatooine/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/other/tatooine/</guid><description>&lt;h3 id="a-long-time-ago-in-a-galaxy-far-far-away">A long time ago in a galaxy far, far away&amp;hellip;.&lt;/h3>
-&lt;p>A project was planned, but never completed&lt;/p></description></item></channel></rss>
+ &lt;/a&gt;
+ &lt;/em&gt; 
+ &lt;/p&gt;
+ &lt;/div&gt;
+ &lt;div class="tabular-list-item" &gt;
+ &lt;div class="title"&gt;
+ &lt;a href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/papers/etale_fundamental_fiber_sequence.pdf"&gt;
+ The fundamental fiber sequence in étale homotopy theory. 
+ &lt;/a&gt; 
+ &lt;div class="year"&gt;
+ 2022
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;p&gt;
+ &lt;div class="files"&gt;
+ &lt;a href="https://academic.oup.com/imrn/advance-article-abstract/doi/10.1093/imrn/rnad018/7034035?redirectedFrom=fulltext"&gt;
+ IMRN
+ &lt;/a&gt; 
+ &amp;nbsp;
+ &lt;a href="https://arxiv.org/abs/2209.03476"&gt;
+ arXiv
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;em&gt;with
+ &lt;a href="https://peterjhaine.github.io"&gt;
+ Peter Haine
+ &lt;/a&gt; 
+ and 
+ &lt;a href="https://wos07573.github.io/index.html"&gt;
+ Sebastian Wolf
+ &lt;/a&gt;
+ &lt;/em&gt; 
+ &lt;/p&gt;</description></item><item><title>The Grothendieck conjecture for affine curves</title><link>https://tholzschuh.github.io/math/teaching/summer22/grothendieck-conjecture-affine-curves/</link><pubDate>Thu, 07 Apr 2022 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/math/teaching/summer22/grothendieck-conjecture-affine-curves/</guid><description>&lt;p&gt;Together with &lt;a href="https://www.uni-frankfurt.de/115666234/Prof__Dr__Jakob_Stix"&gt;Jakob Stix&lt;/a&gt; I&amp;rsquo;m organizing a &lt;a href="https://crc326gaus.de/gaus-ag/"&gt;GAUS-AG&lt;/a&gt; on Tamagawa&amp;rsquo;s seminal paper &lt;em&gt;&lt;a href="https://www.cambridge.org/core/journals/compositio-mathematica/article/grothendieck-conjecture-for-affine-curves/1992BA14A2D63FA076DB39A34EC45E83"&gt;The Grothendieck conjecture for affine curves&lt;/a&gt;&lt;/em&gt;.
+A detailed programme can be found &lt;a href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/teaching/GAUS-AG-TamagawaGC.pdf"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;When?&lt;/em&gt; Roughly every two weeks on Wednesday.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Where?&lt;/em&gt; We&amp;rsquo;re rotating between Heidelberg and Frankfurt.&lt;/li&gt;
+&lt;li&gt;Check out the programme for specific dates and places.&lt;/li&gt;
+&lt;li&gt;Contact:
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;tholzschuh[at]mathi.uni-heidelberg.de&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;stix[at]math.uni-frankfurt.de&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Galois and Fundamental Groups</title><link>https://tholzschuh.github.io/math/teaching/summer22/galois-and-fundamental-groups/</link><pubDate>Thu, 24 Feb 2022 00:00:00 +0000</pubDate><guid>https://tholzschuh.github.io/math/teaching/summer22/galois-and-fundamental-groups/</guid><description>&lt;p&gt;Together with &lt;a href="https://www.mathi.uni-heidelberg.de/~mleonhardt/"&gt;Marius Leonhardt&lt;/a&gt; I&amp;rsquo;m supervising a seminar on &lt;em&gt;Galois and fundamental groups&lt;/em&gt;.
+&lt;br&gt;
+The announcement (in german) is &lt;a href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/teaching/galfundgp.pdf"&gt;here&lt;/a&gt;.
+If you&amp;rsquo;re interested, subscribe via &lt;a href="https://muesli.mathi.uni-heidelberg.de/user/login"&gt;MÜSLI&lt;/a&gt; or send us an email.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;When?&lt;/em&gt; Thursdays, 02:15pm - 03:45pm&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Where?&lt;/em&gt; Mathematikon, SR 6 (Group A) and SR 7 (Group B)&lt;/li&gt;
+&lt;li&gt;Contact:
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;tholzschuh[at]mathi.uni-heidelberg.de&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;mleonhardt[at]mathi.uni-heidelberg.de&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Handouts of all the talks can be found &lt;a href="https://mampf.mathi.uni-heidelberg.de/lectures/122"&gt;MaMpf&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Declarative and reproducible system and user management with NixOS</title><link>https://tholzschuh.github.io/posts/declarative-and-reproducible-system-and-user-management-with-nixos/</link><pubDate>Wed, 14 Jul 2021 18:15:26 +0200</pubDate><guid>https://tholzschuh.github.io/posts/declarative-and-reproducible-system-and-user-management-with-nixos/</guid><description>&lt;p&gt;I&amp;rsquo;ve been using &lt;a href="https://nixos.org/"&gt;NixOS&lt;/a&gt; as my main operating system for quite some time now.&lt;/p&gt;
+&lt;p&gt;As I recently upgraded my computer equipment by acquiring a new laptop, I decided that it&amp;rsquo;s time to invest some more time into further capitalizing on the features of NixOS.
+The main purpose of this post is to collect all the things I learned while doing so in a single place so that I&amp;rsquo;ll always be able to look it up again if need be.&lt;/p&gt;</description></item><item><title>Using LaTeX with Hakyll</title><link>https://tholzschuh.github.io/posts/using-latex-with-hakyll/</link><pubDate>Tue, 12 Jan 2021 18:13:04 +0200</pubDate><guid>https://tholzschuh.github.io/posts/using-latex-with-hakyll/</guid><description>&lt;p&gt;Since &lt;a href="https://jaspervdj.be/hakyll/"&gt;Hakyll&lt;/a&gt; is tightly integrated with &lt;a href="https://pandoc.org/"&gt;Pandoc&lt;/a&gt;, it&amp;rsquo;s easy to use LaTeX with Hakyll by enabling Pandoc&amp;rsquo;s LaTeX compile features.
+Most explanations I found online, like &lt;a href="http://travis.athougies.net/posts/2013-08-13-using-math-on-your-hakyll-blog.html"&gt;this&lt;/a&gt; one, seem to be quite outdated though and they don&amp;rsquo;t work verbatim.&lt;/p&gt;
+&lt;p&gt;The basic idea still is to set up a custom pandoc compiler using the&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-haskell" data-lang="haskell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;pandocCompilerWith&lt;/span&gt; &lt;span style="color:#f92672"&gt;::&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;ReaderOptions&lt;/span&gt; &lt;span style="color:#f92672"&gt;-&amp;gt;&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;WriterOptions&lt;/span&gt; &lt;span style="color:#f92672"&gt;-&amp;gt;&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;Compiler&lt;/span&gt; (&lt;span style="color:#66d9ef"&gt;Item&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;String&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;function, but the internals used in the &lt;code&gt;WriterOptions&lt;/code&gt; have changed.
+Specifically, enabling several extensions at once is no longer passed around as a &lt;code&gt;Set Extension&lt;/code&gt;. Instead, there is a new data type &lt;code&gt;Extensions&lt;/code&gt; introduced to handle several Extensions at once.&lt;/p&gt;</description></item></channel></rss>
