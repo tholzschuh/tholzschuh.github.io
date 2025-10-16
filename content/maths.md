@@ -49,8 +49,8 @@ showTableOfContents: true
                   <br>
                   With an appendix by 
                   <a href="https://bogdanzavyalov.com">
-                    Bogdan Zavyalov
-                  </a>.
+                    Bogdan Zavyalov.
+                  </a>
                 </em> 
               </p>
             </div>
@@ -76,7 +76,7 @@ showTableOfContents: true
                   </a>
                 </div>
                 <em>
-                  Preprint
+                  Preprint.
                 </em> 
               </p>
             </div>
@@ -104,7 +104,7 @@ showTableOfContents: true
                   </a> 
                   and 
                   <a href="https://wos07573.github.io/index.html">
-                    Sebastian Wolf
+                    Sebastian Wolf.
                   </a>
                 </em> 
               </p>
@@ -134,7 +134,7 @@ showTableOfContents: true
                   </a> 
                   and 
                   <a href="https://wos07573.github.io/index.html">
-                    Sebastian Wolf
+                    Sebastian Wolf.
                   </a>
                 </em> 
               </p> 
