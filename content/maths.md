@@ -51,6 +51,7 @@ showTableOfContents: true
                   <a href="https://bogdanzavyalov.com">
                     Bogdan Zavyalov.
                   </a>
+                  Submitted.
                 </em> 
               </p>
             </div>
@@ -76,7 +77,7 @@ showTableOfContents: true
                   </a>
                 </div>
                 <em>
-                  Preprint.
+                 Submitted.
                 </em> 
               </p>
             </div>
