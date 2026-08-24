@@ -35,8 +35,8 @@ showTableOfContents: true
                   </a>
                   and
                   <a href="https://www.math.uni-frankfurt.de/~stix/publikationen.html">
-                    Jakob Stix
-                  </a>.
+                    Jakob Stix.
+                  </a>
                   <!--Submitted.-->
                 </em> 
               </p>
