@@ -1,7 +1,7 @@
 baseURL                = "https://tholzschuh.github.io/"
 title                  = "Tim Holzschuh"
 theme                  = ["gokarna", "hugo-shortcode-gallery"]
-languageCode           = "en"
+locale                 = "en"
 defaultContentLanguage = "en"
 enableEmoji            = true
 enableRobotsTXT        = true

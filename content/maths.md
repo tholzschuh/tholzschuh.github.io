@@ -12,6 +12,37 @@ showTableOfContents: true
 <div class="tabular-list">
             <div class="tabular-list-item" >
               <div class="title">
+                <a href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/papers/anabfam.pdf">
+                  Anabelian Geometry in Families
+                </a> 
+                <div class="year">
+                  2026
+                </div>
+              </div>
+              <p>     
+                <div class="files">
+<!--                  <a href="https://londmathsoc.onlinelibrary.wiley.com/doi/full/10.1112/topo.70009">
+                    J. Topol.
+                  </a>
+-->
+                  <a href="https://arxiv.org/abs/2608.21232">
+                    arXiv
+                  </a>
+                </div>
+                <em>with
+                  <a href="https://www.mathi.uni-heidelberg.de/~schmidt/">
+                    Alexander Schmidt
+                  </a>
+                  and
+                  <a href="https://www.math.uni-frankfurt.de/~stix/publikationen.html">
+                    Jakob Stix
+                  </a>.
+                  <!--Submitted.-->
+                </em> 
+              </p>
+            </div>
+            <div class="tabular-list-item" >
+              <div class="title">
                 <a href="https://raw.githubusercontent.com/tholzschuh/uni-files/master/papers/condensed_homotopy_type_of_a_scheme.pdf">
                   The condensed homotopy type of a scheme
                 </a> 

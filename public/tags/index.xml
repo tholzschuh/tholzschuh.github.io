@@ -1,89 +1,94 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Tags on Tim Holzschuh</title>
-    <link>http://localhost:1313/tags/</link>
-    <description>Recent content in Tags on Tim Holzschuh</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 23 Aug 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Espanso</title>
-      <link>http://localhost:1313/tags/espanso/</link>
-      <pubDate>Tue, 23 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/espanso/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Math</title>
-      <link>http://localhost:1313/tags/math/</link>
-      <pubDate>Tue, 23 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/math/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Unicode</title>
-      <link>http://localhost:1313/tags/unicode/</link>
-      <pubDate>Tue, 23 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/unicode/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Latex</title>
-      <link>http://localhost:1313/tags/latex/</link>
-      <pubDate>Thu, 11 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/latex/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Snippets</title>
-      <link>http://localhost:1313/tags/snippets/</link>
-      <pubDate>Thu, 11 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/snippets/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Tikzcd</title>
-      <link>http://localhost:1313/tags/tikzcd/</link>
-      <pubDate>Thu, 11 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/tikzcd/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Vscode</title>
-      <link>http://localhost:1313/tags/vscode/</link>
-      <pubDate>Thu, 11 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/vscode/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Nix</title>
-      <link>http://localhost:1313/tags/nix/</link>
-      <pubDate>Wed, 14 Jul 2021 18:15:26 +0200</pubDate>
-      <guid>http://localhost:1313/tags/nix/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Nixos</title>
-      <link>http://localhost:1313/tags/nixos/</link>
-      <pubDate>Wed, 14 Jul 2021 18:15:26 +0200</pubDate>
-      <guid>http://localhost:1313/tags/nixos/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Hakyll</title>
-      <link>http://localhost:1313/tags/hakyll/</link>
-      <pubDate>Tue, 12 Jan 2021 18:13:04 +0200</pubDate>
-      <guid>http://localhost:1313/tags/hakyll/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Haskell</title>
-      <link>http://localhost:1313/tags/haskell/</link>
-      <pubDate>Tue, 12 Jan 2021 18:13:04 +0200</pubDate>
-      <guid>http://localhost:1313/tags/haskell/</guid>
-      <description></description>
-    </item>
-  </channel>
+	<channel>
+		<title>Tags on Tim Holzschuh</title>
+		<link>https://tholzschuh.github.io/tags/</link>
+		<description>Recent content in Tags on Tim Holzschuh</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 23 Aug 2022 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://tholzschuh.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Espanso</title>
+				<link>https://tholzschuh.github.io/tags/espanso/</link>
+				<pubDate>Tue, 23 Aug 2022 00:00:00 +0000</pubDate>
+				<guid>https://tholzschuh.github.io/tags/espanso/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Math</title>
+				<link>https://tholzschuh.github.io/tags/math/</link>
+				<pubDate>Tue, 23 Aug 2022 00:00:00 +0000</pubDate>
+				<guid>https://tholzschuh.github.io/tags/math/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Unicode</title>
+				<link>https://tholzschuh.github.io/tags/unicode/</link>
+				<pubDate>Tue, 23 Aug 2022 00:00:00 +0000</pubDate>
+				<guid>https://tholzschuh.github.io/tags/unicode/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Latex</title>
+				<link>https://tholzschuh.github.io/tags/latex/</link>
+				<pubDate>Thu, 11 Aug 2022 00:00:00 +0000</pubDate>
+				<guid>https://tholzschuh.github.io/tags/latex/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Snippets</title>
+				<link>https://tholzschuh.github.io/tags/snippets/</link>
+				<pubDate>Thu, 11 Aug 2022 00:00:00 +0000</pubDate>
+				<guid>https://tholzschuh.github.io/tags/snippets/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Tikzcd</title>
+				<link>https://tholzschuh.github.io/tags/tikzcd/</link>
+				<pubDate>Thu, 11 Aug 2022 00:00:00 +0000</pubDate>
+				<guid>https://tholzschuh.github.io/tags/tikzcd/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Vscode</title>
+				<link>https://tholzschuh.github.io/tags/vscode/</link>
+				<pubDate>Thu, 11 Aug 2022 00:00:00 +0000</pubDate>
+				<guid>https://tholzschuh.github.io/tags/vscode/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Nix</title>
+				<link>https://tholzschuh.github.io/tags/nix/</link>
+				<pubDate>Wed, 14 Jul 2021 18:15:26 +0200</pubDate>
+				<guid>https://tholzschuh.github.io/tags/nix/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Nixos</title>
+				<link>https://tholzschuh.github.io/tags/nixos/</link>
+				<pubDate>Wed, 14 Jul 2021 18:15:26 +0200</pubDate>
+				<guid>https://tholzschuh.github.io/tags/nixos/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Hakyll</title>
+				<link>https://tholzschuh.github.io/tags/hakyll/</link>
+				<pubDate>Tue, 12 Jan 2021 18:13:04 +0200</pubDate>
+				<guid>https://tholzschuh.github.io/tags/hakyll/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Haskell</title>
+				<link>https://tholzschuh.github.io/tags/haskell/</link>
+				<pubDate>Tue, 12 Jan 2021 18:13:04 +0200</pubDate>
+				<guid>https://tholzschuh.github.io/tags/haskell/</guid>
+				<description></description>
+			</item>
+	</channel>
 </rss>
