@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #0982f0;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Your Prompt Is Their Theorem</title>
+    <meta name="description" content="What the Navier–Stokes affair teaches us about the infrastructure of mathematical research">
+    <meta name="keywords" content='blog, academic, mathematics, functional programming, nixos, nix, haskelly, hakyll, ai, privacy, open-weights, tee'>
+
+    <meta property="og:url" content="http://localhost:1313/posts/trustworty-ai/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Your Prompt Is Their Theorem">
+    <meta property="og:description" content="What the Navier–Stokes affair teaches us about the infrastructure of mathematical research">
+    <meta property="og:image" content="/images/tim.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Your Prompt Is Their Theorem">
+    <meta name="twitter:description" content="What the Navier–Stokes affair teaches us about the infrastructure of mathematical research">
+    <meta property="twitter:domain" content="http://localhost:1313/posts/trustworty-ai/">
+    <meta property="twitter:url" content="http://localhost:1313/posts/trustworty-ai/">
+    <meta name="twitter:image" content="/images/tim.jpg">
+
+    
+    <link rel="canonical" href="http://localhost:1313/posts/trustworty-ai/" />
+
+    <link rel="stylesheet" type="text/css" href="http://localhost:1313//css/normalize.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" type="text/css" href="http://localhost:1313//css/main.css">
+    <link disabled id="dark-theme" rel="stylesheet" href="http://localhost:1313//css/dark.css">
+
+    <script src="http://localhost:1313//js/svg-injector.min.js"></script>
+    <script src="http://localhost:1313//js/feather-icons.min.js"></script>
+    <script src="http://localhost:1313//js/main.js"></script>
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script> 
+  
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+
+        <div class="nav-title">
+            <a class="nav-brand" href="http://localhost:1313/">Tim Holzschuh</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/"> about </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/maths/"> maths </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/posts/"> blog </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/tags/"> tags </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/"> about </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/maths/"> maths </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/posts/"> blog </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/tags/"> tags </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Your Prompt Is Their Theorem</h1>
+        <small role="doc-subtitle">What the Navier–Stokes affair teaches us about the infrastructure of mathematical research</small>
+        <p class="post-date">
+            September 9, 2026
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/ai">ai</a></li>
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/mathematics">mathematics</a></li>
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/privacy">privacy</a></li>
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/open-weights">open-weights</a></li>
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/tee">tee</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <p><strong>What the Navier–Stokes affair teaches us about the infrastructure of mathematical research</strong></p>
+<p><em>Draft — September 9, 2026. A developing story; I distinguish what is established, alleged, and denied.</em></p>
+<hr>
+<h2 id="1-one-week-in-one-paragraph">1. One week, in one paragraph</h2>
+<p>On September 8, Tristan Buckmaster (NYU) and Levent Alpöge announced LLM-assisted blowup results for IPM, Boussinesq, and 3D Euler, building on the Córdoba–Martínez-Zoroa program.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> Hours later, OpenAI announced that an internal system — 10,000 sub-agents, an estimated $22.5M of compute — had proved forced Navier–Stokes blowup, resolving the Millennium problem in the negative.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> OpenAI concedes its effort began September 1, triggered by rumors about Buckmaster and Alpöge.<sup id="fnref1:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> Buckmaster&rsquo;s statement describes what followed: on a September 6 call, OpenAI&rsquo;s proposed attack route matched the quiet line &ldquo;almost nobody else&rdquo; was pursuing; authorship deals were offered, including removing Alpöge over his Anthropic affiliation; and when Buckmaster said he would go public, he reports being asked, &ldquo;Why would you ruin your career?&rdquo;<sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> OpenAI and Sebastien Bubeck deny wrongdoing; Bubeck calls the allegations &ldquo;false and inflammatory&rdquo;.<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> Buckmaster himself states he is &ldquo;not accusing anyone of anything&rdquo;.<sup id="fnref2:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> Nothing below depends on who is right.</p>
+<h2 id="2-the-lesson">2. The lesson</h2>
+<p>Two sentences settle it. Buckmaster:</p>
+<blockquote>
+<p>&ldquo;I asked whether the model had been trained on, or had access to, our sessions in Codex, into which we had been putting all our drafts for the whole of this project. I was told the model did not look up user data. I asked again, about training, and I did not get an answer.&rdquo;<sup id="fnref3:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+</blockquote>
+<p>And OpenAI:</p>
+<blockquote>
+<p>&ldquo;no specific user data was accessed in order to solve this problem. While unlikely, we cannot rule out that de-identified data derived from their usage of our products helped improve our models.&rdquo;<sup id="fnref2:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup><sup id="fnref1:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
+</blockquote>
+<p>When you think in plaintext on a frontier lab&rsquo;s servers, your unpublished ideas are at minimum <em>eligible</em> to become that lab&rsquo;s training signal (OpenAI reserves the right to train on Codex interactions unless you opt out<sup id="fnref2:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>) — and if a priority dispute arises, no audit is possible: the weights, data, and logs are closed, and the only referee is the counterparty. Even the <em>unresolvable suspicion</em> is enough to poison credit and collegial trust. Terence Tao&rsquo;s warning this week points the same way: &ldquo;The indiscriminate strip-mining of open problems for solutions may destroy the ecosystem&rdquo; of mathematics.<sup id="fnref1:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+<p>To be clear: LLM assistance in mathematics is useful and genuinely interesting — the Buckmaster–Alpöge work shows it can accelerate serious research, and we should pursue it. But that is exactly why the infrastructure question matters. So, concretely:</p>
+<h2 id="3-two-acceptable-configurations">3. Two acceptable configurations</h2>
+<h3 id="a-open-weight-models-on-university-hardware">(a) Open-weight models on university hardware</h3>
+<p>Run open-weight models (Llama, Qwen, DeepSeek, Mistral and their descendants) on clusters owned by universities or academic computing consortia. No third party ever sees a prompt — there is no training-on-your-data question to ask, because there is no one to ask it of. Weights, inference code, and logs are inspectable, which is also what reproducibility demands of AI-assisted proofs. And your institution&rsquo;s cluster has no incentive to race you, scoop you, or condition authorship on its commercial rivalries. The capability gap to closed frontier models is real but shrinking. Where it still matters:</p>
+<h3 id="b-encrypted-inference-in-trusted-execution-environments">(b) Encrypted inference in trusted execution environments</h3>
+<p>The reason ordinary AI services cannot protect you is structural: to compute a response, the server must see your prompt in plaintext. Whoever operates the server — or hacks it, or subpoenas it — can read, retain, and train on everything. As Moxie Marlinspike puts it: &ldquo;When you use an AI service, you&rsquo;re handing over your thoughts in plaintext&rdquo;.<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
+<p>Confidential computing breaks this equation with hardware. A <strong>Trusted Execution Environment (TEE)</strong> is an isolated environment — typically a confidential VM — whose memory the host machine itself cannot read, even though the host supplies the chips, power, and network. The workflow: your device encrypts your prompt <em>directly into the enclave</em>; the model processes it there; the answer comes back encrypted. The operator never touches plaintext.<sup id="fnref1:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
+<p>Two obvious objections, and both have cryptographic answers. <em>How do you know the encryption endpoint is really an enclave, and not the operator&rsquo;s ordinary server?</em> <strong>Remote attestation</strong>: the hardware produces a signed statement containing hashes of the exact code that booted inside; your client verifies the hardware signature and binds the encrypted channel to that attestation.<sup id="fnref2:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> <em>And how do you know that code doesn&rsquo;t leak your data anyway?</em> <strong>Reproducible builds</strong>: the provider publishes the source, anyone can rebuild it bit-for-bit and check that the attested hash matches, and releases are committed to a public, append-only transparency log so no user can be silently served a different build.<sup id="fnref3:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
+<p>This is why the architecture solves the problem this post is about. Trust is shifted from <em>policy</em> — &ldquo;we promise not to read or train on your drafts, please check a settings box&rdquo; — to <em>publicly verifiable evidence</em>: this exact published code, running in isolation the operator cannot break. A provider built this way does not merely promise restraint; it lacks the capability. And removing the capability removes the unresolvable suspicion that now hangs over every priority dispute involving a commercial lab. One honest caveat: you now trust the chip vendor and the attestation chain instead of the operator — a real, but far smaller and auditable, attack surface.</p>
+<p>Two providers already work exactly this way: <strong>Confer</strong> (<a href="https://confer.to/">confer.to</a>), built by Signal co-founder Moxie Marlinspike, which documents the full attestation-and-reproducible-builds pipeline openly;<sup id="fnref4:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup><sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> and <strong>Maple Research</strong> (<a href="https://www.trymaple.ai/">trymaple.ai</a>), an encrypted research workspace that runs open-weight models inside such enclaves — training on your data: &ldquo;No, by design&rdquo;.<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup> Notably, both run open weights, so options (a) and (b) converge: the same models, either on hardware your institution owns, or inside an enclave whose operator is cryptographically irrelevant.</p>
+<h2 id="4-coda">4. Coda</h2>
+<p>Do not think on machines owned by your competitors. Either own the machine — open weights on academic hardware — or make the machine&rsquo;s owner cryptographically irrelevant. Our drafts and half-formed conjectures are the seed corn of our discipline; this week we learned, phrased as reassuringly as possible, that it &ldquo;cannot be ruled out&rdquo; that they end up in the mill. Stop handing them over.</p>
+<hr>
+<h3 id="references">References</h3>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>T. Buckmaster, <a href="https://cims.nyu.edu/~tristanb/statement.pdf">public statement</a> (Sept. 8, 2026)&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref2:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref3:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>OpenAI, <a href="https://openai.com/index/navier-stokes-solution/">On the Navier–Stokes Millennium Prize Problem</a> (Sept. 8, 2026)&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref2:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>R. Brandom, <a href="https://techcrunch.com/2026/09/08/openai-fought-dirty-on-career-making-math-problem-says-nyu-mathematician/">OpenAI fought dirty on career-making math problem, says NYU mathematician</a>, <em>TechCrunch</em> (Sept. 8, 2026)&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref2:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>J. Kahn, <a href="https://fortune.com/2026/09/08/openai-says-it-cracked-navier-stokes-math-grand-challenge-buckmaster-accusation-cheating-intimidation-tao-lament/">OpenAI says it cracked Navier-Stokes, one of math&rsquo;s grand challenges</a>, <em>Fortune — Eye on AI</em> (Sept. 8, 2026)&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p>M. Marlinspike, <a href="https://confer.to/blog/2026/01/private-inference/">Private inference</a>, <em>Confer Blog</em> (Jan. 2026)&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref2:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref3:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref4:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p>M. Marlinspike, <a href="https://confer.to/blog/2025/12/passkey-encryption/">Making end-to-end encrypted AI chat feel like logging in</a>, <em>Confer Blog</em> (Dec. 2025)&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7">
+<p>Maple Research, <a href="https://www.trymaple.ai/">product/architecture overview</a>&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+        </p>
+    </div>
+</div>
+
+
+
+    
+
+    
+
+    
+
+        </main><footer class="footer">
+    <span>&copy; 2026 Tim Holzschuh</span>
+</footer>
+</body>
+</html>

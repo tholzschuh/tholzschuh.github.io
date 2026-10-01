@@ -12,7 +12,7 @@ pygmentsStyle          = "monokai"
 [params]
   footer         = "Tim Holzschuh"
   greeting       = "Hi!"
-  email          = "[surname] [at] ihes.fr"
+  email          = "t[surname] [at] mathi.uni-heidelberg.de"
   avatarURL      = "/images/tim.jpg"
   avatarLink     = "/images/debiesbosch.jpg"
   avatarSize     = "size-xl"

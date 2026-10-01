@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Privacy on Tim Holzschuh</title>
+		<link>http://localhost:1313/tags/privacy/</link>
+		<description>Recent content in Privacy on Tim Holzschuh</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 09 Sep 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/privacy/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Your Prompt Is Their Theorem</title>
+				<link>http://localhost:1313/posts/trustworty-ai/</link>
+				<pubDate>Wed, 09 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/trustworty-ai/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;What the Navier–Stokes affair teaches us about the infrastructure of mathematical research&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Draft — September 9, 2026. A developing story; I distinguish what is established, alleged, and denied.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;1-one-week-in-one-paragraph&#34;&gt;1. One week, in one paragraph&lt;/h2&gt;&#xA;&lt;p&gt;On September 8, Tristan Buckmaster (NYU) and Levent Alpöge announced LLM-assisted blowup results for IPM, Boussinesq, and 3D Euler, building on the Córdoba–Martínez-Zoroa program.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; Hours later, OpenAI announced that an internal system — 10,000 sub-agents, an estimated $22.5M of compute — had proved forced Navier–Stokes blowup, resolving the Millennium problem in the negative.&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; OpenAI concedes its effort began September 1, triggered by rumors about Buckmaster and Alpöge.&lt;sup id=&#34;fnref1:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; Buckmaster&amp;rsquo;s statement describes what followed: on a September 6 call, OpenAI&amp;rsquo;s proposed attack route matched the quiet line &amp;ldquo;almost nobody else&amp;rdquo; was pursuing; authorship deals were offered, including removing Alpöge over his Anthropic affiliation; and when Buckmaster said he would go public, he reports being asked, &amp;ldquo;Why would you ruin your career?&amp;rdquo;&lt;sup id=&#34;fnref1:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; OpenAI and Sebastien Bubeck deny wrongdoing; Bubeck calls the allegations &amp;ldquo;false and inflammatory&amp;rdquo;.&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; Buckmaster himself states he is &amp;ldquo;not accusing anyone of anything&amp;rdquo;.&lt;sup id=&#34;fnref2:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; Nothing below depends on who is right.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>
