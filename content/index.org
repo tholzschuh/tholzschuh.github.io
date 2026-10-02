@@ -1,0 +1,87 @@
+#+TITLE: Tim Holzschuh
+#+OPTIONS: num:t
+
+#+BEGIN_EXPORT html
+<div class="abstract">
+  <h2>Abstract</h2>
+  <p>
+    This page collects some information about me and my papers, teaching, and general thoughts.
+  </p>
+</div>
+#+END_EXPORT
+
+#+TOC: headlines 1
+
+* About me
+
+I'm a postdoc in mathematics at [[https://www.mathinf.uni-heidelberg.de/en][Heidelberg University]] in the research group of [[https://www.mathi.uni-heidelberg.de/~schmidt/"][Alexander Schmidt]].
+Previously, I was a [[https://www.dfg.de/en/research-funding/funding-opportunities/programmes/individual/walter-benjamin][Walter-Benjamin fellow]] based at [[https://www.ihes.fr/][IHES]] in the research group of [[https://www.ihes.fr/en/professeur/dustin-clausen-2/][Dustin Clausen]].
+
+I like to think about arithmetic homotopy theory. \\
+#+BEGIN_EXPORT html
+ <label for="sn-address" class="sidenote-toggle">⊕</label>
+<input type="checkbox" id="sn-address" class="sidenote-toggle" />
+<span class="sidenote">
+  Institut für Mathematik<br>
+  Im Neuenheimer Feld 205<br>
+  69120 Heidelberg<br>
+  Germany <br>
+</span>
+#+END_EXPORT
++ email: /t[surname] [at] mathi.uni-heidelberg.de/
++ office: 03.324
++ office hours: by appointment
++ [[./images/debiesbosch.jpg][photo]]
+
+  
+* Research
+
++ *[[https://raw.githubusercontent.com/tholzschuh/uni-files/master/papers/anabfam.pdf][Anabelian Geometry in Families]]* /(2026)/ \\
+  with [[https://www.mathi.uni-heidelberg.de/~schmidt/index.html][Alexander Schmidt]] and [[https://www.fb12.uni-frankfurt.de/115666234/Prof__Dr__Jakob_Stix][Jakob Stix]]. \\
+  /Submitted/ | [[https://arxiv.org/abs/2608.21232][arXiv]]
+
++ *[[https://raw.githubusercontent.com/tholzschuh/uni-files/master/papers/condensed_homotopy_type_of_a_scheme.pdf][The condensed homotopy type of a scheme]]* /(2025)/ \\
+  with [[https://peterjhaine.github.io/][Peter Haine]], [[https://marcin-lara.github.io/][Marcin Lara]], [[https://www.mathematik.tu-darmstadt.de/fb/personal/details/catrin_mair.de.jsp][Catrin Mair]], [[https://louismartini.de/][Louis Martini]], and [[https://wos07573.github.io/index.html][Sebastian Wolf]].  \\
+  /Submitted/ | /[[https://arxiv.org/abs/2510.07443][arXiv]]/
+
++  *[[https://raw.githubusercontent.com/tholzschuh/uni-files/master/papers/real-section-conjecture.pdf][On the real Section Conjecture in étale homotopy theory]]* /(2025)/ \\
+  /Submitted/ | /[[https://arxiv.org/abs/2510.13325][arXiv]]/
+
++ *[[https://raw.githubusercontent.com/tholzschuh/uni-files/master/papers/nonabelian_basechange_etale_homotopy.pdf][Nonabelian basechange theorems & étale homotopy theory]]* /(2023)/ \\
+  with [[https://peterjhaine.github.io/][Peter Haine]] and [[https://wos07573.github.io/index.html][Sebastian Wolf]]. \\
+  /[[https://londmathsoc.onlinelibrary.wiley.com/doi/abs/10.1112/topo.70009][Journal of Topology]]/ | /[[https://arxiv.org/abs/2304.00938][arXiv]]/
+
++ *[[https://raw.githubusercontent.com/tholzschuh/uni-files/master/papers/etale_fundamental_fiber_sequence.pdf][The fundamental fiber sequence in étale homotopy theory]]*  /(2022)/ \\
+  /[[https://academic.oup.com/imrn/advance-article-abstract/doi/10.1093/imrn/rnad018/7034035?redirectedFrom=fulltext][IMRN]]/ | /[[https://arxiv.org/abs/2209.03476][arXiv]]/
+
+* Teaching
+
+Current:
++ [[./teaching/2026/algebra-1.org][Algebra 1]] \\
+  /Central exercise: tba/ \\
+  /Exercise Sessions: tba  in tba of the Mathematikon./ 
+
+Previous:
++ [[./teaching/2023/etale-cohomology-1.org][Étale Cohomology I]] \\
+  /Exercise Sessions: Thursdays, 11:00am in SR3 of the Mathematikon./
++ [[./teaching/2023/applications-of-the-etale-fundamental-gerbe-to-anabelian-geometry.org][Applications of the étale fundamental gerbe to anabelian geometry]] \\
+  /GAUS AG on Bresciani's work on anabelian geometry using the étale fundamental gerbe./
++ [[./teaching/2023/galois-cohomology-2.org][Galois Cohomology II]] \\
+  /Exercise Sessions: Wednesdays, 2:00pm in SR6 of the Mathematikon./
++ [[./teaching/2022/galois-cohomology-1.org][Galois Cohomology I]] \\
+  /Exercise Sessions: Wednesdays, 2:00pm in SR3 of the Mathematikon./
++ [[./teaching/2022/the-grothendieck-conjecture-for-affine-curves.org][The Grothendieck conjecture for affine curves]] \\
+  /GAUS AG on Tamagawa's proof of the isomorphism conjecture for affine curves./
++ [[./teaching/2022/galois-and-fundamental-groups.org][Galois and fundamental groups]] \\
+  /Seminar on Galois categories and the étale fundamental group./
+
+* Blog
+
++ [[./blog/using-espanso-to-conveniently-type-unicode-characters.org][Using espanso to conveniently type unicode characters]]
++ [[./blog/tikzcd-snippets-for-vs-code.org][tikzcd snippets for VS Code]] 
++ [[./blog/declarative-and-reproducible-system-and-user-management-with-nixos.org][Declarative and reproducible system and user management with NixOS]]
++ [[./blog/using-latex-with-hakyll.org][Using LaTeX with Hakyll]] 
+
+* Acknowledgments
+
+Thanks to [[https://www.gnu.org/savannah-checkouts/gnu/emacs/emacs.html][emacs]], [[https://orgmode.org/][org-mode]] and [[https://latex.vercel.app/][LaTeX.css]] for powering this site.

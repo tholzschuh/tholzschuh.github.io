@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Using espanso to conveniently type unicode characters</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://latex.vercel.app/style.css" />
+                    <style>
+                    #table-of-contents h2 { font-size: 1.2em; }
+                    #text-table-of-contents ul { list-style: none; padding-left: 0; }
+                    #text-table-of-contents ul ul { padding-left: 1.5em; }
+                    </style> 
+</head>
+<body class="libertinus latex-dark-auto">
+<div id="content" class="content">
+<h1 class="title">Using espanso to conveniently type unicode characters</h1>
+<p>
+<a href="https://peterjhaine.github.io/">Peter Haine</a> recently made me aware of the possibility of using a ```text expander``` to conveniently type unicode characters like Π, ⟶ and 𝒞 by typing things like ```:Pi:```, ```:to:``` and ```:scC:```.
+</p>
+
+<p>
+After a quick search for available options, I decided to give <a href="https://espanso.org/"><code>espanso</code></a> a try.
+</p>
+
+<p>
+While the official <a href="https://hub.espanso.org/">package hub</a> offers some packages with snippets relevant to mathematicians, I wasn't really satisfied with any of the available options and instead started adding all the symbols I might need manually.
+</p>
+
+
+<p>
+![demo](/images/espanso<sub>demo.gif</sub>)
+</p>
+
+<p>
+Currently, I implemented snippets for stuff like the following: 
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Type</td>
+<td class="org-left">Examples</td>
+<td class="org-left">Type</td>
+<td class="org-left">Example</td>
+</tr>
+
+<tr>
+<td class="org-left">-------</td>
+<td class="org-left">-------</td>
+<td class="org-left">-------</td>
+<td class="org-left">-------</td>
+</tr>
+
+<tr>
+<td class="org-left">mathbf</td>
+<td class="org-left">𝐀, 𝐁, 𝐂, &hellip;</td>
+<td class="org-left">greek letters</td>
+<td class="org-left">γ, Γ, δ, Δ, &hellip;</td>
+</tr>
+
+<tr>
+<td class="org-left">mathcal</td>
+<td class="org-left">𝓐, 𝓑, 𝓒, &hellip;</td>
+<td class="org-left">subscripts</td>
+<td class="org-left">Xₐ, X₁, &hellip;</td>
+</tr>
+
+<tr>
+<td class="org-left">mathsf</td>
+<td class="org-left">𝖠, 𝖡, 𝖢, &hellip;</td>
+<td class="org-left">superscripts</td>
+<td class="org-left">Xᵃ, X¹, &hellip;</td>
+</tr>
+
+<tr>
+<td class="org-left">mathsc</td>
+<td class="org-left">𝒜, 𝒞, 𝒟, &hellip;</td>
+<td class="org-left">various arrows</td>
+<td class="org-left">⟶, ↠, ⮩, ⇉, ⇶, &hellip;</td>
+</tr>
+
+<tr>
+<td class="org-left">mathbb</td>
+<td class="org-left">𝔸, 𝔹, ℂ, &hellip;</td>
+<td class="org-left">miscellaneous</td>
+<td class="org-left">∞, ×, ∩, ∪, &hellip;</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>
+In case you want to try it for yourself, I packaged the whole thing and published it as the <a href="https://hub.espanso.org/tholzschuh-maths"><code>tholzschuh-maths</code></a> extension on the package hub.
+</p>
+
+<p>
+A detailed overview of all available snippets can be found in the <a href="https://github.com/espanso/hub/blob/main/packages/tholzschuh-maths/0.1.0/README.md">README</a> file.
+</p>
+
+<p>
+To install the extension, simply type ```espanso install tholzschuh-maths``` in a terminal (which of course requires that you've already installed ```espanso``` itself).
+</p>
+
+<p>
+## contributing
+</p>
+
+<p>
+If you'd like to have other mathematical symbols supported or have anything else to report, either contact me or submit a pull request at the GitHub <a href="https://github.com/tholzschuh/hub/tree/main/packages/tholzschuh-maths/">repo</a>.
+</p>
+
+<p>
+Enjoy!
+</p>
+</div>
+</body>
+</html>

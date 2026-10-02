@@ -1,0 +1,95 @@
+;; Set the package installation directory so that packages aren't stored in the
+;; ~/.emacs.d/elpa path.
+(require 'package)
+(setq package-user-dir (expand-file-name "./.packages"))
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+                         ("elpa" . "https://elpa.gnu.org/packages/")))
+
+;; Initialize the package system
+(package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+
+;; Install dependencies
+(package-install 'htmlize)
+
+;; Load the publishing system
+(require 'ox-publish)
+
+;; Customize the HTML output
+(setq org-html-validation-link nil            ;; Don't show validation link
+      org-html-head-include-scripts nil       ;; Use our own scripts
+      org-html-head-include-default-style nil ;; Use our own styles
+      ;; org-html-head "<link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" />")
+      org-html-head "<link rel=\"stylesheet\" href=\"https://latex.vercel.app/style.css\" />
+                    <style>
+                    #table-of-contents h2 { font-size: 1.2em; }
+                    #text-table-of-contents ul { list-style: none; padding-left: 0; }
+                    #text-table-of-contents ul ul { padding-left: 1.5em; }
+                    </style> ")
+
+;; Define the publishing project
+(setq org-publish-project-alist
+      (list
+       (list "holzschuh.me:main"
+             :recursive t
+             :base-directory "./content"
+             :publishing-function 'org-html-publish-to-html
+             :publishing-directory "./public"
+             :html-link-home "/"
+             :html-link-use-abs-url t
+             :with-author nil           ;; Don't include author name
+             :with-creator nil            ;; Include Emacs and Org versions in footer
+             :with-toc nil                ;; Include a table of contents
+             :section-numbers nil       ;; Don't include section numbers
+             :author "Tim Holzschuh"
+             :email "t[surname][at]mathi.uni-heidelberg.de"
+             :time-stamp-file nil)    ;; Don't include time stamp in file
+
+       (list "holzschuh.me:attachments"
+                  :base-directory "./content"
+                  :base-extension "jpg\\|jpeg\\|png\\|gif\\|svg\\|pdf"
+                  :publishing-function 'org-publish-attachment
+                  :publishing-directory "./public"
+                  :recursive t)))    ;; Don't include time stamp in file
+
+
+
+;; HOME | UP entfernen
+(setq org-html-home/up-format "")
+
+;;;; Header
+;;(setq org-html-preamble t
+;;      org-html-preamble-format
+;;      '(("en" "<header><a href=\"/index.html\" class=\"site-name\"></a><nav class=\"site-nav\"><a href=\"/index.html\">about</a> | <a href=\"/research.html\">research</a> | <a href=\"/teaching.html\">teaching</a> </nav></header>")))
+
+;; Footer
+;;(setq org-html-postamble t
+;;      org-html-postamble-format
+;;      '(("en" "<footer>
+;;                <p>&copy; 2026 Tim Holzschuh | <a href=\"https://orcid.org/0000-0002-9171-1371\">
+;;<img src=\"https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png\" 
+;;     alt=\"ORCID\" 
+;;     width=\"16\" height=\"16\" 
+;;     style=\"vertical-align: middle; border: 0;\">
+;;ORCID
+;;</a></p>
+;;              </footer>")))
+
+;; Libertinus als Schrift: <body> um die Klasse "libertinus" ergänzen,
+;; wie von LaTeX.css dokumentiert (https://latex.vercel.app)
+(defun my/org-html-add-libertinus-class (output backend info)
+  "Fügt dem <body>-Tag die Klasse \"libertinus\" hinzu."
+  (when (org-export-derived-backend-p backend 'html)
+    (if (string-match "<body" output)
+        (replace-match "<body class=\"libertinus latex-dark-auto\"" t t output)
+      output)))
+
+(add-to-list 'org-export-filter-final-output-functions
+             #'my/org-html-add-libertinus-class)
+
+
+;; Generate the site output
+(org-publish-all t)
+
+(message "Build complete!")

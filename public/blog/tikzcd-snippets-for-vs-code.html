@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>tikzcd snippets for VS Code</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://latex.vercel.app/style.css" />
+                    <style>
+                    #table-of-contents h2 { font-size: 1.2em; }
+                    #text-table-of-contents ul { list-style: none; padding-left: 0; }
+                    #text-table-of-contents ul ul { padding-left: 1.5em; }
+                    </style> 
+</head>
+<body class="libertinus latex-dark-auto">
+<div id="content" class="content">
+<h1 class="title">tikzcd snippets for VS Code</h1>
+<p>
+For writing LaTeX documents, I use <a href="https://code.visualstudio.com/">VS Code</a> together with the <a href="https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop"><code>latex-workshop</code></a> extension.
+</p>
+
+<p>
+One thing I particularly like about VS Code is its built-in support for <a href="https://code.visualstudio.com/docs/editor/userdefinedsnippets">snippets</a> and how easy it is to implement your own.
+</p>
+
+<p>
+As there aren't any extensions in the <a href="https://marketplace.visualstudio.com/vscode">marketplace</a> providing snippets for commutative diagrams, I implemented some using ```tikz-cd``` on my own:
+</p>
+
+<p>
+This is what using the snippets looks like:
+</p>
+
+<p>
+![snippet](/images/latex-snippets<sub>demo.gif</sub>)
+&lt;details&gt;
+&lt;summary&gt;
+Result:
+&lt;/summary&gt;
+</p>
+
+<p>
+![result](/images/latex-snippets<sub>diagram.png</sub>)
+&lt;/details&gt;
+</p>
+
+<p>
+I cycle through the preselected ```X```, ```Y```, ```S```, ```T``` by pressing ```tab```, which makes it very convenient to change the objects' names appearing in the diagram.
+</p>
+
+
+<p>
+In case you want to try it for yourself, I packaged the whole thing and published it as the <a href="https://marketplace.visualstudio.com/items?itemName=tholzschuh.snippets-tikzcd"><code>snippets-tikzcd</code></a> extension.
+</p>
+
+<p>
+To install the extension, simply go to ```File ⟶ Preferences ⟶ Extensions```, search for ```snippets-tikzcd``` and install.
+If you for some reason dislike using the marketplace, you can also find the plugin in the ```versions``` folder of <a href="https://github.com/tholzschuh/snippets-tikzcd">this</a> GitHub repository.
+</p>
+
+<p>
+## supported diagrams
+</p>
+
+<p>
+Here's the kinds of diagrams the extension currently supports:
+</p>
+
+<ul class="org-ul">
+<li>(pushout/pullback) ```square```s</li>
+<li>```triangle```s</li>
+<li>```cube```s</li>
+<li>(short/split/long) exact ```sequence```s and the 'snake'</li>
+<li>equalizers and reflexive parallel ```pair```s</li>
+<li>(augmented) (co-)```simplicial``` objects</li>
+<li>```adjunction```s and natural ```transformation```s</li>
+</ul>
+
+<p>
+Read the above as ```trigger``` triggers the drop-down menu to select all the varieties of diagrams of shape ```trigger``` (as in the demo).
+</p>
+
+<p>
+Note that, in the future, the above list might not be comprehensive anymore if I end up adding some other diagrams.
+I'll try to always keep the information on the <a href="https://marketplace.visualstudio.com/items?itemName=tholzschuh.snippets-tikzcd">overview page</a> of the extension up-to-date.
+</p>
+
+<p>
+## contributing
+</p>
+
+<p>
+If you'd like to have other types of diagrams supported or have anything else to report, either contact me or submit a pull request at the GitHub <a href="https://github.com/tholzschuh/snippets-tikzcd">repo</a>.
+</p>
+
+<p>
+Enjoy!
+</p>
+</div>
+</body>
+</html>

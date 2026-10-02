@@ -1,0 +1,10 @@
+* Étale Cohomology I
+
+During the winter term in 2023, I’m TAing the course [[https://www.mathi.uni-heidelberg.de/~schmidt/lehre/Alexander%20Schmidt%20%20Wintersemester%202023_24.htm][Étale Cohomology I]] by [[https://www.mathi.uni-heidelberg.de/~schmidt/][Prof. Alexander Schmidt]].
+The exercise sheets will be accessible through the [[https://mampf.mathi.uni-heidelberg.de/lectures/167][relevant Mampf course]], and will be discussed in the exercise session of the subsequent week:
+
++ When? Thursday, 11:00 am
++ Where? SR3
++ Contact: t[surname] [at] mathi [dot] uni-heidelberg [dot] de
+
+You won’t have to hand in written solutions to the exercises, but I /strongly/ encourage you to spend a fair amount of time thinking about them in order to get the most out of the exercise sessions.
