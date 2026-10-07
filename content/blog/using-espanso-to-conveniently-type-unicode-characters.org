@@ -1,6 +1,6 @@
 #+TITLE: Using espanso to conveniently type unicode characters
 
-[[https://peterjhaine.github.io/][Peter Haine]] recently made me aware of the possibility of using a ```text expander``` to conveniently type unicode characters like Π, ⟶ and 𝒞 by typing things like ```:Pi:```, ```:to:``` and ```:scC:```.
+[[https://peterjhaine.github.io/][Peter Haine]] recently made me aware of the possibility of using a =text expander= to conveniently type unicode characters like Π, ⟶ and 𝒞 by typing things like =:Pi:=, =:to:= and =:scC:=.
 
 After a quick search for available options, I decided to give [[https://espanso.org/][=espanso=]] a try.
 
@@ -9,7 +9,7 @@ While the official [[https://hub.espanso.org/][package hub]] offers some package
 
 # demonstration
 
-![demo](/images/espanso_demo.gif)
+[[./images/espanso_demo.gif]]
 
 # supported symbols
 
@@ -24,13 +24,13 @@ Currently, I implemented snippets for stuff like the following:
 | mathbb | 𝔸, 𝔹, ℂ, ... |  miscellaneous | ∞, ×, ∩, ∪, ... |
 
 
-# ```tholzschuh-maths```
+# =tholzschuh-maths=
 
 In case you want to try it for yourself, I packaged the whole thing and published it as the [[https://hub.espanso.org/tholzschuh-maths][=tholzschuh-maths=]] extension on the package hub.
 
 A detailed overview of all available snippets can be found in the [[https://github.com/espanso/hub/blob/main/packages/tholzschuh-maths/0.1.0/README.md][README]] file.
 
-To install the extension, simply type ```espanso install tholzschuh-maths``` in a terminal (which of course requires that you've already installed ```espanso``` itself).
+To install the extension, simply type =espanso install tholzschuh-maths= in a terminal (which of course requires that you've already installed =espanso= itself).
 
 ## contributing
 

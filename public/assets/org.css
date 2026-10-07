@@ -1,0 +1,6 @@
+/* Nummern nur im TOC zeigen, nicht in den Überschriften */
+.outline-2 h2 > span[class^="section-number"],
+.outline-3 h3 > span[class^="section-number"],
+.outline-4 h4 > .section-number-4 {
+  display: none;
+}
