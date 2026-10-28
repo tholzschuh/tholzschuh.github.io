@@ -66,6 +66,8 @@ I like to think about arithmetic homotopy theory. \\
 
 Current:
 + [[./teaching/2026/algebra-1.org][Algebra 1]] \\
++ [[./teaching/2026/elementary-anabelian-varieties-are-anabelian.org][Elementary anabelian varieties are anabelian]] \\
+  /GAUS AG on Carlsons recent work on elementary anabelian varieties./
 
 Previous:
 + [[./teaching/2023/etale-cohomology-1.org][Étale Cohomology I]] \\
