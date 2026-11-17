@@ -41,6 +41,8 @@ I like to think about arithmetic homotopy theory. \\
 :CUSTOM_ID: research
 :END:
 
++ *[[https://raw.githubusercontent.com/tholzschuh/uni-files/master/papers/profinite-shape-equivalence.pdf][The profinite shape equivalence]]* /(2026)/ \\
+
 + *[[https://raw.githubusercontent.com/tholzschuh/uni-files/master/papers/anabfam.pdf][Anabelian Geometry in Families]]* /(2026)/ \\
   /with [[https://www.mathi.uni-heidelberg.de/~schmidt/index.html][Alexander Schmidt]] and [[https://www.fb12.uni-frankfurt.de/115666234/Prof__Dr__Jakob_Stix][Jakob Stix]]./ \\
   /Submitted/ | [[https://arxiv.org/abs/2608.21232][arXiv]]
